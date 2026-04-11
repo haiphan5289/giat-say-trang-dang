@@ -1,0 +1,40 @@
+{
+  "servers": {
+    "figma": {
+      "command": "/opt/homebrew/bin/node",
+      "args": [
+        "/Users/hai.phan/Desktop/haiphan/ct-ios-app--v3/scripts/figma-mcp-proxy/server.js"
+      ],
+      "type": "stdio",
+      "cwd": "/Users/hai.phan/Desktop/haiphan/ct-ios-app--v3/scripts/figma-mcp-proxy"
+    },
+    "serena": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide-assistant",
+        "--project",
+        "./"
+      ],
+      "type": "stdio"
+    },
+    "time": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-time"
+      ],
+      "type": "stdio"
+    },
+    "Atlassian-MCP": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "mcp-atlassian"
+      ]
+    }
+  }
+}

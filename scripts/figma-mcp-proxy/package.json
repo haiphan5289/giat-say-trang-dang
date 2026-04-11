@@ -1,0 +1,17 @@
+{
+  "name": "figma-mcp-proxy",
+  "version": "1.0.0",
+  "description": "Figma REST API MCP proxy server - stable alternative to Figma Desktop Dev Mode server",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
