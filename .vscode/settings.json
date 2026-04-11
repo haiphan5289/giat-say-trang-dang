@@ -79,6 +79,9 @@
         "/^python3 << 'EOF'\nimport os\nbase = '/Users/hai\\.phan/Desktop/haiphan/giat-say-trang-dang/\\.github/prompts'\n\n# Final check for known bad patterns\nbad = \\[\n    'ininterface', 'interface / typeure', 'API API Service',\n    '\\.typescript', 'GSOrderCustom Hook', 'Custom Hook / Contexts',\n    'Repositories → API Services',\n\\]\n\nissues = \\{\\}\nfor fname in sorted\\(os\\.listdir\\(base\\)\\):\n    fpath = os\\.path\\.join\\(base, fname\\)\n    if not os\\.path\\.isfile\\(fpath\\): continue\n    try:\n        with open\\(fpath, encoding='utf-8'\\) as f:\n            content = f\\.read\\(\\)\n    except:\n        continue\n    found = \\[p for p in bad if p in content\\]\n    if found:\n        issues\\[fname\\] = found\n\nif issues:\n    print\\(f'❌ Remaining issues in \\{len\\(issues\\)\\} files:'\\)\n    for f, b in issues\\.items\\(\\):\n        print\\(f'  \\{f\\}: \\{b\\}'\\)\nelse:\n    print\\('✅ All clean! No broken patterns remaining\\.'\\)\n\n# Spot check final content\nfpath = os\\.path\\.join\\(base, 'AI_generate_usecase_template\\.prompt\\.md'\\)\nwith open\\(fpath, encoding='utf-8'\\) as f:\n    content = f\\.read\\(\\)\nprint\\(\\)\nprint\\('=== AI_generate_usecase_template\\.prompt\\.md - description line ==='\\)\nfor l in content\\.split\\('\\\\n'\\)\\[:5\\]:\n    print\\(l\\)\nEOF\n$/": {
             "approve": true,
             "matchCommandLine": true
-        }
+        },
+        "git add": true,
+        "git commit": true,
+        "git push": true
     }
 }
