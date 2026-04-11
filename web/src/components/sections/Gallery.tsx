@@ -1,38 +1,94 @@
-const galleryItems = [
-  { id: 1, emoji: "👕", label: "Giặt Sấy Quần Áo", span: "col-span-1 row-span-2" },
-  { id: 2, emoji: "🛋️", label: "Giặt Sofa Tại Nhà", span: "col-span-1 row-span-1" },
-  { id: 3, emoji: "👟", label: "Giặt Giày Thể Thao", span: "col-span-1 row-span-1" },
-  { id: 4, emoji: "👔", label: "Giặt Hấp Vest", span: "col-span-2 row-span-1" },
-  { id: 5, emoji: "🪟", label: "Giặt Rèm Cửa", span: "col-span-1 row-span-1" },
-  { id: 6, emoji: "🐻", label: "Giặt Gấu Bông", span: "col-span-1 row-span-1" },
+import {
+  Shirt,
+  Sparkles,
+  Package,
+  Star,
+  Wind,
+  Heart,
+} from "lucide-react";
+
+const items = [
+  {
+    Icon: Shirt,
+    label: "Giặt Sấy Quần Áo",
+    sub: "Gia đình & cá nhân",
+    gradient: "from-blue-600 to-blue-700",
+    span: "md:col-span-1 md:row-span-2",
+  },
+  {
+    Icon: Sparkles,
+    label: "Giặt Hấp Cao Cấp",
+    sub: "Vest, áo dài, dạ hội",
+    gradient: "from-amber-500 to-orange-500",
+    span: "md:col-span-1 md:row-span-1",
+  },
+  {
+    Icon: Star,
+    label: "Giặt Giày",
+    sub: "Mọi chất liệu",
+    gradient: "from-orange-500 to-rose-500",
+    span: "md:col-span-1 md:row-span-1",
+  },
+  {
+    Icon: Package,
+    label: "Giặt Sofa & Nệm",
+    sub: "Tại nhà hoặc cửa hàng",
+    gradient: "from-teal-500 to-cyan-600",
+    span: "md:col-span-2 md:row-span-1",
+  },
+  {
+    Icon: Wind,
+    label: "Giặt Rèm Cửa",
+    sub: "Giao tận nơi",
+    gradient: "from-sky-500 to-blue-500",
+    span: "md:col-span-1 md:row-span-1",
+  },
+  {
+    Icon: Heart,
+    label: "Giặt Gấu Bông",
+    sub: "An toàn cho trẻ em",
+    gradient: "from-pink-500 to-rose-400",
+    span: "md:col-span-1 md:row-span-1",
+  },
 ];
 
 export default function Gallery() {
   return (
-    <section id="thu-vien" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <span className="inline-block bg-blue-100 text-blue-700 rounded-full px-4 py-1 text-sm font-semibold mb-3">
-            Thư Viện Ảnh
-          </span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+    <section id="thu-vien" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16 reveal">
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
+            Dịch vụ & Hình ảnh
+          </p>
+          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
             Chúng Tôi Làm Sạch Tất Cả
           </h2>
-          <p className="text-gray-500 max-w-lg mx-auto">
-            Từ quần áo đến nội thất — mọi vật dụng đều được xử lý chuyên nghiệp.
+          <p className="text-slate-500 max-w-lg mx-auto">
+            Từ quần áo đến nội thất — mọi dịch vụ được thực hiện với tiêu chuẩn
+            chuyên nghiệp cao nhất.
           </p>
         </div>
 
-        {/* Masonry-like grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[200px]">
-          {galleryItems.map((item) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[180px]">
+          {items.map((item, i) => (
             <div
-              key={item.id}
-              className={`${item.span} bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex flex-col items-center justify-center gap-3 group cursor-pointer hover:from-blue-100 hover:to-blue-200 transition-all duration-300 hover:scale-[1.02] shadow-sm hover:shadow-md border border-blue-100`}
+              key={item.label}
+              className={`reveal reveal-delay-${i + 1} ${item.span} relative bg-gradient-to-br ${item.gradient} rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-300`}
             >
-              <span className="text-6xl group-hover:scale-110 transition-transform">{item.emoji}</span>
-              <span className="text-blue-700 font-semibold text-sm text-center px-2">{item.label}</span>
+              {/* Hover overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-300" />
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-4">
+                <item.Icon
+                  size={36}
+                  className="text-white/80 group-hover:text-white group-hover:scale-110 transition-all duration-300"
+                  strokeWidth={1.5}
+                />
+                <p className="text-white font-semibold text-sm lg:text-base text-center leading-tight">
+                  {item.label}
+                </p>
+                <p className="text-white/60 text-xs text-center">{item.sub}</p>
+              </div>
             </div>
           ))}
         </div>

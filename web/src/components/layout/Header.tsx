@@ -19,7 +19,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -27,40 +27,36 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md" : "bg-white/95 backdrop-blur-sm"
+        scrolled
+          ? "bg-white/95 backdrop-blur-lg shadow-sm border-b border-slate-100"
+          : "bg-transparent"
       }`}
     >
-      {/* Top bar */}
-      <div className="bg-blue-600 text-white text-sm py-1.5">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-          <span>⏰ Giờ mở cửa: 7:00 - 21:00 (Tất cả các ngày)</span>
-          <a href="tel:0938432178" className="flex items-center gap-1 font-semibold hover:text-blue-200 transition-colors">
-            <Phone size={14} />
-            0938 432 178
-          </a>
-        </div>
-      </div>
-
-      {/* Main nav */}
-      <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+        <Link href="/" className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-blue-500/25">
             GS
           </div>
-          <div>
-            <p className="font-bold text-blue-700 text-lg leading-tight">Giặt Sấy</p>
-            <p className="font-semibold text-blue-500 text-sm leading-tight">Trắng Đáng</p>
-          </div>
+          <p className={`font-bold text-base transition-colors ${scrolled ? "text-slate-900" : "text-white"}`}>
+            Giặt Sấy{" "}
+            <span className={scrolled ? "text-blue-600" : "text-blue-300"}>
+              Trắng Đáng
+            </span>
+          </p>
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden lg:flex items-center gap-1">
+        <ul className="hidden lg:flex items-center gap-0.5">
           {navItems.map((item) => (
             <li key={item.label}>
               <Link
                 href={item.href}
-                className="px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md text-sm font-medium transition-colors"
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  scrolled
+                    ? "text-slate-600 hover:text-blue-600 hover:bg-blue-50"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
+                }`}
               >
                 {item.label}
               </Link>
@@ -68,44 +64,48 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* CTA + Mobile toggle */}
+        {/* CTA + Toggle */}
         <div className="flex items-center gap-3">
           <a
             href="tel:0938432178"
-            className="hidden sm:flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors"
+            className="hidden sm:flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-all shadow-md shadow-blue-500/20"
           >
-            <Phone size={16} />
-            Gọi Ngay
+            <Phone size={15} />
+            0938 432 178
           </a>
           <button
-            className="lg:hidden p-2 text-gray-700"
+            className={`lg:hidden p-2 rounded-lg transition-colors ${
+              scrolled
+                ? "text-slate-700 hover:bg-slate-100"
+                : "text-white hover:bg-white/10"
+            }`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
-          <ul className="px-4 py-3 space-y-1">
+        <div className="lg:hidden bg-white border-t border-slate-100 shadow-xl">
+          <ul className="px-4 py-4 space-y-1">
             {navItems.map((item) => (
               <li key={item.label}>
                 <Link
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium transition-colors"
+                  className="block px-4 py-3 text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl font-medium text-sm transition-colors"
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
-            <li>
+            <li className="pt-2">
               <a
                 href="tel:0938432178"
-                className="flex items-center gap-2 justify-center bg-blue-600 text-white px-4 py-3 rounded-full font-semibold mt-2"
+                className="flex items-center gap-2 justify-center bg-blue-600 text-white px-4 py-3 rounded-xl font-semibold text-sm"
               >
                 <Phone size={16} />
                 Gọi Ngay: 0938 432 178

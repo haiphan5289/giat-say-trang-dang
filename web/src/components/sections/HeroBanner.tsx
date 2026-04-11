@@ -1,86 +1,117 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Phone, MessageCircle, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { Phone, MessageCircle, ChevronLeft, ChevronRight, CheckCircle } from "lucide-react";
 
 const slides = [
   {
     id: 1,
+    tag: "Dịch vụ giặt sấy chuyên nghiệp",
     title: "Sạch Đúng Nghĩa",
-    subtitle: "Đẹp Như Mới",
+    highlight: "Đẹp Như Mới",
     description:
-      "Dịch vụ giặt sấy chuyên nghiệp — công nghệ hiện đại, an toàn với mọi chất liệu vải.",
-    bg: "from-blue-700 to-blue-500",
-    emoji: "👕",
+      "Công nghệ giặt sấy hiện đại, an toàn với mọi chất liệu vải. Giao nhận tận nơi — tiện lợi, nhanh chóng.",
+    accent: "from-slate-900 via-blue-950 to-slate-900",
   },
   {
     id: 2,
-    title: "Giao Nhận Tận Nơi",
-    subtitle: "Tiết Kiệm Thời Gian",
+    tag: "Tiết kiệm thời gian sống",
+    title: "Đặt Lịch Online",
+    highlight: "Nhận Về Trong Ngày",
     description:
-      "Đặt lịch online, chúng tôi đến tận nhà lấy và trả đồ. Không cần ra cửa hàng.",
-    bg: "from-cyan-700 to-blue-500",
-    emoji: "🚚",
+      "Chỉ 2 phút đặt lịch qua điện thoại hoặc Zalo — chúng tôi đến tận nhà lấy và giao lại khi hoàn thành.",
+    accent: "from-slate-900 via-cyan-950 to-slate-900",
   },
   {
     id: 3,
-    title: "Giặt Hấp Cao Cấp",
-    subtitle: "Vest, Áo Dài, Dạ Hội",
+    tag: "Trang phục cao cấp",
+    title: "Giặt Hấp",
+    highlight: "Vest & Áo Dài",
     description:
-      "Xử lý trang phục cao cấp bằng phương pháp hấp chuyên biệt, giữ nguyên form dáng.",
-    bg: "from-indigo-700 to-blue-500",
-    emoji: "👔",
+      "Xử lý trang phục cao cấp bằng phương pháp hấp chuyên biệt, giữ nguyên form dáng và màu sắc nguyên bản.",
+    accent: "from-slate-900 via-indigo-950 to-slate-900",
   },
+];
+
+const trustPoints = [
+  "Công nghệ máy giặt Nhật Bản hiện đại",
+  "Nước giặt chuyên dụng nhập khẩu an toàn",
+  "Hoàn tiền 100% nếu không hài lòng",
+];
+
+const stats = [
+  { v: "500+", l: "Khách hàng" },
+  { v: "5+", l: "Chi nhánh" },
+  { v: "10+", l: "Năm KN" },
+  { v: "99%", l: "Hài lòng" },
 ];
 
 export default function HeroBanner() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    const timer = setInterval(
+      () => setCurrent((prev) => (prev + 1) % slides.length),
+      6000
+    );
     return () => clearInterval(timer);
   }, []);
 
-  const slide = slides[current];
-  const prev = () => setCurrent((c) => (c - 1 + slides.length) % slides.length);
+  const prev = () =>
+    setCurrent((c) => (c - 1 + slides.length) % slides.length);
   const next = () => setCurrent((c) => (c + 1) % slides.length);
+  const slide = slides[current];
 
   return (
-    <section className={`relative min-h-screen bg-gradient-to-br ${slide.bg} transition-all duration-700 flex items-center pt-20`}>
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 text-9xl">💧</div>
-        <div className="absolute top-40 right-20 text-8xl">✨</div>
-        <div className="absolute bottom-20 left-1/4 text-7xl">🫧</div>
-        <div className="absolute bottom-40 right-1/3 text-6xl">💎</div>
-      </div>
+    <section
+      className={`relative min-h-screen bg-gradient-to-br ${slide.accent} transition-all duration-700 flex items-center overflow-hidden pt-16`}
+    >
+      {/* Decorative blobs */}
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-blue-600/10 -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-cyan-600/10 translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text content */}
-          <div className="text-white">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 text-sm font-medium">
+      <div className="max-w-7xl mx-auto px-6 py-24 relative z-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left: Text */}
+          <div className="text-white space-y-8">
+            {/* Tag badge */}
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-2 text-sm text-blue-200 font-medium backdrop-blur-sm">
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              Đang phục vụ · 7:00 - 21:00
+              {slide.tag}
             </div>
 
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-2">
-              {slide.title}
-            </h1>
-            <h2 className="text-3xl lg:text-4xl font-semibold text-blue-200 mb-6">
-              {slide.subtitle}
-            </h2>
-            <p className="text-lg text-blue-100 mb-8 max-w-lg leading-relaxed">
+            {/* Headline */}
+            <div className="space-y-1">
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight">
+                {slide.title}
+              </h1>
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                {slide.highlight}
+              </h1>
+            </div>
+
+            <p className="text-slate-300 text-lg leading-relaxed max-w-md">
               {slide.description}
             </p>
 
-            {/* CTA buttons */}
-            <div className="flex flex-wrap gap-4">
+            {/* Trust checklist */}
+            <ul className="space-y-2.5">
+              {trustPoints.map((point) => (
+                <li
+                  key={point}
+                  className="flex items-center gap-2.5 text-sm text-slate-300"
+                >
+                  <CheckCircle size={16} className="text-green-400 shrink-0" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA */}
+            <div className="flex flex-wrap gap-3 pt-2">
               <a
                 href="tel:0938432178"
-                className="flex items-center gap-2 bg-white text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-full font-bold text-lg transition-all hover:scale-105 shadow-lg"
+                className="flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white px-7 py-3.5 rounded-xl font-semibold text-lg transition-all hover:scale-105 shadow-xl shadow-blue-500/25"
               >
                 <Phone size={20} />
                 Gọi Ngay
@@ -89,79 +120,82 @@ export default function HeroBanner() {
                 href="https://zalo.me/0938432178"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-blue-400/30 hover:bg-blue-400/50 border-2 border-white/50 text-white px-6 py-3 rounded-full font-bold text-lg transition-all hover:scale-105"
+                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm text-white px-7 py-3.5 rounded-xl font-semibold text-lg transition-all hover:scale-105"
               >
                 <MessageCircle size={20} />
-                Zalo Chat
+                Chat Zalo
               </a>
-            </div>
-
-            {/* Stats row */}
-            <div className="flex flex-wrap gap-8 mt-10 pt-8 border-t border-white/20">
-              {[
-                { value: "500+", label: "Khách hàng" },
-                { value: "5+", label: "Chi nhánh" },
-                { value: "10+", label: "Năm KN" },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="text-3xl font-bold">{stat.value}</p>
-                  <p className="text-blue-200 text-sm">{stat.label}</p>
-                </div>
-              ))}
             </div>
           </div>
 
-          {/* Visual / emoji card */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="w-72 h-72 lg:w-96 lg:h-96 bg-white/10 backdrop-blur-lg rounded-3xl flex items-center justify-center text-9xl lg:text-[10rem] shadow-2xl border border-white/20">
-                {slide.emoji}
+          {/* Right: Stats card */}
+          <div className="hidden lg:flex justify-end">
+            <div className="relative w-80">
+              <div className="bg-white/8 backdrop-blur-xl border border-white/15 rounded-3xl p-8 space-y-6 shadow-2xl">
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-3xl mb-3 shadow-lg shadow-blue-500/30">
+                    ✨
+                  </div>
+                  <p className="text-white font-bold text-lg">
+                    Giặt Sấy Trắng Đáng
+                  </p>
+                  <p className="text-slate-400 text-sm mt-0.5">
+                    Dịch vụ chuyên nghiệp
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {stats.map((s) => (
+                    <div
+                      key={s.l}
+                      className="bg-white/10 rounded-2xl p-4 text-center"
+                    >
+                      <p className="text-white font-bold text-2xl">{s.v}</p>
+                      <p className="text-slate-400 text-xs mt-0.5">{s.l}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-emerald-500/15 border border-emerald-500/25 rounded-xl p-3 text-center">
+                  <p className="text-emerald-400 text-sm font-semibold">
+                    🎉 Giảm 10% đơn đầu tiên
+                  </p>
+                </div>
               </div>
-              {/* Floating badge */}
-              <div className="absolute -top-4 -right-4 bg-yellow-400 text-gray-900 rounded-2xl px-4 py-2 font-bold shadow-lg text-sm">
-                Giá từ 25k/kg 🎉
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-green-400 text-gray-900 rounded-2xl px-4 py-2 font-bold shadow-lg text-sm">
-                ✅ Miễn phí giao nhận
+              <div className="absolute -top-3 -right-3 bg-amber-400 text-amber-900 rounded-xl px-3 py-1.5 text-xs font-bold shadow-lg">
+                Từ 25k/kg
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Prev / Next arrow buttons */}
+      {/* Prev / Next arrows */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white transition-all hover:scale-110"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white transition-all hover:scale-105"
         aria-label="Slide trước"
       >
-        <ChevronLeft size={24} />
+        <ChevronLeft size={22} />
       </button>
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white transition-all hover:scale-110"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white transition-all hover:scale-105"
         aria-label="Slide tiếp"
       >
-        <ChevronRight size={24} />
+        <ChevronRight size={22} />
       </button>
 
-      {/* Slide dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+      {/* Pill indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              i === current ? "bg-white scale-125" : "bg-white/40"
+            className={`rounded-full transition-all duration-300 ${
+              i === current ? "bg-white w-7 h-2.5" : "bg-white/30 w-2.5 h-2.5 hover:bg-white/50"
             }`}
             aria-label={`Slide ${i + 1}`}
           />
         ))}
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 right-8 text-white/60 flex flex-col items-center gap-1 animate-bounce">
-        <ChevronDown size={20} />
       </div>
     </section>
   );

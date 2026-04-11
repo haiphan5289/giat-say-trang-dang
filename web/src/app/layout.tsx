@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingCTA from "@/components/sections/FloatingCTA";
+import ScrollRevealInit from "@/components/ScrollRevealInit";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="vi" className="scroll-smooth">
       <body className={`${inter.className} antialiased`}>
+        <ScrollRevealInit />
         <Header />
         <main>{children}</main>
         <Footer />

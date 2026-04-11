@@ -1,57 +1,71 @@
 import { newsPosts } from "@/data/news";
+import { ArrowRight, Calendar, Tag } from "lucide-react";
+
+const thumbnailGradients = [
+  "from-blue-600 to-blue-700",
+  "from-teal-500 to-cyan-600",
+  "from-violet-500 to-purple-600",
+];
+const thumbnailEmojis = ["👗", "🛏️", "⚡"];
 
 export default function NewsSection() {
   return (
-    <section id="tin-tuc" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
+    <section id="tin-tuc" className="py-24 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12 reveal">
           <div>
-            <span className="inline-block bg-blue-100 text-blue-700 rounded-full px-4 py-1 text-sm font-semibold mb-3">
-              Tin Tức & Mẹo Hay
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
+              Tin tức & mẹo hay
+            </p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
               Bài Viết Mới Nhất
             </h2>
           </div>
           <a
             href="/tin-tuc"
-            className="text-blue-600 hover:text-blue-800 font-semibold text-sm flex items-center gap-1 whitespace-nowrap transition-colors"
+            className="group flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors"
           >
-            Xem tất cả →
+            Xem tất cả{" "}
+            <ArrowRight
+              size={16}
+              className="group-hover:translate-x-0.5 transition-transform"
+            />
           </a>
         </div>
 
-        {/* Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {newsPosts.map((post, index) => (
+          {newsPosts.map((post, i) => (
             <article
               key={post.id}
-              className={`group cursor-pointer rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
-                index === 0 ? "md:row-span-1" : ""
-              }`}
+              className={`reveal reveal-delay-${i + 1} group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:border-blue-200 hover:shadow-lg transition-all duration-300 cursor-pointer`}
             >
-              {/* Image placeholder */}
-              <div className="h-48 bg-gradient-to-br from-blue-100 to-cyan-50 flex items-center justify-center text-6xl">
-                {index === 0 ? "👕" : index === 1 ? "🛏️" : "🚀"}
+              {/* Thumbnail */}
+              <div
+                className={`h-44 bg-gradient-to-br ${thumbnailGradients[i]} flex items-end p-5`}
+              >
+                <span className="text-5xl">{thumbnailEmojis[i]}</span>
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs bg-blue-100 text-blue-600 px-3 py-1 rounded-full font-medium">
+                <div className="flex items-center gap-2.5 mb-3">
+                  <span className="inline-flex items-center gap-1 text-xs text-blue-600 font-medium bg-blue-50 px-2.5 py-1 rounded-full">
+                    <Tag size={10} />
                     {post.category}
                   </span>
-                  <span className="text-xs text-gray-400">{post.date}</span>
+                  <span className="inline-flex items-center gap-1 text-xs text-slate-400">
+                    <Calendar size={10} />
+                    {post.date}
+                  </span>
                 </div>
-                <h3 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-blue-600 transition-colors leading-tight">
+                <h3 className="font-semibold text-slate-900 text-base mb-2 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">
+                <p className="text-slate-500 text-sm leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
-                <div className="mt-4 text-blue-600 text-sm font-semibold group-hover:translate-x-1 transition-transform">
-                  Đọc thêm →
+                <div className="mt-4 inline-flex items-center gap-1.5 text-blue-600 text-sm font-semibold group-hover:gap-2.5 transition-all">
+                  Đọc thêm <ArrowRight size={14} />
                 </div>
               </div>
             </article>

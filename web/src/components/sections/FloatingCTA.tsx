@@ -59,7 +59,7 @@ export default function FloatingCTA() {
       {/* Phone — pulsing */}
       <a
         href="tel:0938432178"
-        className="group w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110 relative animate-pulse-slow"
+        className="group w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110 relative phone-pulse"
         aria-label="Gọi ngay"
       >
         <Phone size={26} className="text-white" />
