@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Phone, MessageCircle, ChevronDown } from "lucide-react";
+import { Phone, MessageCircle, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
@@ -44,6 +44,8 @@ export default function HeroBanner() {
   }, []);
 
   const slide = slides[current];
+  const prev = () => setCurrent((c) => (c - 1 + slides.length) % slides.length);
+  const next = () => setCurrent((c) => (c + 1) % slides.length);
 
   return (
     <section className={`relative min-h-screen bg-gradient-to-br ${slide.bg} transition-all duration-700 flex items-center pt-20`}>
@@ -126,6 +128,22 @@ export default function HeroBanner() {
           </div>
         </div>
       </div>
+
+      {/* Prev / Next arrow buttons */}
+      <button
+        onClick={prev}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white transition-all hover:scale-110"
+        aria-label="Slide trước"
+      >
+        <ChevronLeft size={24} />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white transition-all hover:scale-110"
+        aria-label="Slide tiếp"
+      >
+        <ChevronRight size={24} />
+      </button>
 
       {/* Slide dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
