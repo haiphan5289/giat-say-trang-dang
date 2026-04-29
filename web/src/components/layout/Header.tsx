@@ -41,7 +41,7 @@ export default function Header() {
           <p className={`font-bold text-base transition-colors ${scrolled ? "text-slate-900" : "text-white"}`}>
             Giặt Sấy{" "}
             <span className={scrolled ? "text-blue-600" : "text-blue-300"}>
-              Trắng Đáng
+              24h Gò Vấp
             </span>
           </p>
         </Link>

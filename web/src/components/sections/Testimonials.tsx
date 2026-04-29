@@ -30,10 +30,10 @@ export default function Testimonials() {
         {/* Header */}
         <div className="text-center mb-12 reveal">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
-            Khách hàng nói gì
+            Khách hàng Gò Vấp nói gì
           </p>
           <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
-            Tin Tưởng Từ Hàng Trăm Khách Hàng
+            Tin Tưởng Từ Khách Hàng Gò Vấp
           </h2>
         </div>
 

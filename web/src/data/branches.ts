@@ -11,7 +11,7 @@ export const branches: Branch[] = [
   {
     id: 1,
     name: "Chi Nhánh 1 - Trung Tâm",
-    address: "123 Đường Lê Lợi, Phường 1, TP. Thủ Đức",
+    address: "Số 1 đường số 8, Thông Tay Hội, Hồ Chí Minh",
     phone: "0938 432 178",
     hours: "7:00 - 21:00",
     mapUrl: "https://maps.google.com",

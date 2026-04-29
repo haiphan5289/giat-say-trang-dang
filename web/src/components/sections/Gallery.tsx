@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Shirt,
   Sparkles,
@@ -73,7 +75,18 @@ export default function Gallery() {
           {items.map((item, i) => (
             <div
               key={item.label}
-              className={`reveal reveal-delay-${i + 1} ${item.span} relative bg-gradient-to-br ${item.gradient} rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-300`}
+              style={{ transition: "transform 0.15s ease, box-shadow 0.3s ease" }}
+              onMouseMove={(e) => {
+                const el = e.currentTarget;
+                const { left, top, width, height } = el.getBoundingClientRect();
+                const x = ((e.clientX - left) / width - 0.5) * 16;
+                const y = ((e.clientY - top) / height - 0.5) * -16;
+                el.style.transform = `perspective(600px) rotateX(${y}deg) rotateY(${x}deg) scale(1.03)`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "";
+              }}
+              className={`reveal reveal-delay-${i + 1} ${item.span} relative bg-gradient-to-br ${item.gradient} rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl`}
             >
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-300" />

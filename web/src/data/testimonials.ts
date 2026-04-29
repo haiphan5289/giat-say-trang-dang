@@ -11,24 +11,6 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Chị Nguyễn Thị Lan",
-    location: "Quận 9, TP.HCM",
-    rating: 5,
-    comment:
-      "Quần áo được giặt rất sạch và thơm. Nhân viên phục vụ nhiệt tình, giao hàng đúng hẹn. Tôi rất hài lòng!",
-    service: "Giặt Sấy Gia Đình",
-  },
-  {
-    id: 2,
-    name: "Anh Trần Văn Minh",
-    location: "Thủ Đức, TP.HCM",
-    rating: 5,
-    comment:
-      "Giặt bộ vest cưới ở đây, kết quả ngoài mong đợi. Chất vải được giữ nguyên, không bị nhăn hay phai màu.",
-    service: "Giặt Hấp Cao Cấp",
-  },
-  {
-    id: 3,
     name: "Chị Phạm Thị Hoa",
     location: "Gò Vấp, TP.HCM",
     rating: 5,
@@ -37,9 +19,27 @@ export const testimonials: Testimonial[] = [
     service: "Giặt Nệm & Sofa",
   },
   {
+    id: 2,
+    name: "Anh Trần Minh Khoa",
+    location: "Gò Vấp, TP.HCM",
+    rating: 5,
+    comment:
+      "Giặt bộ vest cưới ở đây, kết quả ngoài mong đợi. Chất vải được giữ nguyên, không bị nhăn hay phai màu.",
+    service: "Giặt Hấp Cao Cấp",
+  },
+  {
+    id: 3,
+    name: "Chị Lê Thị Mai",
+    location: "Gò Vấp, TP.HCM",
+    rating: 5,
+    comment:
+      "Quần áo được giặt rất sạch và thơm. Nhân viên phục vụ nhiệt tình, giao hàng đúng hẹn. Tôi rất hài lòng!",
+    service: "Giặt Sấy Gia Đình",
+  },
+  {
     id: 4,
-    name: "Anh Lê Hoàng Nam",
-    location: "Bình Thạnh, TP.HCM",
+    name: "Anh Nguyễn Văn Tài",
+    location: "Gò Vấp, TP.HCM",
     rating: 5,
     comment:
       "Đôi giày Nike trắng của tôi đã bị ố vàng, sau khi giặt ở đây trắng sáng như mới. Rất ấn tượng!",
@@ -48,26 +48,26 @@ export const testimonials: Testimonial[] = [
   {
     id: 5,
     name: "Chị Võ Thị Thu",
-    location: "Quận 12, TP.HCM",
+    location: "Gò Vấp, TP.HCM",
     rating: 5,
     comment:
-      "Gia đình tôi có 3 đứa con nhỏ, đồ vải luôn bẩn. Nhờ dịch vụ giặt sấy này mà tiết kiệm được rất nhiều thời gian.",
+      "Gia đình tôi có 3 đứa con nhỏ, đồ vải luôn bẩn. Nhờ dịch vụ giặt sấy tại Gò Vấp này mà tiết kiệm được rất nhiều thời gian.",
     service: "Giặt Sấy Gia Đình",
   },
   {
     id: 6,
-    name: "Anh Nguyễn Đức Huy",
-    location: "Bình Dương",
+    name: "Anh Đinh Quốc Hùng",
+    location: "Gò Vấp, TP.HCM",
     rating: 5,
     comment:
-      "Dịch vụ giặt chăn mền rất tốt, công ty tôi đặt thường xuyên cho toàn bộ nhân viên. Giá cả hợp lý.",
+      "Dịch vụ giặt chăn mền rất tốt, tôi đặt thường xuyên cho cả gia đình. Giá cả hợp lý, chất lượng tốt.",
     service: "Giặt Chăn Mền",
   },
 ];
 
 export const stats = [
-  { value: "500+", label: "Khách hàng tin dùng" },
-  { value: "5+", label: "Chi nhánh trên toàn thành phố" },
+  { value: "500+", label: "Khách hàng Gò Vấp tin dùng" },
+  { value: "1", label: "Chi nhánh tại Gò Vấp" },
   { value: "10+", label: "Năm kinh nghiệm" },
   { value: "99%", label: "Khách hàng hài lòng" },
 ];

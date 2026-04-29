@@ -47,7 +47,7 @@ export default function Footer() {
               </div>
               <p className="font-bold text-white text-base">
                 Giặt Sấy{" "}
-                <span className="text-blue-400">Trắng Đáng</span>
+                <span className="text-blue-400">24h Gò Vấp</span>
               </p>
             </div>
             <p className="text-sm leading-relaxed text-slate-500 mb-5">
@@ -130,7 +130,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={15} className="text-blue-500 mt-0.5 shrink-0" />
                 <span className="text-slate-500">
-                  123 Đường Lê Lợi, Phường 1, TP. Thủ Đức, TP.HCM
+                  Số 1 đường số 8, Thông Tay Hội, Hồ Chí Minh
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -147,8 +147,8 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-600">
-          <p>© 2025 Giặt Sấy Trắng Đáng. Bảo lưu mọi quyền.</p>
-          <p>Thiết kế bởi đội ngũ Giặt Sấy Trắng Đáng</p>
+          <p>© 2025 Giặt Sấy 24h Gò Vấp. Bảo lưu mọi quyền.</p>
+          <p>Thiết kế bởi đội ngũ Giặt Sấy 24h Gò Vấp</p>
         </div>
       </div>
     </footer>

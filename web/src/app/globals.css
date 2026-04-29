@@ -44,6 +44,15 @@ html {
   animation: phone-pulse 2.4s ease-in-out infinite;
 }
 
+/* ── Ken Burns zoom ── */
+@keyframes ken-burns {
+  0%   { transform: scale(1)    translateX(0)    translateY(0); }
+  100% { transform: scale(1.12) translateX(-2%)  translateY(-1%); }
+}
+.animate-ken-burns {
+  animation: ken-burns 6s ease-out forwards;
+}
+
 /* ── Line clamp ── */
 .line-clamp-2 {
   display: -webkit-box;

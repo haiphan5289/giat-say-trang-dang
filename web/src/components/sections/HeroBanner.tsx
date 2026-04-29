@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Phone, MessageCircle, ChevronLeft, ChevronRight, CheckCircle } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Phone, MessageCircle, ChevronLeft, ChevronRight, CheckCircle, Pause, Play } from "lucide-react";
 
 const slides = [
   {
@@ -39,21 +39,24 @@ const trustPoints = [
   "Hoàn tiền 100% nếu không hài lòng",
 ];
 
-const stats = [
-  { v: "500+", l: "Khách hàng" },
-  { v: "5+", l: "Chi nhánh" },
-  { v: "10+", l: "Năm KN" },
-  { v: "99%", l: "Hài lòng" },
+const heroImages = [
+  "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=85",
+  "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&q=85",
+  "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=85",
 ];
 
 export default function HeroBanner() {
   const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const pausedRef = useRef(paused);
+  pausedRef.current = paused;
 
   useEffect(() => {
-    const timer = setInterval(
-      () => setCurrent((prev) => (prev + 1) % slides.length),
-      6000
-    );
+    const timer = setInterval(() => {
+      if (!pausedRef.current) {
+        setCurrent((prev) => (prev + 1) % slides.length);
+      }
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
@@ -128,41 +131,34 @@ export default function HeroBanner() {
             </div>
           </div>
 
-          {/* Right: Stats card */}
-          <div className="hidden lg:flex justify-end">
-            <div className="relative w-80">
-              <div className="bg-white/8 backdrop-blur-xl border border-white/15 rounded-3xl p-8 space-y-6 shadow-2xl">
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-3xl mb-3 shadow-lg shadow-blue-500/30">
-                    ✨
-                  </div>
-                  <p className="text-white font-bold text-lg">
-                    Giặt Sấy Trắng Đáng
-                  </p>
-                  <p className="text-slate-400 text-sm mt-0.5">
-                    Dịch vụ chuyên nghiệp
-                  </p>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {stats.map((s) => (
-                    <div
-                      key={s.l}
-                      className="bg-white/10 rounded-2xl p-4 text-center"
-                    >
-                      <p className="text-white font-bold text-2xl">{s.v}</p>
-                      <p className="text-slate-400 text-xs mt-0.5">{s.l}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="bg-emerald-500/15 border border-emerald-500/25 rounded-xl p-3 text-center">
-                  <p className="text-emerald-400 text-sm font-semibold">
-                    🎉 Giảm 10% đơn đầu tiên
-                  </p>
-                </div>
-              </div>
-              <div className="absolute -top-3 -right-3 bg-amber-400 text-amber-900 rounded-xl px-3 py-1.5 text-xs font-bold shadow-lg">
-                Từ 25k/kg
-              </div>
+          {/* Right: Ken Burns photo panel */}
+          <div className="hidden lg:block relative h-[520px] w-full rounded-3xl overflow-hidden shadow-2xl">
+            {heroImages.map((src, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={i}
+                src={src}
+                alt=""
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                  i === current ? "opacity-100 animate-ken-burns" : "opacity-0"
+                }`}
+              />
+            ))}
+            {/* Brand overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/65 via-transparent to-transparent" />
+            {/* Bottom label */}
+            <div className="absolute bottom-6 left-6 text-white">
+              <p className="text-sm font-medium opacity-75">Giặt Sấy 24h Gò Vấp</p>
+              <p className="text-lg font-bold">Chi nhánh Gò Vấp</p>
+            </div>
+            {/* Price badge */}
+            <div className="absolute top-4 right-4 bg-amber-400 text-amber-900 rounded-xl px-3 py-1.5 text-xs font-bold shadow-lg">
+              Từ 25k/kg
+            </div>
+            <div className="bg-emerald-500/15 hidden">
+              <p className="text-emerald-400 text-sm font-semibold">
+                🎉 Giảm 10% đơn đầu tiên
+              </p>
             </div>
           </div>
         </div>
@@ -184,8 +180,8 @@ export default function HeroBanner() {
         <ChevronRight size={22} />
       </button>
 
-      {/* Pill indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2">
+      {/* Pill indicators + pause/play */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3">
         {slides.map((_, i) => (
           <button
             key={i}
@@ -196,6 +192,13 @@ export default function HeroBanner() {
             aria-label={`Slide ${i + 1}`}
           />
         ))}
+        <button
+          onClick={() => setPaused((p) => !p)}
+          className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white transition-all"
+          aria-label={paused ? "Tiếp tục" : "Tạm dừng"}
+        >
+          {paused ? <Play size={12} /> : <Pause size={12} />}
+        </button>
       </div>
     </section>
   );
