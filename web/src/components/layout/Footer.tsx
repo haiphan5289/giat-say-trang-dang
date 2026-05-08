@@ -36,18 +36,23 @@ const serviceList = [
 
 export default function Footer() {
   return (
-    <footer id="lien-he" className="bg-slate-900 text-slate-400">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <footer id="lien-he" className="bg-slate-900 text-slate-400 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-blue-900/20 -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-cyan-900/15 translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none" />
+      {/* Top gradient divider */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+      <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-blue-500/20">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white font-extrabold text-sm shadow-lg shadow-blue-500/25">
                 GS
               </div>
-              <p className="font-bold text-white text-base">
+              <p className="font-extrabold text-white text-base">
                 Giặt Sấy{" "}
-                <span className="text-blue-400">24h Gò Vấp</span>
+                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">24h Gò Vấp</span>
               </p>
             </div>
             <p className="text-sm leading-relaxed text-slate-500 mb-5">
@@ -145,10 +150,13 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-slate-800">
+      <div className="border-t border-slate-800/60 relative z-10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-600">
           <p>© 2025 Giặt Sấy 24h Gò Vấp. Bảo lưu mọi quyền.</p>
-          <p>Thiết kế bởi đội ngũ Giặt Sấy 24h Gò Vấp</p>
+          <p className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+            Thiết kế bởi đội ngũ Giặt Sấy 24h Gò Vấp
+          </p>
         </div>
       </div>
     </footer>

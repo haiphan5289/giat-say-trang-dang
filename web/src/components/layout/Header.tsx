@@ -34,13 +34,13 @@ export default function Header() {
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-blue-500/25">
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white font-extrabold text-sm shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 transition-shadow">
             GS
           </div>
-          <p className={`font-bold text-base transition-colors ${scrolled ? "text-slate-900" : "text-white"}`}>
+          <p className={`font-extrabold text-base transition-colors ${scrolled ? "text-slate-900" : "text-white"}`}>
             Giặt Sấy{" "}
-            <span className={scrolled ? "text-blue-600" : "text-blue-300"}>
+            <span className={scrolled ? "bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent" : "text-blue-300"}>
               24h Gò Vấp
             </span>
           </p>
@@ -68,7 +68,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href="tel:0938432178"
-            className="hidden sm:flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-all shadow-md shadow-blue-500/20"
+            className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-4 py-2 rounded-xl text-sm font-bold transition-all shadow-md shadow-blue-500/25 hover:shadow-blue-500/40"
           >
             <Phone size={15} />
             0938 432 178

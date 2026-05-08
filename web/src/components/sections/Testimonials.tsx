@@ -1,113 +1,122 @@
-"use client";
-
-import { useState } from "react";
 import { testimonials, stats } from "@/data/testimonials";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
+
+const statGradients = [
+  "from-blue-500 to-cyan-500",
+  "from-violet-500 to-purple-500",
+  "from-amber-500 to-orange-500",
+  "from-teal-500 to-emerald-500",
+];
+
+const avatarGradients = [
+  "from-blue-500 to-cyan-600",
+  "from-violet-500 to-purple-600",
+  "from-amber-500 to-orange-500",
+  "from-teal-500 to-emerald-600",
+  "from-pink-500 to-rose-500",
+  "from-indigo-500 to-blue-600",
+];
 
 export default function Testimonials() {
-  const [current, setCurrent] = useState(0);
-  const total = testimonials.length;
-  const t = testimonials[current];
-
   return (
-    <section id="danh-gia" className="py-24 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
+    <section id="danh-gia" className="py-24 bg-slate-50 relative overflow-hidden">
+      {/* Background blobs */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-blue-100/40 -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-violet-100/40 translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+        {/* Header */}
+        <div className="text-center mb-14 reveal">
+          <span className="section-label mb-4 inline-flex">
+            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+            Khách hàng Gò Vấp nói gì
+          </span>
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-slate-900 mt-4 mb-4">
+            Tin Tưởng Từ{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              Khách Hàng
+            </span>
+          </h2>
+          <p className="text-slate-500 text-lg max-w-xl mx-auto">
+            Hơn 500 gia đình tại Gò Vấp đã tin dùng — đây là những gì họ chia sẻ.
+          </p>
+        </div>
+
+        {/* Stats row */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={`reveal reveal-delay-${i + 1} bg-white border border-slate-100 rounded-2xl p-6 text-center shadow-sm`}
+              className={`reveal reveal-delay-${i + 1} group relative overflow-hidden bg-white border border-slate-100 rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
             >
-              <p className="text-3xl lg:text-4xl font-bold text-blue-600 mb-1">
+              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${statGradients[i]} rounded-t-2xl`} />
+              <p className={`text-3xl lg:text-4xl font-extrabold mb-1 bg-gradient-to-r ${statGradients[i]} bg-clip-text text-transparent`}>
                 {stat.value}
               </p>
-              <p className="text-slate-500 text-sm">{stat.label}</p>
+              <p className="text-slate-500 text-sm font-medium">{stat.label}</p>
             </div>
           ))}
         </div>
 
-        {/* Header */}
-        <div className="text-center mb-12 reveal">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
-            Khách hàng Gò Vấp nói gì
-          </p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
-            Tin Tưởng Từ Khách Hàng Gò Vấp
-          </h2>
-        </div>
-
-        {/* Testimonial card */}
-        <div className="max-w-2xl mx-auto reveal">
-          <div className="bg-white border border-slate-100 rounded-3xl p-8 lg:p-10 shadow-sm">
-            {/* Large quote */}
-            <svg
-              width="36"
-              height="28"
-              viewBox="0 0 36 28"
-              fill="none"
-              className="text-blue-100 fill-current mb-5"
-              xmlns="http://www.w3.org/2000/svg"
+        {/* Reviews grid */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
+          {testimonials.map((t, i) => (
+            <div
+              key={t.id}
+              className={`reveal reveal-delay-${(i % 3) + 1} break-inside-avoid group bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-slate-200/60 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden`}
             >
-              <path d="M0 28V18C0 7.667 5.333 1.667 16 0L17 3C11.667 4.333 8.833 7.333 8.5 12H14V28H0ZM20 28V18C20 7.667 25.333 1.667 36 0L37 3C31.667 4.333 28.833 7.333 28.5 12H34.5V28H20Z" />
-            </svg>
+              {/* Top accent line */}
+              <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${avatarGradients[i]} opacity-60 group-hover:opacity-100 transition-opacity`} />
 
-            <p className="text-slate-700 text-lg leading-relaxed italic mb-8">
-              {t.comment}
-            </p>
-
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white font-bold text-base shadow-md shadow-blue-200">
-                  {t.name.split(" ").pop()?.charAt(0)}
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900 text-sm">{t.name}</p>
-                  <p className="text-slate-400 text-xs mt-0.5">{t.location}</p>
-                </div>
-              </div>
-              <div className="text-right">
-                <div className="flex gap-0.5 justify-end mb-1">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      size={14}
-                      className="fill-amber-400 text-amber-400"
-                    />
+              {/* Stars + service */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex gap-0.5">
+                  {Array.from({ length: t.rating }).map((_, j) => (
+                    <Star key={j} size={14} className="fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-xs text-blue-600 font-medium">{t.service}</p>
+                <span className="text-[11px] font-bold text-blue-600 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-full">
+                  {t.service}
+                </span>
+              </div>
+
+              {/* Comment */}
+              <p className="text-slate-600 text-sm leading-relaxed mb-5">
+                &ldquo;{t.comment}&rdquo;
+              </p>
+
+              {/* Divider */}
+              <div className="border-t border-slate-100 pt-4">
+                <div className="flex items-center gap-3">
+                  {/* Avatar */}
+                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${avatarGradients[i]} flex items-center justify-center text-white font-extrabold text-sm shadow-sm flex-shrink-0`}>
+                    {t.name.split(" ").pop()?.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm leading-tight">{t.name}</p>
+                    <p className="text-slate-400 text-xs mt-0.5">{t.location}</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Carousel controls */}
-          <div className="flex items-center justify-center gap-3 mt-6">
-            <button
-              onClick={() => setCurrent((c) => (c - 1 + total) % total)}
-              className="w-9 h-9 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:border-blue-300 hover:text-blue-600 transition-all"
-            >
-              <ChevronLeft size={16} />
-            </button>
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`rounded-full transition-all duration-300 ${
-                  i === current
-                    ? "bg-blue-600 w-5 h-2.5"
-                    : "bg-slate-200 hover:bg-slate-300 w-2.5 h-2.5"
-                }`}
-              />
-            ))}
-            <button
-              onClick={() => setCurrent((c) => (c + 1) % total)}
-              className="w-9 h-9 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:border-blue-300 hover:text-blue-600 transition-all"
-            >
-              <ChevronRight size={16} />
-            </button>
+        {/* Bottom CTA */}
+        <div className="mt-14 text-center reveal">
+          <div className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-2xl px-6 py-3 shadow-sm text-sm text-slate-600">
+            <div className="flex gap-0.5">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} size={13} className="fill-amber-400 text-amber-400" />
+              ))}
+            </div>
+            <span className="font-semibold text-slate-800">4.9/5</span>
+            <span className="text-slate-400">·</span>
+            <span>Dựa trên 500+ đánh giá thực tế</span>
           </div>
         </div>
+
       </div>
     </section>
   );

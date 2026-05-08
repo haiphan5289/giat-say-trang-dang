@@ -70,25 +70,39 @@ export default function HeroBanner() {
       className={`relative min-h-screen bg-gradient-to-br ${slide.accent} transition-all duration-700 flex items-center overflow-hidden pt-16`}
     >
       {/* Decorative blobs */}
-      <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-blue-600/10 -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-cyan-600/10 translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-blue-500/15 -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-cyan-500/15 translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-indigo-600/5 blur-3xl pointer-events-none" />
+      {/* Dot pattern overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-20"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(147,197,253,0.4) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-6 py-24 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}
           <div className="text-white space-y-8">
             {/* Tag badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-2 text-sm text-blue-200 font-medium backdrop-blur-sm">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              {slide.tag}
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm text-blue-200 font-medium backdrop-blur-sm shadow-lg shadow-blue-900/20">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                {slide.tag}
+              </div>
+              <div className="inline-flex items-center gap-1.5 bg-amber-400/90 backdrop-blur-sm text-amber-900 rounded-full px-3.5 py-1.5 text-xs font-bold shadow-lg shadow-amber-500/30 animate-float">
+                🎉 Giảm 10% đơn đầu tiên
+              </div>
             </div>
 
             {/* Headline */}
             <div className="space-y-1">
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight">
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight drop-shadow-sm">
                 {slide.title}
               </h1>
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight shimmer-text">
                 {slide.highlight}
               </h1>
             </div>
@@ -114,8 +128,9 @@ export default function HeroBanner() {
             <div className="flex flex-wrap gap-3 pt-2">
               <a
                 href="tel:0938432178"
-                className="flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white px-7 py-3.5 rounded-xl font-semibold text-lg transition-all hover:scale-105 shadow-xl shadow-blue-500/25"
+                className="group flex items-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white px-7 py-3.5 rounded-xl font-semibold text-lg transition-all hover:scale-105 shadow-xl shadow-blue-500/35 relative overflow-hidden"
               >
+                <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
                 <Phone size={20} />
                 Gọi Ngay
               </a>
@@ -123,7 +138,7 @@ export default function HeroBanner() {
                 href="https://zalo.me/0938432178"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm text-white px-7 py-3.5 rounded-xl font-semibold text-lg transition-all hover:scale-105"
+                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-sm text-white px-7 py-3.5 rounded-xl font-semibold text-lg transition-all hover:scale-105 shadow-lg shadow-black/10"
               >
                 <MessageCircle size={20} />
                 Chat Zalo
@@ -132,7 +147,7 @@ export default function HeroBanner() {
           </div>
 
           {/* Right: Ken Burns photo panel */}
-          <div className="hidden lg:block relative h-[520px] w-full rounded-3xl overflow-hidden shadow-2xl">
+          <div className="hidden lg:block relative h-[540px] w-full rounded-3xl overflow-hidden shadow-[0_32px_80px_-12px_rgba(59,130,246,0.35)]">
             {heroImages.map((src, i) => (
               // eslint-disable-next-line @next/next/no-img-element
               <img
@@ -145,20 +160,24 @@ export default function HeroBanner() {
               />
             ))}
             {/* Brand overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/65 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-blue-900/10 to-transparent" />
+            {/* Side glow */}
+            <div className="absolute inset-0 ring-1 ring-white/10 rounded-3xl" />
             {/* Bottom label */}
             <div className="absolute bottom-6 left-6 text-white">
-              <p className="text-sm font-medium opacity-75">Giặt Sấy 24h Gò Vấp</p>
-              <p className="text-lg font-bold">Chi nhánh Gò Vấp</p>
+              <p className="text-sm font-medium opacity-70">Giặt Sấy 24h Gò Vấp</p>
+              <p className="text-xl font-bold">Chi nhánh Gò Vấp</p>
             </div>
             {/* Price badge */}
-            <div className="absolute top-4 right-4 bg-amber-400 text-amber-900 rounded-xl px-3 py-1.5 text-xs font-bold shadow-lg">
-              Từ 25k/kg
+            <div className="absolute top-4 right-4 bg-amber-400 text-amber-900 rounded-2xl px-4 py-2 text-sm font-bold shadow-xl shadow-amber-500/30 flex items-center gap-1">
+              <span>Từ</span>
+              <span className="text-base font-extrabold">25k</span>
+              <span>/kg</span>
             </div>
-            <div className="bg-emerald-500/15 hidden">
-              <p className="text-emerald-400 text-sm font-semibold">
-                🎉 Giảm 10% đơn đầu tiên
-              </p>
+            {/* Quality badge */}
+            <div className="absolute top-4 left-4 bg-white/15 backdrop-blur-md border border-white/20 text-white rounded-2xl px-3 py-2 text-xs font-semibold shadow-lg flex items-center gap-1.5">
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              Đang nhận đơn
             </div>
           </div>
         </div>

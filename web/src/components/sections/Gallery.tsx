@@ -1,77 +1,77 @@
 "use client";
 
-import {
-  Shirt,
-  Sparkles,
-  Package,
-  Star,
-  Wind,
-  Heart,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const items = [
   {
-    Icon: Shirt,
     label: "Giặt Sấy Quần Áo",
     sub: "Gia đình & cá nhân",
-    gradient: "from-blue-600 to-blue-700",
+    image: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&q=80",
+    gradient: "from-blue-900/70 to-blue-600/40",
     span: "md:col-span-1 md:row-span-2",
   },
   {
-    Icon: Sparkles,
     label: "Giặt Hấp Cao Cấp",
     sub: "Vest, áo dài, dạ hội",
-    gradient: "from-amber-500 to-orange-500",
+    image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=80",
+    gradient: "from-amber-900/70 to-orange-600/40",
     span: "md:col-span-1 md:row-span-1",
   },
   {
-    Icon: Star,
     label: "Giặt Giày",
     sub: "Mọi chất liệu",
-    gradient: "from-orange-500 to-rose-500",
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
+    gradient: "from-orange-900/70 to-rose-600/40",
     span: "md:col-span-1 md:row-span-1",
   },
   {
-    Icon: Package,
     label: "Giặt Sofa & Nệm",
     sub: "Tại nhà hoặc cửa hàng",
-    gradient: "from-teal-500 to-cyan-600",
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+    gradient: "from-teal-900/70 to-cyan-600/40",
     span: "md:col-span-2 md:row-span-1",
   },
   {
-    Icon: Wind,
     label: "Giặt Rèm Cửa",
     sub: "Giao tận nơi",
-    gradient: "from-sky-500 to-blue-500",
+    image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80",
+    gradient: "from-sky-900/70 to-blue-600/40",
     span: "md:col-span-1 md:row-span-1",
   },
   {
-    Icon: Heart,
     label: "Giặt Gấu Bông",
     sub: "An toàn cho trẻ em",
-    gradient: "from-pink-500 to-rose-400",
+    image: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&q=80",
+    gradient: "from-pink-900/70 to-rose-600/40",
     span: "md:col-span-1 md:row-span-1",
   },
 ];
 
 export default function Gallery() {
   return (
-    <section id="thu-vien" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="thu-vien" className="py-24 bg-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-slate-100 translate-x-1/2 -translate-y-1/2 blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16 reveal">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
+          <span className="section-label mb-4 inline-flex">
+            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
             Dịch vụ & Hình ảnh
-          </p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-            Chúng Tôi Làm Sạch Tất Cả
+          </span>
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-slate-900 mb-4 mt-4">
+            Chúng Tôi Làm Sạch{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              Tất Cả
+            </span>
           </h2>
-          <p className="text-slate-500 max-w-lg mx-auto">
+          <p className="text-slate-500 max-w-lg mx-auto text-lg">
             Từ quần áo đến nội thất — mọi dịch vụ được thực hiện với tiêu chuẩn
             chuyên nghiệp cao nhất.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[180px]">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px]">
           {items.map((item, i) => (
             <div
               key={item.label}
@@ -79,28 +79,37 @@ export default function Gallery() {
               onMouseMove={(e) => {
                 const el = e.currentTarget;
                 const { left, top, width, height } = el.getBoundingClientRect();
-                const x = ((e.clientX - left) / width - 0.5) * 16;
-                const y = ((e.clientY - top) / height - 0.5) * -16;
-                el.style.transform = `perspective(600px) rotateX(${y}deg) rotateY(${x}deg) scale(1.03)`;
+                const x = ((e.clientX - left) / width - 0.5) * 14;
+                const y = ((e.clientY - top) / height - 0.5) * -14;
+                el.style.transform = `perspective(700px) rotateX(${y}deg) rotateY(${x}deg) scale(1.03)`;
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "";
               }}
-              className={`reveal reveal-delay-${i + 1} ${item.span} relative bg-gradient-to-br ${item.gradient} rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl`}
+              className={`reveal reveal-delay-${i + 1} ${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
             >
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-300" />
+              {/* Photo background */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={item.image}
+                alt={item.label}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+
+              {/* Gradient overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} group-hover:opacity-90 transition-opacity duration-300`} />
+
+              {/* Arrow icon */}
+              <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+                <ArrowUpRight size={14} className="text-white" />
+              </div>
+
               {/* Content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-4">
-                <item.Icon
-                  size={36}
-                  className="text-white/80 group-hover:text-white group-hover:scale-110 transition-all duration-300"
-                  strokeWidth={1.5}
-                />
-                <p className="text-white font-semibold text-sm lg:text-base text-center leading-tight">
+              <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-center">
+                <p className="text-white font-bold text-sm lg:text-base leading-tight drop-shadow-md">
                   {item.label}
                 </p>
-                <p className="text-white/60 text-xs text-center">{item.sub}</p>
+                <p className="text-white/70 text-xs mt-1 drop-shadow">{item.sub}</p>
               </div>
             </div>
           ))}

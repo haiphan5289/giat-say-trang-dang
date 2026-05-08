@@ -6,7 +6,10 @@ const services = [
     title: "Giặt Sấy Gia Đình",
     description: "Giặt sấy quần áo theo kg, nhanh chóng sạch sẽ, thơm mát cả ngày.",
     price: "Từ 25.000đ/kg",
-    iconBg: "bg-blue-50 text-blue-600",
+    gradient: "from-blue-500 to-blue-600",
+    glow: "shadow-blue-500/20",
+    bg: "bg-blue-50",
+    text: "text-blue-600",
     ring: "ring-blue-100",
   },
   {
@@ -14,7 +17,10 @@ const services = [
     title: "Giặt Sấy Công Nghiệp",
     description: "Phục vụ khách sạn, nhà hàng, spa với hệ thống máy móc công suất lớn.",
     price: "Liên hệ báo giá",
-    iconBg: "bg-violet-50 text-violet-600",
+    gradient: "from-violet-500 to-purple-600",
+    glow: "shadow-violet-500/20",
+    bg: "bg-violet-50",
+    text: "text-violet-600",
     ring: "ring-violet-100",
   },
   {
@@ -22,7 +28,10 @@ const services = [
     title: "Giặt Hấp Cao Cấp",
     description: "Vest, áo dài, trang phục dạ hội được hấp chuyên nghiệp, giữ form dáng.",
     price: "Từ 80.000đ/món",
-    iconBg: "bg-amber-50 text-amber-600",
+    gradient: "from-amber-400 to-orange-500",
+    glow: "shadow-amber-500/20",
+    bg: "bg-amber-50",
+    text: "text-amber-600",
     ring: "ring-amber-100",
   },
   {
@@ -30,7 +39,10 @@ const services = [
     title: "Giặt Nệm & Sofa",
     description: "Vệ sinh nệm, sofa, thảm tại nhà bằng máy giặt chuyên dụng.",
     price: "Từ 150.000đ/cái",
-    iconBg: "bg-teal-50 text-teal-600",
+    gradient: "from-teal-500 to-cyan-600",
+    glow: "shadow-teal-500/20",
+    bg: "bg-teal-50",
+    text: "text-teal-600",
     ring: "ring-teal-100",
   },
   {
@@ -38,7 +50,10 @@ const services = [
     title: "Giặt Giày",
     description: "Làm sạch, phục hồi màu sắc và khử mùi giày dép mọi chất liệu.",
     price: "Từ 50.000đ/đôi",
-    iconBg: "bg-orange-50 text-orange-600",
+    gradient: "from-orange-500 to-rose-500",
+    glow: "shadow-orange-500/20",
+    bg: "bg-orange-50",
+    text: "text-orange-600",
     ring: "ring-orange-100",
   },
   {
@@ -46,7 +61,10 @@ const services = [
     title: "Giặt Rèm Cửa",
     description: "Giặt rèm tận nơi hoặc tại cửa hàng, trả về thẳng phẳng như mới.",
     price: "Từ 30.000đ/m²",
-    iconBg: "bg-cyan-50 text-cyan-600",
+    gradient: "from-cyan-500 to-sky-600",
+    glow: "shadow-cyan-500/20",
+    bg: "bg-cyan-50",
+    text: "text-cyan-600",
     ring: "ring-cyan-100",
   },
   {
@@ -54,7 +72,10 @@ const services = [
     title: "Giặt Gấu Bông",
     description: "Vệ sinh đồ chơi mềm an toàn cho trẻ em, diệt khuẩn hiệu quả.",
     price: "Từ 30.000đ/món",
-    iconBg: "bg-pink-50 text-pink-600",
+    gradient: "from-pink-500 to-rose-400",
+    glow: "shadow-pink-500/20",
+    bg: "bg-pink-50",
+    text: "text-pink-600",
     ring: "ring-pink-100",
   },
   {
@@ -62,22 +83,33 @@ const services = [
     title: "Giặt Chăn Mền",
     description: "Giặt sạch mền gối, đánh bung sợi vải, thơm mát như ngày đầu.",
     price: "Từ 60.000đ/cái",
-    iconBg: "bg-indigo-50 text-indigo-600",
+    gradient: "from-indigo-500 to-blue-600",
+    glow: "shadow-indigo-500/20",
+    bg: "bg-indigo-50",
+    text: "text-indigo-600",
     ring: "ring-indigo-100",
   },
 ];
 
 export default function ServicesGrid() {
   return (
-    <section id="dich-vu" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="dich-vu" className="py-24 bg-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-blue-50 -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-cyan-50 translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 reveal">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
+          <span className="section-label mb-4 inline-flex">
+            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
             Dịch vụ của chúng tôi
-          </p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-            Đa Dạng Dịch Vụ Giặt Sấy
+          </span>
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-slate-900 mb-4 mt-4">
+            Đa Dạng Dịch Vụ{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              Giặt Sấy
+            </span>
           </h2>
           <p className="text-slate-500 max-w-xl mx-auto text-lg">
             Từ giặt sấy gia đình đến công nghiệp — chúng tôi xử lý mọi loại vải với
@@ -90,20 +122,25 @@ export default function ServicesGrid() {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`reveal reveal-delay-${(i % 4) + 1} group bg-white border border-slate-100 hover:border-blue-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer`}
+              className={`reveal reveal-delay-${(i % 4) + 1} group bg-white border border-slate-100 hover:border-transparent rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300 cursor-pointer hover:-translate-y-1.5 relative overflow-hidden`}
             >
+              {/* Hover gradient background */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300 rounded-2xl`} />
+
+              {/* Icon */}
               <div
-                className={`w-11 h-11 rounded-xl ${service.iconBg} ring-4 ${service.ring} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
+                className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${service.gradient} shadow-md ${service.glow} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
               >
-                <service.Icon size={20} strokeWidth={1.75} />
+                <service.Icon size={20} className="text-white" strokeWidth={1.75} />
               </div>
-              <h3 className="font-semibold text-slate-900 text-base mb-2 group-hover:text-blue-600 transition-colors">
+
+              <h3 className="font-bold text-slate-900 text-base mb-2 group-hover:text-blue-600 transition-colors">
                 {service.title}
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed mb-4">
                 {service.description}
               </p>
-              <span className="inline-block text-xs font-semibold text-slate-600 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded-full">
+              <span className={`inline-block text-xs font-bold ${service.text} ${service.bg} border ${service.ring} px-3 py-1.5 rounded-full ring-2`}>
                 {service.price}
               </span>
             </div>
@@ -111,13 +148,14 @@ export default function ServicesGrid() {
         </div>
 
         {/* CTA */}
-        <div className="mt-12 text-center reveal">
+        <div className="mt-14 text-center reveal">
           <a
             href="tel:0938432178"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 rounded-xl font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-500/20"
+            className="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all hover:scale-105 shadow-xl shadow-blue-500/25 relative overflow-hidden"
           >
+            <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
             Tư Vấn Miễn Phí
-            <ArrowRight size={18} />
+            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
       </div>

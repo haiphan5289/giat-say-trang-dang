@@ -31,20 +31,24 @@ export default function Location() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-600 mb-3">
+          <span className="section-label mb-4 inline-flex">
+            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
             Tìm chúng tôi
           </span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
-            Vị Trí & Liên Hệ
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-slate-900 mt-4">
+            Vị Trí &{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              Liên Hệ
+            </span>
           </h2>
-          <p className="mt-3 text-slate-500 max-w-md mx-auto">
+          <p className="mt-3 text-slate-500 max-w-md mx-auto text-lg">
             Ghé trực tiếp hoặc đặt lịch giao nhận tận nhà — chúng tôi luôn sẵn sàng phục vụ.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-8 items-stretch">
           {/* Map */}
-          <div className="lg:col-span-3 rounded-2xl overflow-hidden shadow-lg min-h-[380px]">
+          <div className="lg:col-span-3 rounded-2xl overflow-hidden shadow-xl shadow-slate-200/60 min-h-[380px] ring-1 ring-slate-100">
             <iframe
               title="Giặt Sấy 24h Gò Vấp - Vị trí"
               src="https://maps.google.com/maps?q=10.8370625,106.6645925&z=17&output=embed"
@@ -58,10 +62,11 @@ export default function Location() {
           </div>
 
           {/* Info card */}
-          <div className="lg:col-span-2 bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-between">
+          <div className="lg:col-span-2 bg-white rounded-2xl shadow-xl shadow-slate-200/60 p-8 flex flex-col justify-between ring-1 ring-slate-100 relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-t-2xl" />
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white font-extrabold text-sm shadow-lg shadow-blue-500/25">
                   GS
                 </div>
                 <div>
@@ -73,7 +78,7 @@ export default function Location() {
               <ul className="space-y-5">
                 {info.map(({ icon: Icon, label, value, href }) => (
                   <li key={label} className="flex items-start gap-3.5">
-                    <div className="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 flex items-center justify-center shrink-0 mt-0.5">
                       <Icon size={16} className="text-blue-600" />
                     </div>
                     <div>
@@ -95,8 +100,9 @@ export default function Location() {
             <div className="flex flex-col gap-3 mt-8">
               <a
                 href="tel:0938432178"
-                className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-xl font-semibold text-sm transition-all"
+                className="group flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-5 py-3 rounded-xl font-bold text-sm transition-all shadow-md shadow-blue-500/20 hover:shadow-blue-500/35 relative overflow-hidden"
               >
+                <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
                 <Phone size={16} />
                 Gọi Ngay
               </a>
@@ -104,7 +110,7 @@ export default function Location() {
                 href="https://zalo.me/0938432178"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 px-5 py-3 rounded-xl font-semibold text-sm transition-all"
+                className="flex items-center justify-center gap-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 px-5 py-3 rounded-xl font-bold text-sm transition-all"
               >
                 <MessageCircle size={16} />
                 Chat Zalo
