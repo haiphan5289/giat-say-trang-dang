@@ -1,4 +1,41 @@
 import { Phone, MessageCircle } from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import CTAButton from "@/components/ui/CTAButton";
+
+function ProcessCTABanner() {
+  return (
+    <div className="mt-16 reveal relative overflow-hidden rounded-3xl">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-600" />
+      <div className="absolute inset-0 opacity-20 dot-pattern-white" />
+      <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
+      <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-cyan-400/15 blur-3xl" />
+      <div className="relative p-8 lg:p-12 text-center">
+        <h3 className="text-2xl lg:text-3xl font-extrabold text-white mb-3">
+          Đặt Lịch Ngay Hôm Nay
+        </h3>
+        <p className="text-blue-100 mb-8 max-w-md mx-auto text-lg">
+          Lần đầu sử dụng — giảm{" "}
+          <strong className="text-amber-300 text-xl">10%</strong> cho mọi dịch vụ.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <CTAButton href="tel:0938432178" variant="white">
+            <Phone size={20} />
+            0938 432 178
+          </CTAButton>
+          <CTAButton
+            href="https://zalo.me/0938432178"
+            variant="ghost"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={20} />
+            Chat Zalo
+          </CTAButton>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const steps = [
   {
@@ -51,22 +88,20 @@ export default function ProcessSteps() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 reveal">
-          <span className="section-label mb-4 inline-flex">
-            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-            Quy trình làm việc
-          </span>
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-slate-900 mb-4 mt-4">
-            Chỉ{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              4 Bước
-            </span>{" "}
-            Đơn Giản
-          </h2>
-          <p className="text-slate-500 max-w-lg mx-auto text-lg">
-            Minh bạch, chuyên nghiệp — bạn không cần lo lắng bất cứ điều gì.
-          </p>
-        </div>
+        <SectionHeader
+          label="Quy trình làm việc"
+          title={
+            <>
+              Chỉ{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                4 Bước
+              </span>{" "}
+              Đơn Giản
+            </>
+          }
+          description="Minh bạch, chuyên nghiệp — bạn không cần lo lắng bất cứ điều gì."
+          descriptionClass="max-w-lg"
+        />
 
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
@@ -96,48 +131,7 @@ export default function ProcessSteps() {
           ))}
         </div>
 
-        {/* CTA Banner */}
-        <div className="mt-16 reveal relative overflow-hidden rounded-3xl">
-          {/* Background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-600" />
-          <div className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px)",
-              backgroundSize: "28px 28px",
-            }}
-          />
-          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
-          <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-cyan-400/15 blur-3xl" />
-
-          <div className="relative p-8 lg:p-12 text-center">
-            <h3 className="text-2xl lg:text-3xl font-extrabold text-white mb-3">
-              Đặt Lịch Ngay Hôm Nay
-            </h3>
-            <p className="text-blue-100 mb-8 max-w-md mx-auto text-lg">
-              Lần đầu sử dụng — giảm{" "}
-              <strong className="text-amber-300 text-xl">10%</strong> cho mọi dịch vụ.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="tel:0938432178"
-                className="group flex items-center gap-2 bg-white text-blue-700 hover:bg-blue-50 px-7 py-3.5 rounded-xl font-bold text-lg transition-all hover:scale-105 shadow-xl shadow-black/10 relative overflow-hidden"
-              >
-                <span className="absolute inset-0 bg-blue-50 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
-                <Phone size={20} />
-                0938 432 178
-              </a>
-              <a
-                href="https://zalo.me/0938432178"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-white/15 border-2 border-white/30 text-white hover:bg-white/25 px-7 py-3.5 rounded-xl font-bold text-lg transition-all hover:scale-105 backdrop-blur-sm"
-              >
-                <MessageCircle size={20} />
-                Chat Zalo
-              </a>
-            </div>
-          </div>
-        </div>
+        <ProcessCTABanner />
       </div>
 
       {/* Bottom wave to white */}

@@ -1,4 +1,7 @@
 import { Shirt, Building2, Sparkles, Package, Star, Wind, Heart, Cloud, ArrowRight } from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import CTAButton from "@/components/ui/CTAButton";
+import TiltCard from "@/components/ui/TiltCard";
 
 const services = [
   {
@@ -100,27 +103,23 @@ export default function ServicesGrid() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 reveal">
-          <span className="section-label mb-4 inline-flex">
-            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-            Dịch vụ của chúng tôi
-          </span>
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-slate-900 mb-4 mt-4">
-            Đa Dạng Dịch Vụ{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              Giặt Sấy
-            </span>
-          </h2>
-          <p className="text-slate-500 max-w-xl mx-auto text-lg">
-            Từ giặt sấy gia đình đến công nghiệp — chúng tôi xử lý mọi loại vải với
-            chất lượng cao nhất.
-          </p>
-        </div>
+        <SectionHeader
+          label="Dịch vụ của chúng tôi"
+          title={
+            <>
+              Đa Dạng Dịch Vụ{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                Giặt Sấy
+              </span>
+            </>
+          }
+          description="Từ giặt sấy gia đình đến công nghiệp — chúng tôi xử lý mọi loại vải với chất lượng cao nhất."
+        />
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {services.map((service, i) => (
-            <div
+            <TiltCard
               key={service.title}
               className={`reveal reveal-delay-${(i % 4) + 1} group bg-white border border-slate-100 hover:border-transparent rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300 cursor-pointer hover:-translate-y-1.5 relative overflow-hidden`}
             >
@@ -143,20 +142,16 @@ export default function ServicesGrid() {
               <span className={`inline-block text-xs font-bold ${service.text} ${service.bg} border ${service.ring} px-3 py-1.5 rounded-full ring-2`}>
                 {service.price}
               </span>
-            </div>
+            </TiltCard>
           ))}
         </div>
 
         {/* CTA */}
         <div className="mt-14 text-center reveal">
-          <a
-            href="tel:0938432178"
-            className="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all hover:scale-105 shadow-xl shadow-blue-500/25 relative overflow-hidden"
-          >
-            <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12" />
+          <CTAButton href="tel:0938432178" size="lg">
             Tư Vấn Miễn Phí
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          </CTAButton>
         </div>
       </div>
     </section>

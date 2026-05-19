@@ -1,6 +1,31 @@
-"use client";
-
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import TiltCard from "@/components/ui/TiltCard";
+
+const shopPhotos = [
+  {
+    label: "Cửa Hàng Gò Vấp",
+    sub: "Mặt tiền cửa hàng",
+    image: "/images/shop-front-1.jpg",
+    gradient: "from-blue-900/60 to-blue-700/30",
+    span: "md:col-span-1 md:row-span-2",
+  },
+  {
+    label: "Không Gian Tiếp Nhận",
+    sub: "Đơn hàng đang chờ xử lý",
+    image: "/images/shop-interior.jpg",
+    gradient: "from-slate-900/60 to-slate-700/30",
+    span: "md:col-span-2 md:row-span-1",
+  },
+  {
+    label: "Chi Nhánh Gò Vấp",
+    sub: "Siêu sạch · Thơm lâu · Khử khuẩn",
+    image: "/images/shop-front-2.jpg",
+    gradient: "from-cyan-900/60 to-blue-700/30",
+    span: "md:col-span-2 md:row-span-1",
+  },
+];
 
 const items = [
   {
@@ -45,75 +70,103 @@ const items = [
     gradient: "from-pink-900/70 to-rose-600/40",
     span: "md:col-span-1 md:row-span-1",
   },
+  {
+    label: "Quần Áo Sau Giặt",
+    sub: "Phẳng phiu · Thơm mát",
+    image: "/images/folded-clothes.jpg",
+    gradient: "from-slate-900/70 to-slate-600/40",
+    span: "md:col-span-1 md:row-span-1",
+  },
+  {
+    label: "Kho Nhận Đồ",
+    sub: "Lưu trữ an toàn · Đóng gói kỹ",
+    image: "/images/laundry-items-shelf.jpg",
+    gradient: "from-teal-900/70 to-cyan-600/40",
+    span: "md:col-span-1 md:row-span-1",
+  },
 ];
+
+function ShopPhotoGrid() {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[220px] mb-4 reveal">
+      {shopPhotos.map((item, i) => (
+        <TiltCard
+          key={item.label}
+          className={`reveal reveal-delay-${i + 1} ${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
+        >
+          <Image
+            src={item.image}
+            alt={item.label}
+            fill
+            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 50vw, 33vw"
+          />
+          <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} group-hover:opacity-90 transition-opacity duration-300`} />
+          <div className="absolute top-3 left-3">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+              <span className="w-1.5 h-1.5 bg-green-400 rounded-full" />
+              Ảnh thực tế
+            </span>
+          </div>
+          <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-center">
+            <p className="text-white font-bold text-sm lg:text-base leading-tight drop-shadow-md">{item.label}</p>
+            <p className="text-white/70 text-xs mt-1 drop-shadow">{item.sub}</p>
+          </div>
+        </TiltCard>
+      ))}
+    </div>
+  );
+}
+
+function ServicePhotoGrid() {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px]">
+      {items.map((item, i) => (
+        <TiltCard
+          key={item.label}
+          className={`reveal reveal-delay-${Math.min(i + 1, 8)} ${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
+        >
+          <Image
+            src={item.image}
+            alt={item.label}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 50vw, 33vw"
+          />
+          <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} group-hover:opacity-90 transition-opacity duration-300`} />
+          <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+            <ArrowUpRight size={14} className="text-white" />
+          </div>
+          <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-center">
+            <p className="text-white font-bold text-sm lg:text-base leading-tight drop-shadow-md">{item.label}</p>
+            <p className="text-white/70 text-xs mt-1 drop-shadow">{item.sub}</p>
+          </div>
+        </TiltCard>
+      ))}
+    </div>
+  );
+}
 
 export default function Gallery() {
   return (
     <section id="thu-vien" className="py-24 bg-white relative overflow-hidden">
-      {/* Background decoration */}
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-slate-100 translate-x-1/2 -translate-y-1/2 blur-3xl pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16 reveal">
-          <span className="section-label mb-4 inline-flex">
-            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-            Dịch vụ & Hình ảnh
-          </span>
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-slate-900 mb-4 mt-4">
-            Chúng Tôi Làm Sạch{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              Tất Cả
-            </span>
-          </h2>
-          <p className="text-slate-500 max-w-lg mx-auto text-lg">
-            Từ quần áo đến nội thất — mọi dịch vụ được thực hiện với tiêu chuẩn
-            chuyên nghiệp cao nhất.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px]">
-          {items.map((item, i) => (
-            <div
-              key={item.label}
-              style={{ transition: "transform 0.15s ease, box-shadow 0.3s ease" }}
-              onMouseMove={(e) => {
-                const el = e.currentTarget;
-                const { left, top, width, height } = el.getBoundingClientRect();
-                const x = ((e.clientX - left) / width - 0.5) * 14;
-                const y = ((e.clientY - top) / height - 0.5) * -14;
-                el.style.transform = `perspective(700px) rotateX(${y}deg) rotateY(${x}deg) scale(1.03)`;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "";
-              }}
-              className={`reveal reveal-delay-${i + 1} ${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
-            >
-              {/* Photo background */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={item.image}
-                alt={item.label}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-
-              {/* Gradient overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} group-hover:opacity-90 transition-opacity duration-300`} />
-
-              {/* Arrow icon */}
-              <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
-                <ArrowUpRight size={14} className="text-white" />
-              </div>
-
-              {/* Content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-center">
-                <p className="text-white font-bold text-sm lg:text-base leading-tight drop-shadow-md">
-                  {item.label}
-                </p>
-                <p className="text-white/70 text-xs mt-1 drop-shadow">{item.sub}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <SectionHeader
+          label="Dịch vụ & Hình ảnh"
+          title={
+            <>
+              Chúng Tôi Làm Sạch{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                Tất Cả
+              </span>
+            </>
+          }
+          description="Từ quần áo đến nội thất — mọi dịch vụ được thực hiện với tiêu chuẩn chuyên nghiệp cao nhất."
+          descriptionClass="max-w-lg"
+        />
+        <ShopPhotoGrid />
+        <ServicePhotoGrid />
       </div>
     </section>
   );

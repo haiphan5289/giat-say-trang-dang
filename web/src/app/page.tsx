@@ -1,4 +1,5 @@
 import HeroBanner from "@/components/sections/HeroBanner";
+import BranchCarousel from "@/components/sections/BranchCarousel";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import ProcessSteps from "@/components/sections/ProcessSteps";
 import Testimonials from "@/components/sections/Testimonials";
@@ -10,6 +11,7 @@ export default function HomePage() {
   return (
     <>
       <HeroBanner />
+      <BranchCarousel />
       <ServicesGrid />
       <ProcessSteps />
       <Testimonials />

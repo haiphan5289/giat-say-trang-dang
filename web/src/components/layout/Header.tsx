@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
+import CTAButton from "@/components/ui/CTAButton";
 
 const navItems = [
   { label: "Trang Chủ", href: "/" },
@@ -20,7 +21,7 @@ export default function Header() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -66,13 +67,10 @@ export default function Header() {
 
         {/* CTA + Toggle */}
         <div className="flex items-center gap-3">
-          <a
-            href="tel:0938432178"
-            className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-4 py-2 rounded-xl text-sm font-bold transition-all shadow-md shadow-blue-500/25 hover:shadow-blue-500/40"
-          >
+          <CTAButton href="tel:0938432178" variant="primary" size="sm" className="hidden sm:inline-flex">
             <Phone size={15} />
             0938 432 178
-          </a>
+          </CTAButton>
           <button
             className={`lg:hidden p-2 rounded-lg transition-colors ${
               scrolled
@@ -103,13 +101,10 @@ export default function Header() {
               </li>
             ))}
             <li className="pt-2">
-              <a
-                href="tel:0938432178"
-                className="flex items-center gap-2 justify-center bg-blue-600 text-white px-4 py-3 rounded-xl font-semibold text-sm"
-              >
+              <CTAButton href="tel:0938432178" variant="primary" size="sm" className="w-full">
                 <Phone size={16} />
                 Gọi Ngay: 0938 432 178
-              </a>
+              </CTAButton>
             </li>
           </ul>
         </div>

@@ -50,10 +50,10 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white font-extrabold text-sm shadow-lg shadow-blue-500/25">
                 GS
               </div>
-              <p className="font-extrabold text-white text-base">
+              <span className="font-extrabold text-white text-base">
                 Giặt Sấy{" "}
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">24h Gò Vấp</span>
-              </p>
+              </span>
             </div>
             <p className="text-sm leading-relaxed text-slate-500 mb-5">
               Dịch vụ giặt sấy chuyên nghiệp — sạch đúng nghĩa, đẹp như mới.

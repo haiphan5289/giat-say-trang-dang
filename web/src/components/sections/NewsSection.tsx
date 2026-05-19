@@ -1,12 +1,7 @@
+import Image from "next/image";
 import { newsPosts } from "@/data/news";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
-
-const thumbnailGradients = [
-  "from-blue-600 to-blue-700",
-  "from-teal-500 to-cyan-600",
-  "from-violet-500 to-purple-600",
-];
-const thumbnailEmojis = ["👗", "🛏️", "⚡"];
+import TiltCard from "@/components/ui/TiltCard";
 
 export default function NewsSection() {
   return (
@@ -40,24 +35,25 @@ export default function NewsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {newsPosts.map((post, i) => (
-            <article
+            <TiltCard
               key={post.id}
               className={`reveal reveal-delay-${i + 1} group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:border-blue-200 hover:shadow-xl hover:shadow-slate-200/60 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer`}
             >
               {/* Thumbnail */}
-              <div
-                className={`h-44 bg-gradient-to-br ${thumbnailGradients[i]} flex items-end p-5 relative overflow-hidden`}
-              >
-                <div className="absolute inset-0 opacity-20"
-                  style={{
-                    backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px)",
-                    backgroundSize: "20px 20px",
-                  }}
-                />
-                <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="h-44 relative overflow-hidden bg-slate-100">
+                {post.image && (
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <ArrowRight size={14} className="text-white" />
                 </div>
-                <span className="text-5xl relative z-10 group-hover:scale-110 transition-transform duration-300 inline-block">{thumbnailEmojis[i]}</span>
               </div>
 
               {/* Content */}
@@ -82,7 +78,7 @@ export default function NewsSection() {
                   Đọc thêm <ArrowRight size={14} />
                 </div>
               </div>
-            </article>
+            </TiltCard>
           ))}
         </div>
       </div>

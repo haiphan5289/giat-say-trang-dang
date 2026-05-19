@@ -12,14 +12,17 @@ export default function BranchCarousel() {
   const next = () => setActive((c) => Math.min(c + 1, total - 1));
 
   return (
-    <section id="he-thong" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="he-thong" className="py-24 bg-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-blue-50 -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-cyan-50 translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12 reveal">
           <div>
-            <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
+            <span className="section-label mb-3 inline-flex">
+              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
               Hệ thống chi nhánh
-            </p>
+            </span>
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
               {total} Chi Nhánh Toàn Thành Phố
             </h2>
@@ -40,23 +43,23 @@ export default function BranchCarousel() {
             {branches.map((branch, i) => (
               <div
                 key={branch.id}
-                className={`flex-shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] rounded-2xl p-6 border transition-all duration-300 ${
+                className={`group flex-shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] rounded-2xl p-6 border transition-all duration-300 ${
                   i === active
                     ? "border-blue-300 bg-blue-50 shadow-md"
-                    : "border-slate-100 bg-white hover:border-slate-200 hover:shadow-sm"
+                    : "border-slate-100 bg-white hover:border-blue-200 hover:shadow-md"
                 }`}
               >
                 <div className="flex items-center gap-3 mb-5">
                   <div
-                    className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                    className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
                       i === active
                         ? "bg-blue-600 text-white"
-                        : "bg-slate-100 text-slate-500"
+                        : "bg-slate-100 text-slate-500 group-hover:bg-blue-600 group-hover:text-white"
                     }`}
                   >
                     <MapPin size={16} />
                   </div>
-                  <h3 className="font-semibold text-slate-900 text-sm leading-tight">
+                  <h3 className="font-semibold text-slate-900 text-sm leading-tight group-hover:text-blue-600 transition-colors">
                     {branch.name}
                   </h3>
                 </div>

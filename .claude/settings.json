@@ -7,7 +7,16 @@
       "Bash(find /Users/hai.phan/Desktop/haiphan/ct-ios-app--v3 -name *.xcassets -path */CTCorePayment/*)",
       "Edit(/.claude/skills/review-code/**)",
       "Bash(swiftlint lint:*)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(sips -Z 1200 /Users/hai.phan/Desktop/haiphan/giat-say-trang-dang/web/public/images/shop-front-1.jpg --out /Users/hai.phan/Desktop/haiphan/giat-say-trang-dang/web/public/images/shop-front-1.jpg)",
+      "Bash(sips -Z 1200 /Users/hai.phan/Desktop/haiphan/giat-say-trang-dang/web/public/images/shop-front-2.jpg --out /Users/hai.phan/Desktop/haiphan/giat-say-trang-dang/web/public/images/shop-front-2.jpg)",
+      "Bash(sips -Z 1200 /Users/hai.phan/Desktop/haiphan/giat-say-trang-dang/web/public/images/shop-interior.jpg --out /Users/hai.phan/Desktop/haiphan/giat-say-trang-dang/web/public/images/shop-interior.jpg)",
+      "Bash(npx tsc *)",
+      "Bash(xargs ls -la)",
+      "Bash(grep -E \"\\(_screen|_view|_page|_widget|_card|_tile|_section\\)\\\\.dart$\")",
+      "Edit(/.claude/skills/pa-premium-ui/**)",
+      "Edit(/.claude/skills/pa-preview-guard/**)",
+      "Edit(/.claude/skills/ui-score/**)"
     ],
     "additionalDirectories": [
       "/Users/hai.phan/Library/Developer/Xcode/DerivedData"
