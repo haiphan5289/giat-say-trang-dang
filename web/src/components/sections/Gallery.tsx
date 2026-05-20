@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Phone, MessageCircle } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import TiltCard from "@/components/ui/TiltCard";
+import CTAButton from "@/components/ui/CTAButton";
 
 const shopPhotos = [
   {
@@ -88,11 +89,11 @@ const items = [
 
 function ShopPhotoGrid() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[220px] mb-4 reveal">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[220px] mb-4">
       {shopPhotos.map((item, i) => (
         <TiltCard
           key={item.label}
-          className={`reveal reveal-delay-${i + 1} ${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
+          className={`reveal-fall reveal-delay-${i + 1} ${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
         >
           <Image
             src={item.image}
@@ -124,7 +125,7 @@ function ServicePhotoGrid() {
       {items.map((item, i) => (
         <TiltCard
           key={item.label}
-          className={`reveal reveal-delay-${Math.min(i + 1, 8)} ${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
+          className={`reveal-fall reveal-delay-${Math.min(i + 1, 8)} ${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
         >
           <Image
             src={item.image}
@@ -167,6 +168,31 @@ export default function Gallery() {
         />
         <ShopPhotoGrid />
         <ServicePhotoGrid />
+
+        {/* CTA strip */}
+        <div className="mt-12 reveal relative overflow-hidden rounded-3xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900" />
+          <div className="absolute inset-0 opacity-15 dot-pattern-white" />
+          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-blue-500/10 blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-cyan-500/10 blur-3xl" />
+          <div className="relative p-8 lg:p-12 text-center">
+            <p className="text-slate-400 text-sm mb-2">Chúng tôi xử lý tất cả — từ quần áo đến nội thất</p>
+            <h3 className="text-2xl lg:text-3xl font-extrabold text-white mb-3">Đặt Lịch Giặt Sấy Ngay</h3>
+            <p className="text-slate-300 mb-8 max-w-md mx-auto">
+              Giao nhận tận nơi · Nhanh chóng · Chuyên nghiệp
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <CTAButton href="tel:0938432178" variant="white">
+                <Phone size={20} />
+                Gọi Ngay
+              </CTAButton>
+              <CTAButton href="https://zalo.me/0938432178" variant="ghost" target="_blank" rel="noopener noreferrer">
+                <MessageCircle size={20} />
+                Chat Zalo
+              </CTAButton>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

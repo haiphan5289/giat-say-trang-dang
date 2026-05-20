@@ -1,26 +1,26 @@
 ---
 name: ct-flipped-interaction
-description: Ask clarifying questions before implementing any iOS feature in Cho Tot. Use when the user provides a vague or incomplete feature request and you need to gather full requirements — scope, API contracts, UX expectations, business rules, and performance constraints — before writing any code.
+description: Ask clarifying questions before implementing any feature for the Giặt Sấy Trang Đáng landing page. Use when the user provides a vague or incomplete feature request and you need to gather full requirements — scope, content, UX expectations, animation behavior, and business rules — before writing any code.
 model: sonnet
 effort: medium
 ---
 
-# iOS Flipped Interaction - Ask Before Implementing
+# Flipped Interaction — Ask Before Implementing
 
-> **Anti-Hallucination:** Verify every symbol, token, path, and identifier against the codebase before generating code. See [ct-anti-hallucination](.claude/skills/ct-anti-hallucination/SKILL.md).
+> **Anti-Hallucination:** Only reference components, CSS utilities, and file paths that actually exist in the project. Verified list in the Stack Context section below.
 
 ## Overview
 
-This skill implements the **Flipped Interaction Pattern** for iOS development in the Chợ Tốt app. Instead of immediately proposing solutions, the AI asks systematic clarifying questions first to fully understand the requirements before writing any code.
+This skill implements the **Flipped Interaction Pattern** for the **Giặt Sấy Trang Đáng** Next.js landing page. Instead of immediately proposing solutions, the AI asks systematic clarifying questions first to fully understand the requirements before writing any code.
 
 ## When to Use This Skill
 
 **Use this skill when:**
-- The feature request is vague or underspecified
-- Requirements, API contracts, or data models are unclear
-- Integration points with existing modules are unknown
-- UX expectations or design mockups haven't been shared
-- Business rules and validation logic need confirmation
+- The feature request is vague (e.g. "add a booking section", "improve the header")
+- Content, copy, or Vietnamese text hasn't been specified
+- Integration with existing sections or scroll behavior is unclear
+- Animation requirements or visual expectations aren't described
+- Business rules (phone number, address, service pricing) need confirmation
 - You want to avoid rework from incorrect assumptions
 
 ## Input Format
@@ -33,69 +33,73 @@ PRIORITY: [High / Medium / Low]
 
 ## Priority Field Behavior
 
-The **PRIORITY** field shapes how the AI asks questions and proposes solutions:
-
-- **High**: Focus on fastest, lowest-risk solutions. Target minimum viable requirements. Prefer existing components and patterns. Suggest incremental implementation.
-- **Medium**: Balance speed vs. quality. Cover complete business logic and edge cases. May suggest new component creation if needed.
-- **Low**: Explore optimal, future-proof solutions. Include scalability and optimization details. May propose comprehensive refactoring.
+- **High**: Fastest path using existing components. Minimal new code. Target immediate visible result.
+- **Medium**: Balance speed vs. completeness. Cover content accuracy and responsive behavior.
+- **Low**: Optimal implementation. Explore animation depth, SEO, performance, and future-proofing.
 
 ## Flipped Interaction Rules
 
 **🚨 CRITICAL: Follow these rules strictly**
 
 1. **Ask clarifying questions FIRST** — do not propose any implementation
-2. **DO NOT assume** requirements not explicitly stated
-3. **DO NOT provide code** until all requirements are crystal clear
+2. **DO NOT assume** Vietnamese copy, phone numbers, addresses, or prices
+3. **DO NOT provide code** until content and UX expectations are confirmed
 4. **DO NOT start implementation** until confirmed understanding is 100%
-5. **Always consider Vietnamese marketplace context** when relevant
+5. **Always consider Vietnamese business context** — laundry services in Gò Vấp, TP.HCM
 
 ## Information Categories to Gather
 
-Systematically ask about these areas before implementing:
+### 1. Feature Scope & Content
+- What exactly should this section/component display?
+- What is the Vietnamese copy (title, description, labels)?
+- What are the specific business details (price, service name, phone, address)?
 
-### 1. Feature Scope & Requirements
-- What is the exact functionality expected?
-- What are the user stories and acceptance criteria?
-- What are the edge cases and error scenarios?
+### 2. Visual & Animation Behavior
+- Should new content use `.reveal` (fade-up) or `.reveal-fall` (fall from above)?
+- Are there hover interactions (TiltCard, group-hover transitions)?
+- Is there a `ClothesDecor` floating image needed in this section?
 
-### 2. Technical Integration
-- Which existing modules or components need integration?
-- What are the API contracts and data models?
-- Are there authentication or permission requirements?
+### 3. Layout & Responsive
+- Desktop-first or mobile-first concern?
+- Grid layout — how many columns on desktop vs. mobile?
+- Any full-width vs. constrained content areas?
 
-### 3. User Experience
-- What is the expected user flow?
-- Are there specific design requirements or Figma mockups?
-- What accessibility considerations are needed?
+### 4. Integration with Existing Sections
+- Does this affect the page nav (`Header` anchor links)?
+- Does it need a new `id` for scroll-to navigation?
+- Does it replace an existing section or insert between two sections?
 
-### 4. Business Context
-- How does this feature relate to Chợ Tốt's marketplace business?
-- Are there Vietnamese localization requirements?
-- What are the business rules and validation logic?
-
-### 5. Performance & Constraints
-- What are the performance expectations?
-- Are there data volume or caching considerations?
-- What are the timeline and resource constraints?
+### 5. Business & SEO Context
+- Does the content affect metadata (title, description, OpenGraph)?
+- Are there specific keywords for Vietnamese SEO?
+- Is this for a time-sensitive campaign or permanent content?
 
 ## Questioning Strategy
 
 - Ask **one essential question at a time** to avoid overwhelming the user
 - After each answer, determine if more clarification is needed or if implementation can begin
-- Adjust question depth based on PRIORITY: High → fewer, focused questions; Low → thorough exploration
-- Confirm your understanding before writing any code
+- Adjust question depth based on PRIORITY: High → 1–2 focused questions; Low → thorough exploration
+- **Never assume Vietnamese text** — always ask for exact wording
 
-## Architecture Requirements for Implementation
+## Stack Context for Implementation
 
 Once requirements are confirmed, all implementations must follow:
-- **MVVM + Clean Architecture** (Presentation → Domain → Data layers)
-- **CTDesignSystem** components (DSLabel, DSButton, DSTextField, DSImageView)
-- **SnapKit** for all UI layout constraints
-- **RxSwift** for reactive programming (BehaviorRelay, PublishRelay, DisposeBag)
-- **Swinject / CCDefaultAssembler** for dependency injection
-- **Logger.print()** for logging (never `print()`)
 
-❗️ **Important:** Do not provide any code or architecture proposal until the user confirms all requirements are understood.
+| Concept | Implementation |
+|---|---|
+| Shared CTA button | `CTAButton` — variants: `primary`, `white`, `ghost` |
+| Section heading block | `SectionHeader` — props: `label`, `title`, `description` |
+| Interactive hover card | `TiltCard` wrapper |
+| Decorative clothes image | `ClothesDecor` — `delay` prop (1–8), `className` for position |
+| Scroll reveal (fade-up) | `.reveal` + optional `.reveal-delay-{1..8}` |
+| Scroll reveal (fall-in) | `.reveal-fall` + optional `.reveal-delay-{1..8}` |
+| Section badge | `.section-label` |
+| Images | `<Image>` from `next/image` with `fill` + `sizes` |
+| External links | Must have `rel="noopener noreferrer"` |
+| Phone CTA | `CTAButton href="tel:0938432178"` |
+| Zalo CTA | `CTAButton href="https://zalo.me/0938432178" variant="ghost" target="_blank"` |
+
+❗️ **Important:** Do not provide any code or layout proposal until the user confirms all requirements are understood.
 
 ---
 
@@ -104,81 +108,62 @@ Once requirements are confirmed, all implementations must follow:
 ### Sample Input
 
 ```
-FEATURE_REQUEST: Add a favorites list for products
-CONTEXT: Users want to save interesting items for later
-PRIORITY: Low
+FEATURE_REQUEST: Thêm section đặt lịch online
+CONTEXT: Khách muốn đặt lịch giao nhận không cần gọi điện
+PRIORITY: Medium
 ```
 
 ---
 
-### AI Behavior (Low Priority → thorough exploration)
+### AI Behavior (Medium Priority → 3–4 questions)
 
 **Question 1 — Scope:**
 
-> Before I propose anything, I want to make sure I understand the full scope.
+> Trước khi implement, mình cần hiểu rõ scope của form đặt lịch.
 >
-> When a user "favorites" a product, should that list be:
-> - Stored **locally only** (disappears if the app is reinstalled), or
-> - **Synced to a backend** so it persists across devices?
+> Form này sẽ:
+> - Chỉ thu thập **tên + số điện thoại + ngày giờ**, rồi gửi về Zalo/SMS? Hay
+> - Tích hợp với một **hệ thống booking backend** thực sự (API endpoint)?
 >
-> This will determine whether we need a new API endpoint or just local persistence.
+> Điều này quyết định mình cần form đơn giản hay cần API integration.
 
 ---
 
-**User answers:** "Synced to backend, we have an existing wishlist API."
+**User answers:** "Chỉ cần submit form → gửi thông báo Zalo cho shop là đủ."
 
 ---
 
-**Question 2 — API Contract:**
+**Question 2 — Fields & Validation:**
 
-> Great. A few questions about the API:
-> - What is the endpoint and HTTP method for adding/removing a favorite? (e.g. `POST /api/v1/wishlist`)
-> - Does the fetch endpoint return full product objects or just product IDs (requiring a second fetch)?
-> - Is there a maximum limit on favorites per user?
-
----
-
-**User answers:** `POST /api/v1/wishlist/add`, `DELETE /api/v1/wishlist/remove/{id}`, fetch returns full objects, no limit.
-
----
-
-**Question 3 — UX & Entry Points:**
-
-> Where can the user add a product to favorites?
-> - Only from the product detail screen, or
-> - Also from feed/listing cards (inline heart button)?
+> Form cần những trường nào?
+> - Họ tên, số điện thoại, địa chỉ giao nhận?
+> - Loại dịch vụ (giặt thường / giặt hấp / giặt nệm)?
+> - Ngày giờ mong muốn?
 >
-> And should the favorites list have its own tab/screen, or is it accessible from the profile/account section?
+> Và khi submit thành công, hiển thị thông báo gì bằng tiếng Việt?
 
 ---
 
-**User answers:** "Heart button on feed cards AND detail screen. Accessible from profile tab."
+**Question 3 — Position & Anchor:**
 
----
-
-**Question 4 — Offline & Sync:**
-
-> When the user taps the heart button offline:
-> - Should it **optimistically update** the UI and sync when back online, or
-> - Show an error and require network connectivity?
-
----
-
-**User answers:** "Optimistic update preferred."
+> Section này đặt ở vị trí nào trên trang?
+> - Trước section "Vị Trí & Liên Hệ" (`#vi-tri`), hay sau?
+>
+> Và `id` anchor cho section này là gì? (ví dụ: `#dat-lich`)
 
 ---
 
 ### Confirmed Understanding (AI summarizes before implementing)
 
-> Let me confirm what I'll implement:
+> Để xác nhận lại những gì mình sẽ implement:
 >
-> - Heart button on feed cards + product detail screen — taps call `POST /api/v1/wishlist/add` or `DELETE /api/v1/wishlist/remove/{id}`
-> - Optimistic UI update on tap; sync error silently retried
-> - Favorites list screen accessible from Profile tab, showing full product objects
-> - `FavoritesRepository` with local cache + API sync; `FavoritesUseCase` for add/remove/fetch logic
-> - CTDesignSystem components (DSButton for heart, DSTableView for list)
+> - Form với 4 trường: tên, SĐT, loại dịch vụ, ngày giờ
+> - Submit → mở Zalo với tin nhắn đặt sẵn (`https://zalo.me/0938432178?text=...`)
+> - Đặt trước `#vi-tri`, anchor `id="dat-lich"`
+> - Dùng `SectionHeader`, `CTAButton variant="primary"`, có `ClothesDecor` góc phải
+> - `.reveal` trên form container, `.reveal-delay-*` stagger trên từng field
 >
-> Does this match your expectations? Shall I start implementation?
+> Bạn xác nhận mình có thể bắt đầu implement chưa?
 
 ---
 
@@ -186,6 +171,6 @@ PRIORITY: Low
 
 | Priority | Questions Asked | Scope |
 |---|---|---|
-| **High** | 1–2 focused questions on MVP requirements only | Fastest path using existing patterns |
-| **Medium** | 3–4 questions covering business logic + edge cases | Balanced implementation with some new components |
-| **Low** | 4–5 thorough questions including scalability + UX | Optimal architecture, may propose refactoring |
+| **High** | 1–2 questions on critical content + placement | Fastest path using existing components |
+| **Medium** | 3–4 questions covering content, layout, integration | Balanced implementation with responsive behavior |
+| **Low** | 4–5 thorough questions including SEO, animation depth, edge cases | Optimal UX, proper accessibility, Vietnamese SEO |

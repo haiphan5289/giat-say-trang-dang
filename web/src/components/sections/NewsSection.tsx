@@ -1,35 +1,40 @@
 import Image from "next/image";
 import { newsPosts } from "@/data/news";
-import { ArrowRight, Calendar, Tag } from "lucide-react";
+import { ArrowRight, Calendar, Tag, Phone, MessageCircle } from "lucide-react";
 import TiltCard from "@/components/ui/TiltCard";
-
+import SectionHeader from "@/components/ui/SectionHeader";
+import CTAButton from "@/components/ui/CTAButton";
 export default function NewsSection() {
   return (
     <section id="tin-tuc" className="py-24 bg-slate-50 relative overflow-hidden">
+      {/* Top wave from Gallery (white bg above) */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none pointer-events-none">
+        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-[60px]">
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,0 L0,0 Z" fill="#ffffff" />
+        </svg>
+      </div>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-blue-100/30 -translate-y-1/2 blur-3xl pointer-events-none" />
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12 reveal">
-          <div>
-            <span className="section-label mb-4 inline-flex">
-              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-              Tin tức & mẹo hay
-            </span>
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-slate-900 mt-4">
+<div className="max-w-7xl mx-auto px-6 relative z-10">
+        <SectionHeader
+          label="Tin tức & mẹo hay"
+          title={
+            <>
               Bài Viết{" "}
               <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
                 Mới Nhất
               </span>
-            </h2>
-          </div>
+            </>
+          }
+          description="Mẹo giặt sấy, hướng dẫn bảo quản quần áo và tin tức mới nhất từ chúng tôi."
+          wrapperClass="mb-8"
+        />
+        <div className="flex justify-end mb-6">
           <a
             href="/tin-tuc"
             className="group flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors"
           >
             Xem tất cả{" "}
-            <ArrowRight
-              size={16}
-              className="group-hover:translate-x-0.5 transition-transform"
-            />
+            <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>
 
@@ -80,6 +85,30 @@ export default function NewsSection() {
               </div>
             </TiltCard>
           ))}
+        </div>
+
+        {/* CTA banner */}
+        <div className="mt-12 reveal relative overflow-hidden rounded-3xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-600" />
+          <div className="absolute inset-0 opacity-20 dot-pattern-white" />
+          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-cyan-400/15 blur-3xl" />
+          <div className="relative p-8 lg:p-12 text-center">
+            <h3 className="text-2xl lg:text-3xl font-extrabold text-white mb-3">Đặt Lịch Ngay Hôm Nay</h3>
+            <p className="text-blue-100 mb-8 max-w-md mx-auto">
+              Lần đầu sử dụng — giảm <strong className="text-amber-300 text-xl">10%</strong> cho mọi dịch vụ.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <CTAButton href="tel:0938432178" variant="white">
+                <Phone size={20} />
+                Gọi Ngay
+              </CTAButton>
+              <CTAButton href="https://zalo.me/0938432178" variant="ghost" target="_blank" rel="noopener noreferrer">
+                <MessageCircle size={20} />
+                Chat Zalo
+              </CTAButton>
+            </div>
+          </div>
         </div>
       </div>
     </section>

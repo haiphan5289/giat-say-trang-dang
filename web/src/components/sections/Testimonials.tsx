@@ -1,7 +1,7 @@
 import { testimonials, stats } from "@/data/testimonials";
-import { Star } from "lucide-react";
+import { Star, Phone, MessageCircle } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
-
+import CTAButton from "@/components/ui/CTAButton";
 const statGradients = [
   "from-blue-500 to-cyan-500",
   "from-violet-500 to-purple-500",
@@ -81,8 +81,7 @@ export default function Testimonials() {
     <section id="danh-gia" className="py-24 bg-slate-50 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-blue-100/40 -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-violet-100/40 translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+<div className="max-w-7xl mx-auto px-6 relative z-10">
         <SectionHeader
           label="Khách hàng Gò Vấp nói gì"
           title={
@@ -108,6 +107,33 @@ export default function Testimonials() {
             <span className="font-semibold text-slate-800">4.9/5</span>
             <span className="text-slate-400">·</span>
             <span>Dựa trên 500+ đánh giá thực tế</span>
+          </div>
+        </div>
+
+        {/* CTA banner */}
+        <div className="mt-10 reveal relative overflow-hidden rounded-3xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-600" />
+          <div className="absolute inset-0 opacity-20 dot-pattern-white" />
+          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-cyan-400/15 blur-3xl" />
+          <div className="relative p-8 lg:p-12 text-center">
+            <p className="text-blue-200 text-sm font-medium mb-2">Tham gia 500+ gia đình hài lòng</p>
+            <h3 className="text-2xl lg:text-3xl font-extrabold text-white mb-3">
+              Trải Nghiệm Dịch Vụ Ngay Hôm Nay
+            </h3>
+            <p className="text-blue-100 mb-8 max-w-md mx-auto">
+              Lần đầu sử dụng — giảm <strong className="text-amber-300 text-xl">10%</strong> cho mọi dịch vụ.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <CTAButton href="tel:0938432178" variant="white">
+                <Phone size={20} />
+                Gọi Ngay
+              </CTAButton>
+              <CTAButton href="https://zalo.me/0938432178" variant="ghost" target="_blank" rel="noopener noreferrer">
+                <MessageCircle size={20} />
+                Chat Zalo
+              </CTAButton>
+            </div>
           </div>
         </div>
       </div>

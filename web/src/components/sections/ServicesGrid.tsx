@@ -2,7 +2,6 @@ import { Shirt, Building2, Sparkles, Package, Star, Wind, Heart, Cloud, ArrowRig
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
 import TiltCard from "@/components/ui/TiltCard";
-
 const services = [
   {
     Icon: Shirt,
@@ -100,8 +99,7 @@ export default function ServicesGrid() {
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-blue-50 -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-cyan-50 translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+<div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <SectionHeader
           label="Dịch vụ của chúng tôi"

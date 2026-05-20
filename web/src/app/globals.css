@@ -27,23 +27,37 @@ html {
 /* ── Scroll-reveal ── */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(20px);
   transition:
-    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
-.reveal-delay-1 { transition-delay: 80ms; }
-.reveal-delay-2 { transition-delay: 160ms; }
-.reveal-delay-3 { transition-delay: 240ms; }
-.reveal-delay-4 { transition-delay: 320ms; }
-.reveal-delay-5 { transition-delay: 400ms; }
-.reveal-delay-6 { transition-delay: 480ms; }
-.reveal-delay-7 { transition-delay: 560ms; }
-.reveal-delay-8 { transition-delay: 640ms; }
+.reveal-delay-1 { transition-delay: 80ms;  animation-delay: 80ms; }
+.reveal-delay-2 { transition-delay: 160ms; animation-delay: 160ms; }
+.reveal-delay-3 { transition-delay: 240ms; animation-delay: 240ms; }
+.reveal-delay-4 { transition-delay: 320ms; animation-delay: 320ms; }
+.reveal-delay-5 { transition-delay: 400ms; animation-delay: 400ms; }
+.reveal-delay-6 { transition-delay: 480ms; animation-delay: 480ms; }
+.reveal-delay-7 { transition-delay: 560ms; animation-delay: 560ms; }
+.reveal-delay-8 { transition-delay: 640ms; animation-delay: 640ms; }
+
+/* ── Fall-in (clothing images drop from above with soft bounce) ── */
+@keyframes fall-in {
+  0%   { opacity: 0; transform: translateY(-40px) scale(0.94); }
+  55%  { opacity: 1; transform: translateY(8px)   scale(1.02); }
+  75%  { transform: translateY(-3px) scale(0.99); }
+  100% { opacity: 1; transform: translateY(0)    scale(1); }
+}
+.reveal-fall {
+  opacity: 0;
+}
+.reveal-fall.visible {
+  animation: fall-in 0.6s ease-out both;
+}
 
 /* ── Phone button pulse ── */
 @keyframes phone-pulse {

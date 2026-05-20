@@ -1,5 +1,5 @@
 import HeroBanner from "@/components/sections/HeroBanner";
-import BranchCarousel from "@/components/sections/BranchCarousel";
+// import ShirtPhysicsCanvas from "@/components/ui/ShirtPhysicsCanvas";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import ProcessSteps from "@/components/sections/ProcessSteps";
 import Testimonials from "@/components/sections/Testimonials";
@@ -10,9 +10,9 @@ import Location from "@/components/sections/Location";
 export default function HomePage() {
   return (
     <>
+      {/* <ShirtPhysicsCanvas /> */}
       <HeroBanner />
-      <BranchCarousel />
-      <ServicesGrid />
+<ServicesGrid />
       <ProcessSteps />
       <Testimonials />
       <Gallery />

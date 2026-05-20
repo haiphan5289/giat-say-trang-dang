@@ -1,7 +1,6 @@
 import { Phone, MessageCircle } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
-
 function ProcessCTABanner() {
   return (
     <div className="mt-16 reveal relative overflow-hidden rounded-3xl">
@@ -85,8 +84,7 @@ export default function ProcessSteps() {
           <path d="M0,30 C360,60 1080,0 1440,30 L1440,0 L0,0 Z" fill="#ffffff" />
         </svg>
       </div>
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+<div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <SectionHeader
           label="Quy trình làm việc"

@@ -9,6 +9,7 @@ import ScrollRevealInit from "@/components/ScrollRevealInit";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: "Giặt Sấy 24h Gò Vấp - Dịch Vụ Giặt Sấy Chuyên Nghiệp",
   description:
     "Giặt Sấy 24h Gò Vấp cung cấp dịch vụ giặt sấy gia đình, công nghiệp, giặt hấp cao cấp, giặt nệm sofa, giặt giày. Giao nhận tận nơi, giá cả hợp lý.",

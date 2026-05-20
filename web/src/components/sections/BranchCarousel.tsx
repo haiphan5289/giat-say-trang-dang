@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { branches } from "@/data/branches";
-import { ChevronLeft, ChevronRight, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
-
+import { ChevronLeft, ChevronRight, MapPin, Phone, Clock, ArrowRight, MessageCircle } from "lucide-react";
+import CTAButton from "@/components/ui/CTAButton";
 export default function BranchCarousel() {
   const [active, setActive] = useState(0);
   const total = branches.length;
@@ -15,7 +15,7 @@ export default function BranchCarousel() {
     <section id="he-thong" className="py-24 bg-white relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-blue-50 -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-cyan-50 translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none" />
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+<div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12 reveal">
           <div>
@@ -33,7 +33,7 @@ export default function BranchCarousel() {
         </div>
 
         {/* Cards */}
-        <div className="overflow-hidden reveal">
+        <div className="overflow-hidden">
           <div
             className="flex gap-5 transition-transform duration-500 ease-out"
             style={{
@@ -43,7 +43,7 @@ export default function BranchCarousel() {
             {branches.map((branch, i) => (
               <div
                 key={branch.id}
-                className={`group flex-shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] rounded-2xl p-6 border transition-all duration-300 ${
+                className={`reveal reveal-delay-${Math.min(i + 1, 8)} group flex-shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] rounded-2xl p-6 border transition-all duration-300 ${
                   i === active
                     ? "border-blue-300 bg-blue-50 shadow-md"
                     : "border-slate-100 bg-white hover:border-blue-200 hover:shadow-md"
@@ -136,6 +136,32 @@ export default function BranchCarousel() {
             >
               <ChevronRight size={18} />
             </button>
+          </div>
+        </div>
+
+        {/* CTA strip */}
+        <div className="mt-12 reveal relative overflow-hidden rounded-3xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-600" />
+          <div className="absolute inset-0 opacity-20 dot-pattern-white" />
+          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-cyan-400/15 blur-3xl" />
+          <div className="relative p-8 lg:p-12 text-center">
+            <h3 className="text-2xl lg:text-3xl font-extrabold text-white mb-3">
+              Giao Nhận Tận Nơi Toàn Gò Vấp
+            </h3>
+            <p className="text-blue-100 mb-8 max-w-md mx-auto">
+              Không cần đến cửa hàng — chúng tôi đến tận nhà lấy và trả đồ cho bạn.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <CTAButton href="tel:0938432178" variant="white">
+                <Phone size={20} />
+                Gọi Ngay
+              </CTAButton>
+              <CTAButton href="https://zalo.me/0938432178" variant="ghost" target="_blank" rel="noopener noreferrer">
+                <MessageCircle size={20} />
+                Chat Zalo
+              </CTAButton>
+            </div>
           </div>
         </div>
       </div>
