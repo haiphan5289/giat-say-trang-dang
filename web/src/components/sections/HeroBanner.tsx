@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Phone, MessageCircle, ChevronLeft, ChevronRight, CheckCircle, Pause, Play } from "lucide-react";
 import CTAButton from "@/components/ui/CTAButton";
+import FadeIn from "@/components/ui/FadeIn";
 
 const slides = [
   {
@@ -50,7 +51,7 @@ const heroImages = [
 function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
   return (
     <div className="text-white space-y-8">
-      <div className="reveal flex flex-wrap items-center gap-3">
+      <FadeIn direction="up" className="flex flex-wrap items-center gap-3">
         <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm text-blue-200 font-medium backdrop-blur-sm shadow-lg shadow-blue-900/20">
           <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
           {slide.tag}
@@ -58,31 +59,35 @@ function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
         <div className="inline-flex items-center gap-1.5 bg-amber-400/90 backdrop-blur-sm text-amber-900 rounded-full px-3.5 py-1.5 text-xs font-bold shadow-lg shadow-amber-500/30 animate-float">
           🎉 Giảm 10% đơn đầu tiên
         </div>
-      </div>
+      </FadeIn>
 
-      <h1 className="reveal reveal-delay-1 space-y-1">
-        <span className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight drop-shadow-sm">
-          {slide.title}
-        </span>
-        <span className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight shimmer-text">
-          {slide.highlight}
-        </span>
-      </h1>
+      <FadeIn direction="up" delay={0.1} className="space-y-1">
+        <h1 className="space-y-1">
+          <span className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight drop-shadow-sm">
+            {slide.title}
+          </span>
+          <span className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight shimmer-text">
+            {slide.highlight}
+          </span>
+        </h1>
+      </FadeIn>
 
-      <p className="reveal reveal-delay-2 text-slate-300 text-lg leading-relaxed max-w-md">
+      <FadeIn direction="up" delay={0.2} className="text-slate-300 text-lg leading-relaxed max-w-md">
         {slide.description}
-      </p>
+      </FadeIn>
 
-      <ul className="reveal reveal-delay-3 space-y-2.5">
-        {trustPoints.map((point) => (
-          <li key={point} className="flex items-center gap-2.5 text-sm text-slate-300">
-            <CheckCircle size={16} className="text-green-400 shrink-0" />
-            {point}
-          </li>
-        ))}
-      </ul>
+      <FadeIn direction="up" delay={0.3}>
+        <ul className="space-y-2.5">
+          {trustPoints.map((point) => (
+            <li key={point} className="flex items-center gap-2.5 text-sm text-slate-300">
+              <CheckCircle size={16} className="text-green-400 shrink-0" />
+              {point}
+            </li>
+          ))}
+        </ul>
+      </FadeIn>
 
-      <div className="reveal reveal-delay-4 flex flex-wrap gap-3 pt-2">
+      <FadeIn direction="up" delay={0.4} className="flex flex-wrap gap-3 pt-2">
         <CTAButton href="tel:0938432178">
           <Phone size={20} />
           Gọi Ngay
@@ -96,7 +101,7 @@ function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
           <MessageCircle size={20} />
           Chat Zalo
         </CTAButton>
-      </div>
+      </FadeIn>
     </div>
   );
 }
