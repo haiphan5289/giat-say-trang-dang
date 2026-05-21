@@ -1,9 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import { Phone, MessageCircle, ChevronLeft, ChevronRight, CheckCircle, Pause, Play } from "lucide-react";
 import CTAButton from "@/components/ui/CTAButton";
+
+const ShirtScene3D = dynamic(() => import("@/components/ui/ShirtScene3D"), {
+  ssr: false,
+  loading: () => null,
+});
 
 const slides = [
   {
@@ -41,11 +46,6 @@ const trustPoints = [
   "Hoàn tiền 100% nếu không hài lòng",
 ];
 
-const heroImages = [
-  { src: "/images/shop-front-1.jpg", alt: "Mặt tiền cửa hàng Giặt Sấy 24h Gò Vấp" },
-  { src: "/images/shop-front-2.jpg", alt: "Chi nhánh giặt sấy tại Gò Vấp" },
-  { src: "/images/shop-interior.jpg", alt: "Không gian tiếp nhận đơn tại cửa hàng" },
-];
 
 function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
   return (
@@ -101,28 +101,19 @@ function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
   );
 }
 
-function HeroImagePanel({ current }: { current: number }) {
+function Hero3DPanel() {
   return (
     <div className="hidden lg:block relative h-[540px] w-full rounded-3xl overflow-hidden shadow-[0_32px_80px_-12px_rgba(59,130,246,0.35)]">
-      {heroImages.map((img, i) => (
-        <Image
-          key={i}
-          src={img.src}
-          alt={img.alt}
-          fill
-          className={`object-cover object-center transition-opacity duration-1000 ${
-            i === current ? "opacity-100 animate-ken-burns" : "opacity-0"
-          }`}
-          priority={i === 0}
-          sizes="(max-width: 1024px) 0px, 50vw"
-        />
-      ))}
-      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-blue-900/10 to-transparent" />
-      <div className="absolute inset-0 ring-1 ring-white/10 rounded-3xl" />
-      <div className="absolute bottom-6 left-6 text-white">
-        <p className="text-sm font-medium opacity-70">Giặt Sấy 24h Gò Vấp</p>
-        <p className="text-xl font-bold">Chi nhánh Gò Vấp</p>
+      {/* 3D Shirt Scene */}
+      <div className="absolute inset-0">
+        <ShirtScene3D />
       </div>
+
+      {/* Depth gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-950/50 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 ring-1 ring-white/10 rounded-3xl pointer-events-none" />
+
+      {/* Badges */}
       <div className="absolute top-4 right-4 bg-amber-400 text-amber-900 rounded-2xl px-4 py-2 text-sm font-bold shadow-xl shadow-amber-500/30 flex items-center gap-1">
         <span>Từ</span>
         <span className="text-base font-extrabold">25k</span>
@@ -131,6 +122,10 @@ function HeroImagePanel({ current }: { current: number }) {
       <div className="absolute top-4 left-4 bg-white/15 backdrop-blur-md border border-white/20 text-white rounded-2xl px-3 py-2 text-xs font-semibold shadow-lg flex items-center gap-1.5">
         <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
         Đang nhận đơn
+      </div>
+      <div className="absolute bottom-6 left-6 text-white">
+        <p className="text-sm font-medium opacity-70">Giặt Sấy 24h Gò Vấp</p>
+        <p className="text-xl font-bold">Chi nhánh Gò Vấp</p>
       </div>
     </div>
   );
@@ -168,7 +163,7 @@ export default function HeroBanner() {
       <div className="max-w-7xl mx-auto px-6 py-24 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <HeroTextContent slide={slide} />
-          <HeroImagePanel current={current} />
+          <Hero3DPanel />
         </div>
       </div>
 

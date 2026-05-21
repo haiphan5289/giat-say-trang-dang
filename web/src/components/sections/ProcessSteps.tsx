@@ -1,6 +1,7 @@
 import { Phone, MessageCircle } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
+import AnimatedStepCard from "@/components/ui/AnimatedStepCard";
 function ProcessCTABanner() {
   return (
     <div className="mt-16 reveal relative overflow-hidden rounded-3xl">
@@ -107,25 +108,7 @@ export default function ProcessSteps() {
           <div className="hidden md:block absolute top-10 left-[14%] right-[14%] h-0.5 bg-gradient-to-r from-blue-200 via-violet-200 to-amber-200 z-0" />
 
           {steps.map((step, i) => (
-            <div
-              key={step.number}
-              className={`reveal reveal-delay-${i + 1} relative z-10 group text-center`}
-            >
-              {/* Step circle */}
-              <div className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br ${step.gradient} shadow-lg ${step.shadow} group-hover:shadow-xl group-hover:scale-110 flex flex-col items-center justify-center gap-0.5 transition-all duration-300 mb-6`}>
-                <span className="text-[10px] font-bold text-white/70 leading-none">
-                  {step.number}
-                </span>
-                <span className="text-2xl leading-none">{step.emoji}</span>
-              </div>
-
-              <h3 className="font-bold text-slate-900 text-base mb-2 group-hover:text-blue-600 transition-colors">
-                {step.title}
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                {step.description}
-              </p>
-            </div>
+            <AnimatedStepCard key={step.number} step={step} index={i} />
           ))}
         </div>
 
