@@ -1,6 +1,7 @@
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
+import FadeIn from "@/components/ui/FadeIn";
 const info = [
   {
     icon: MapPin,
@@ -50,7 +51,10 @@ export default function Location() {
 
         <div className="grid lg:grid-cols-5 gap-8 items-stretch">
           {/* Map */}
-          <div className="reveal lg:col-span-3 rounded-2xl overflow-hidden shadow-xl shadow-slate-200/60 min-h-[380px] ring-1 ring-slate-100">
+          <FadeIn
+            direction="left"
+            className="lg:col-span-3 rounded-2xl overflow-hidden shadow-xl shadow-slate-200/60 min-h-[380px] ring-1 ring-slate-100"
+          >
             <iframe
               title="Giặt Sấy 24h Gò Vấp - Vị trí"
               src="https://maps.google.com/maps?q=10.8370625,106.6645925&z=17&output=embed"
@@ -61,10 +65,14 @@ export default function Location() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-          </div>
+          </FadeIn>
 
           {/* Info card */}
-          <div className="reveal reveal-delay-2 lg:col-span-2 bg-white rounded-2xl shadow-xl shadow-slate-200/60 p-8 flex flex-col justify-between ring-1 ring-slate-100 relative overflow-hidden">
+          <FadeIn
+            direction="right"
+            delay={0.1}
+            className="lg:col-span-2 bg-white rounded-2xl shadow-xl shadow-slate-200/60 p-8 flex flex-col justify-between ring-1 ring-slate-100 relative overflow-hidden"
+          >
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-t-2xl" />
             <div>
               <div className="flex items-center gap-3 mb-6">
@@ -79,7 +87,7 @@ export default function Location() {
 
               <ul className="space-y-5">
                 {info.map(({ icon: Icon, label, value, href }, i) => (
-                  <li key={label} className={`reveal reveal-delay-${i + 1} flex items-start gap-3.5`}>
+                  <li key={label} className="flex items-start gap-3.5">
                     <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 flex items-center justify-center shrink-0 mt-0.5">
                       <Icon size={16} className="text-blue-600" />
                     </div>
@@ -116,7 +124,7 @@ export default function Location() {
                 Chat Zalo
               </CTAButton>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>

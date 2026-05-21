@@ -2,6 +2,7 @@ import { Shirt, Building2, Sparkles, Package, Star, Wind, Heart, Cloud, ArrowRig
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
 import TiltCard from "@/components/ui/TiltCard";
+import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 const services = [
   {
     Icon: Shirt,
@@ -115,11 +116,11 @@ export default function ServicesGrid() {
         />
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {services.map((service, i) => (
+        <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {services.map((service) => (
+            <StaggerItem key={service.title}>
             <TiltCard
-              key={service.title}
-              className={`reveal reveal-delay-${(i % 4) + 1} group bg-white border border-slate-100 hover:border-transparent rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300 cursor-pointer hover:-translate-y-1.5 relative overflow-hidden`}
+              className="group bg-white border border-slate-100 hover:border-transparent rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300 cursor-pointer hover:-translate-y-1.5 relative overflow-hidden h-full"
             >
               {/* Hover gradient background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-300 rounded-2xl`} />
@@ -141,8 +142,9 @@ export default function ServicesGrid() {
                 {service.price}
               </span>
             </TiltCard>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
 
         {/* CTA */}
         <div className="mt-14 text-center reveal">

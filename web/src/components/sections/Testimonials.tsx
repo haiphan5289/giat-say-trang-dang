@@ -2,6 +2,7 @@ import { testimonials, stats } from "@/data/testimonials";
 import { Star, Phone, MessageCircle } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
+import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 const statGradients = [
   "from-blue-500 to-cyan-500",
   "from-violet-500 to-purple-500",
@@ -20,31 +21,28 @@ const avatarGradients = [
 
 function StatsRow() {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+    <StaggerGrid className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
       {stats.map((stat, i) => (
-        <div
-          key={stat.label}
-          className={`reveal reveal-delay-${i + 1} group relative overflow-hidden bg-white border border-slate-100 rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
-        >
-          <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${statGradients[i]} rounded-t-2xl`} />
-          <p className={`text-3xl lg:text-4xl font-extrabold mb-1 bg-gradient-to-r ${statGradients[i]} bg-clip-text text-transparent`}>
-            {stat.value}
-          </p>
-          <p className="text-slate-500 text-sm font-medium">{stat.label}</p>
-        </div>
+        <StaggerItem key={stat.label}>
+          <div className="group relative overflow-hidden bg-white border border-slate-100 rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${statGradients[i]} rounded-t-2xl`} />
+            <p className={`text-3xl lg:text-4xl font-extrabold mb-1 bg-gradient-to-r ${statGradients[i]} bg-clip-text text-transparent`}>
+              {stat.value}
+            </p>
+            <p className="text-slate-500 text-sm font-medium">{stat.label}</p>
+          </div>
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerGrid>
   );
 }
 
 function ReviewGrid() {
   return (
-    <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
+    <StaggerGrid className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
       {testimonials.map((t, i) => (
-        <div
-          key={t.id}
-          className={`reveal reveal-delay-${(i % 3) + 1} break-inside-avoid group bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-slate-200/60 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden`}
-        >
+        <StaggerItem key={t.id} className="break-inside-avoid">
+          <div className="group bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-slate-200/60 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
           <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${avatarGradients[i % avatarGradients.length]} opacity-60 group-hover:opacity-100 transition-opacity`} />
           <div className="flex items-center justify-between mb-4">
             <div className="flex gap-0.5">
@@ -70,9 +68,10 @@ function ReviewGrid() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerGrid>
   );
 }
 

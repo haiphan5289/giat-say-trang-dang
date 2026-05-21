@@ -30,7 +30,7 @@ export default function FloatingCTA() {
     >
       {/* Facebook */}
       <a
-        href="https://facebook.com"
+        href="https://www.facebook.com/profile.php?id=61551799042694"
         target="_blank"
         rel="noopener noreferrer"
         className="group w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30 transition-all hover:scale-110 relative"
@@ -38,7 +38,7 @@ export default function FloatingCTA() {
       >
         <FacebookIcon size={22} />
         <span className="absolute right-14 bg-slate-800 text-white text-xs rounded-xl px-3 py-1.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
-          Facebook
+          Fanpage Facebook
         </span>
       </a>
 

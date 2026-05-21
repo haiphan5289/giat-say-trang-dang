@@ -4,6 +4,7 @@ import { ArrowRight, Calendar, Tag, Phone, MessageCircle } from "lucide-react";
 import TiltCard from "@/components/ui/TiltCard";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
+import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 export default function NewsSection() {
   return (
     <section id="tin-tuc" className="py-24 bg-slate-50 relative overflow-hidden">
@@ -38,11 +39,11 @@ export default function NewsSection() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {newsPosts.map((post, i) => (
+        <StaggerGrid className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {newsPosts.map((post) => (
+            <StaggerItem key={post.id}>
             <TiltCard
-              key={post.id}
-              className={`reveal reveal-delay-${i + 1} group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:border-blue-200 hover:shadow-xl hover:shadow-slate-200/60 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer`}
+              className="group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:border-blue-200 hover:shadow-xl hover:shadow-slate-200/60 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer h-full"
             >
               {/* Thumbnail */}
               <div className="h-44 relative overflow-hidden bg-slate-100">
@@ -84,8 +85,9 @@ export default function NewsSection() {
                 </div>
               </div>
             </TiltCard>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
 
         {/* CTA banner */}
         <div className="mt-12 reveal relative overflow-hidden rounded-3xl">
