@@ -1,41 +1,7 @@
-import { Phone, MessageCircle } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
-import CTAButton from "@/components/ui/CTAButton";
+import CTABanner from "@/components/ui/CTABanner";
 import AnimatedStepCard from "@/components/ui/AnimatedStepCard";
-function ProcessCTABanner() {
-  return (
-    <div className="mt-16 reveal relative overflow-hidden rounded-3xl">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-600" />
-      <div className="absolute inset-0 opacity-20 dot-pattern-white" />
-      <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
-      <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-cyan-400/15 blur-3xl" />
-      <div className="relative p-8 lg:p-12 text-center">
-        <h3 className="text-2xl lg:text-3xl font-extrabold text-white mb-3">
-          Đặt Lịch Ngay Hôm Nay
-        </h3>
-        <p className="text-blue-100 mb-8 max-w-md mx-auto text-lg">
-          Lần đầu sử dụng — giảm{" "}
-          <strong className="text-amber-300 text-xl">10%</strong> cho mọi dịch vụ.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <CTAButton href="tel:0938432178" variant="white">
-            <Phone size={20} />
-            0938 432 178
-          </CTAButton>
-          <CTAButton
-            href="https://zalo.me/0938432178"
-            variant="ghost"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MessageCircle size={20} />
-            Chat Zalo
-          </CTAButton>
-        </div>
-      </div>
-    </div>
-  );
-}
+import AnimatedConnector from "@/components/ui/AnimatedConnector";
 
 const steps = [
   {
@@ -78,14 +44,14 @@ const steps = [
 
 export default function ProcessSteps() {
   return (
-    <section id="quy-trinh" className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="quy-trinh" className="py-14 md:py-24 bg-slate-50 relative overflow-hidden">
       {/* Top wave from white */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none pointer-events-none">
         <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-[60px]">
           <path d="M0,30 C360,60 1080,0 1440,30 L1440,0 L0,0 Z" fill="#ffffff" />
         </svg>
       </div>
-<div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <SectionHeader
           label="Quy trình làm việc"
@@ -105,14 +71,24 @@ export default function ProcessSteps() {
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
           {/* Connector line desktop */}
-          <div className="hidden md:block absolute top-10 left-[14%] right-[14%] h-0.5 bg-gradient-to-r from-blue-200 via-violet-200 to-amber-200 z-0" />
+          <AnimatedConnector />
 
           {steps.map((step, i) => (
             <AnimatedStepCard key={step.number} step={step} index={i} />
           ))}
         </div>
 
-        <ProcessCTABanner />
+        <CTABanner
+          title="Đặt Lịch Ngay Hôm Nay"
+          description={
+            <>
+              Lần đầu sử dụng — giảm{" "}
+              <strong className="text-amber-300 text-xl">10%</strong> cho mọi dịch vụ.
+            </>
+          }
+          phoneLabel="0938 432 178"
+          className="mt-16"
+        />
       </div>
 
       {/* Bottom wave to white */}

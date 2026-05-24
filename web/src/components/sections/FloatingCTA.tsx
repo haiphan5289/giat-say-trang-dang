@@ -28,7 +28,7 @@ export default function FloatingCTA() {
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
-      {/* Facebook */}
+      {/* Icon-only floating widget buttons — CTAButton does not support this square icon-only layout */}
       <a
         href="https://www.facebook.com/profile.php?id=61551799042694"
         target="_blank"

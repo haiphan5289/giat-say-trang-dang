@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Phone, MessageCircle, ChevronLeft, ChevronRight, CheckCircle, Pause, Play } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import CTAButton from "@/components/ui/CTAButton";
 import FadeIn from "@/components/ui/FadeIn";
 
@@ -22,7 +23,7 @@ const slides = [
     title: "Đặt Lịch Online",
     highlight: "Nhận Về Trong Ngày",
     description:
-      "Chỉ 2 phút đặt lịch qua điện thoại hoặc Zalo — chúng tôi đến tận nhà lấy và giao lại khi hoàn thành.",
+      "Hỗ trợ nhận và giao đồ tận nơi nhanh chóng, tiện lợi, giúp tiết kiệm thời gian cho khách hàng.",
     accent: "from-slate-900 via-cyan-950 to-slate-900",
   },
   {
@@ -39,7 +40,6 @@ const slides = [
 const trustPoints = [
   "Công nghệ máy giặt Nhật Bản hiện đại",
   "Nước giặt chuyên dụng nhập khẩu an toàn",
-  "Hoàn tiền 100% nếu không hài lòng",
 ];
 
 const heroImages = [
@@ -63,10 +63,11 @@ function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
 
       <FadeIn direction="up" delay={0.1} className="space-y-1">
         <h1 className="space-y-1">
-          <span className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight drop-shadow-sm">
+          <span className="sr-only">Giặt Sấy 24h Gò Vấp — </span>
+          <span className="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight drop-shadow-sm">
             {slide.title}
           </span>
-          <span className="block text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight shimmer-text">
+          <span className="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight shimmer-text">
             {slide.highlight}
           </span>
         </h1>
@@ -130,7 +131,7 @@ function HeroImagePanel({ current }: { current: number }) {
       </div>
       <div className="absolute top-4 right-4 bg-amber-400 text-amber-900 rounded-2xl px-4 py-2 text-sm font-bold shadow-xl shadow-amber-500/30 flex items-center gap-1">
         <span>Từ</span>
-        <span className="text-base font-extrabold">25k</span>
+        <span className="text-base font-extrabold">13k</span>
         <span>/kg</span>
       </div>
       <div className="absolute top-4 left-4 bg-white/15 backdrop-blur-md border border-white/20 text-white rounded-2xl px-3 py-2 text-xs font-semibold shadow-lg flex items-center gap-1.5">
@@ -146,6 +147,9 @@ export default function HeroBanner() {
   const [paused, setPaused] = useState(false);
   const pausedRef = useRef(paused);
   pausedRef.current = paused;
+
+  const { scrollY } = useScroll();
+  const contentY = useTransform(scrollY, [0, 500], [0, -50]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -165,17 +169,17 @@ export default function HeroBanner() {
       id="gioi-thieu"
       className={`relative min-h-screen bg-gradient-to-br ${slide.accent} transition-all duration-700 flex items-center overflow-hidden pt-16`}
     >
-      <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-blue-500/15 -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-cyan-500/15 translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-indigo-600/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-blue-500/15 -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none animate-blob" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-cyan-500/15 translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none animate-blob-delay" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-indigo-600/5 blur-3xl pointer-events-none animate-blob-slow" />
       <div className="absolute inset-0 pointer-events-none opacity-20 dot-pattern" />
 
-      <div className="max-w-7xl mx-auto px-6 py-24 relative z-10 w-full">
+      <motion.div style={{ y: contentY }} className="max-w-7xl mx-auto px-6 py-24 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <HeroTextContent slide={slide} />
           <HeroImagePanel current={current} />
         </div>
-      </div>
+      </motion.div>
 
       <button
         onClick={prev}
@@ -192,20 +196,22 @@ export default function HeroBanner() {
         <ChevronRight size={22} />
       </button>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-1">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`rounded-full transition-all duration-300 ${
+            className="p-2.5 flex items-center justify-center"
+            aria-label={`Trang chiếu ${i + 1}`}
+          >
+            <span className={`block rounded-full transition-all duration-300 ${
               i === current ? "bg-white w-7 h-2.5" : "bg-white/30 w-2.5 h-2.5 hover:bg-white/50"
-            }`}
-            aria-label={`Slide ${i + 1}`}
-          />
+            }`} />
+          </button>
         ))}
         <button
           onClick={() => setPaused((p) => !p)}
-          className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white transition-all"
+          className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white transition-all ml-1"
           aria-label={paused ? "Tiếp tục" : "Tạm dừng"}
         >
           {paused ? <Play size={12} /> : <Pause size={12} />}

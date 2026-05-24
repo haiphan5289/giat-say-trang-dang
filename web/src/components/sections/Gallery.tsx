@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { ArrowUpRight, Phone, MessageCircle } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import TiltCard from "@/components/ui/TiltCard";
-import CTAButton from "@/components/ui/CTAButton";
+import CTABanner from "@/components/ui/CTABanner";
 
 const shopPhotos = [
   {
@@ -150,7 +150,7 @@ function ServicePhotoGrid() {
 
 export default function Gallery() {
   return (
-    <section id="thu-vien" className="py-24 bg-white relative overflow-hidden">
+    <section id="thu-vien" className="py-14 md:py-24 bg-white relative overflow-hidden">
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full bg-slate-100 translate-x-1/2 -translate-y-1/2 blur-3xl pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <SectionHeader
@@ -169,30 +169,12 @@ export default function Gallery() {
         <ShopPhotoGrid />
         <ServicePhotoGrid />
 
-        {/* CTA strip */}
-        <div className="mt-12 reveal relative overflow-hidden rounded-3xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900" />
-          <div className="absolute inset-0 opacity-15 dot-pattern-white" />
-          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-blue-500/10 blur-3xl" />
-          <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-cyan-500/10 blur-3xl" />
-          <div className="relative p-8 lg:p-12 text-center">
-            <p className="text-slate-400 text-sm mb-2">Chúng tôi xử lý tất cả — từ quần áo đến nội thất</p>
-            <h3 className="text-2xl lg:text-3xl font-extrabold text-white mb-3">Đặt Lịch Giặt Sấy Ngay</h3>
-            <p className="text-slate-300 mb-8 max-w-md mx-auto">
-              Giao nhận tận nơi · Nhanh chóng · Chuyên nghiệp
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <CTAButton href="tel:0938432178" variant="white">
-                <Phone size={20} />
-                Gọi Ngay
-              </CTAButton>
-              <CTAButton href="https://zalo.me/0938432178" variant="ghost" target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={20} />
-                Chat Zalo
-              </CTAButton>
-            </div>
-          </div>
-        </div>
+        <CTABanner
+          title="Đặt Lịch Giặt Sấy Ngay"
+          description="Giao nhận tận nơi · Nhanh chóng · Chuyên nghiệp"
+          preTitle="Chúng tôi xử lý tất cả — từ quần áo đến nội thất"
+          variant="dark"
+        />
       </div>
     </section>
   );

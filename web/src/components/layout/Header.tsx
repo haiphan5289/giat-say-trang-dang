@@ -8,10 +8,10 @@ import CTAButton from "@/components/ui/CTAButton";
 const navItems = [
   { label: "Trang Chủ", href: "/" },
   { label: "Giới Thiệu", href: "#gioi-thieu" },
-  { label: "Hệ Thống", href: "#he-thong" },
   { label: "Dịch Vụ", href: "#dich-vu" },
   { label: "Quy Trình", href: "#quy-trinh" },
   { label: "Tin Tức", href: "#tin-tuc" },
+  { label: "Vị Trí", href: "#vi-tri" },
   { label: "Liên Hệ", href: "#lien-he" },
 ];
 
@@ -33,7 +33,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav aria-label="Điều hướng chính" className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white font-extrabold text-sm shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 transition-shadow">
@@ -67,7 +67,7 @@ export default function Header() {
 
         {/* CTA + Toggle */}
         <div className="flex items-center gap-3">
-          <CTAButton href="tel:0938432178" variant="primary" size="sm" className="hidden sm:inline-flex">
+          <CTAButton href="tel:0938432178" variant="primary" size="sm" className="hidden sm:inline-flex whitespace-nowrap">
             <Phone size={15} />
             0938 432 178
           </CTAButton>

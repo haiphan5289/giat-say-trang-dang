@@ -19,7 +19,7 @@ const quickLinks = [
   { label: "Trang Chủ", href: "/" },
   { label: "Giới Thiệu", href: "#gioi-thieu" },
   { label: "Dịch Vụ", href: "#dich-vu" },
-  { label: "Hệ Thống", href: "#he-thong" },
+  { label: "Vị Trí", href: "#vi-tri" },
   { label: "Tin Tức", href: "#tin-tuc" },
   { label: "Liên Hệ", href: "#lien-he" },
 ];

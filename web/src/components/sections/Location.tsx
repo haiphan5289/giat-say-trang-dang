@@ -32,7 +32,7 @@ export default function Location() {
     <section id="vi-tri" className="bg-slate-50 py-20 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-blue-100/40 -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-cyan-100/30 translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none" />
-<div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <SectionHeader
           label="Tìm chúng tôi"
@@ -108,14 +108,13 @@ export default function Location() {
 
             {/* CTAs */}
             <div className="mt-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-4 flex flex-col gap-3">
-              <CTAButton href="tel:0938432178" variant="white" size="sm" className="w-full">
+              <CTAButton href="tel:0938432178" variant="white" className="w-full">
                 <Phone size={16} />
                 Gọi Ngay
               </CTAButton>
               <CTAButton
                 href="https://zalo.me/0938432178"
                 variant="ghost"
-                size="sm"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full"

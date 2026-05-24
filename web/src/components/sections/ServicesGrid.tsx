@@ -1,4 +1,4 @@
-import { Shirt, Building2, Sparkles, Package, Star, Wind, Heart, Cloud, ArrowRight } from "lucide-react";
+import { Shirt, Building2, Star, Heart, Cloud, ArrowRight, Zap } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
 import TiltCard from "@/components/ui/TiltCard";
@@ -6,14 +6,25 @@ import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 const services = [
   {
     Icon: Shirt,
-    title: "Giặt Sấy Gia Đình",
+    title: "Giặt Thường",
     description: "Giặt sấy quần áo theo kg, nhanh chóng sạch sẽ, thơm mát cả ngày.",
-    price: "Từ 25.000đ/kg",
+    price: "Từ 13.000đ/kg",
     gradient: "from-blue-500 to-blue-600",
     glow: "shadow-blue-500/20",
     bg: "bg-blue-50",
     text: "text-blue-600",
     ring: "ring-blue-100",
+  },
+  {
+    Icon: Zap,
+    title: "Giặt Nhanh",
+    description: "Lấy trong ngày — giặt ưu tiên, sấy khô và trả đồ ngay trong buổi.",
+    price: "Từ 20.000đ/kg",
+    gradient: "from-emerald-500 to-teal-500",
+    glow: "shadow-emerald-500/20",
+    bg: "bg-emerald-50",
+    text: "text-emerald-600",
+    ring: "ring-emerald-100",
   },
   {
     Icon: Building2,
@@ -27,28 +38,6 @@ const services = [
     ring: "ring-violet-100",
   },
   {
-    Icon: Sparkles,
-    title: "Giặt Hấp Cao Cấp",
-    description: "Vest, áo dài, trang phục dạ hội được hấp chuyên nghiệp, giữ form dáng.",
-    price: "Từ 80.000đ/món",
-    gradient: "from-amber-400 to-orange-500",
-    glow: "shadow-amber-500/20",
-    bg: "bg-amber-50",
-    text: "text-amber-600",
-    ring: "ring-amber-100",
-  },
-  {
-    Icon: Package,
-    title: "Giặt Nệm & Sofa",
-    description: "Vệ sinh nệm, sofa, thảm tại nhà bằng máy giặt chuyên dụng.",
-    price: "Từ 150.000đ/cái",
-    gradient: "from-teal-500 to-cyan-600",
-    glow: "shadow-teal-500/20",
-    bg: "bg-teal-50",
-    text: "text-teal-600",
-    ring: "ring-teal-100",
-  },
-  {
     Icon: Star,
     title: "Giặt Giày",
     description: "Làm sạch, phục hồi màu sắc và khử mùi giày dép mọi chất liệu.",
@@ -58,17 +47,6 @@ const services = [
     bg: "bg-orange-50",
     text: "text-orange-600",
     ring: "ring-orange-100",
-  },
-  {
-    Icon: Wind,
-    title: "Giặt Rèm Cửa",
-    description: "Giặt rèm tận nơi hoặc tại cửa hàng, trả về thẳng phẳng như mới.",
-    price: "Từ 30.000đ/m²",
-    gradient: "from-cyan-500 to-sky-600",
-    glow: "shadow-cyan-500/20",
-    bg: "bg-cyan-50",
-    text: "text-cyan-600",
-    ring: "ring-cyan-100",
   },
   {
     Icon: Heart,
@@ -85,7 +63,7 @@ const services = [
     Icon: Cloud,
     title: "Giặt Chăn Mền",
     description: "Giặt sạch mền gối, đánh bung sợi vải, thơm mát như ngày đầu.",
-    price: "Từ 60.000đ/cái",
+    price: "20.000đ – 30.000đ/cái",
     gradient: "from-indigo-500 to-blue-600",
     glow: "shadow-indigo-500/20",
     bg: "bg-indigo-50",
@@ -96,11 +74,11 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section id="dich-vu" className="py-24 bg-white relative overflow-hidden">
+    <section id="dich-vu" className="py-14 md:py-24 bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-blue-50 -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-cyan-50 translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none" />
-<div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <SectionHeader
           label="Dịch vụ của chúng tôi"
@@ -112,7 +90,7 @@ export default function ServicesGrid() {
               </span>
             </>
           }
-          description="Từ giặt sấy gia đình đến công nghiệp — chúng tôi xử lý mọi loại vải với chất lượng cao nhất."
+          description="Giặt sạch – sấy thơm – chăm sóc quần áo toàn diện — chúng tôi xử lý mọi loại vải với chất lượng cao nhất."
         />
 
         {/* Grid */}

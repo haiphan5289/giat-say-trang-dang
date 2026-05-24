@@ -66,8 +66,8 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const stats = [
-  { value: "500+", label: "Khách hàng Gò Vấp tin dùng" },
-  { value: "1", label: "Chi nhánh tại Gò Vấp" },
-  { value: "10+", label: "Năm kinh nghiệm" },
-  { value: "99%", label: "Khách hàng hài lòng" },
+  { value: "500+", count: 500, suffix: "+", label: "Khách hàng Gò Vấp tin dùng" },
+  { value: "1",    count: 1,   suffix: "",  label: "Chi nhánh tại Gò Vấp" },
+  { value: "10+",  count: 10,  suffix: "+", label: "Năm kinh nghiệm" },
+  { value: "99%",  count: 99,  suffix: "%", label: "Khách hàng hài lòng" },
 ];
