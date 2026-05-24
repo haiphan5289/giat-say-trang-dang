@@ -4,6 +4,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import CTABanner from "@/components/ui/CTABanner";
 import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 import CountUp from "@/components/ui/CountUp";
+import FadeIn from "@/components/ui/FadeIn";
 const statGradients = [
   "from-blue-500 to-cyan-500",
   "from-violet-500 to-purple-500",
@@ -97,7 +98,7 @@ export default function Testimonials() {
         />
         <StatsRow />
         <ReviewGrid />
-        <div className="mt-14 text-center reveal">
+        <FadeIn className="mt-14 text-center">
           <div className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-2xl px-6 py-3 shadow-sm text-sm text-slate-600">
             <div className="flex gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -108,17 +109,12 @@ export default function Testimonials() {
             <span className="text-slate-400">·</span>
             <span>Dựa trên 500+ đánh giá thực tế</span>
           </div>
-        </div>
+        </FadeIn>
 
         <CTABanner
-          title="Trải Nghiệm Dịch Vụ Ngay Hôm Nay"
-          description={
-            <>
-              Lần đầu sử dụng — giảm{" "}
-              <strong className="text-amber-300 text-xl">10%</strong> cho mọi dịch vụ.
-            </>
-          }
-          preTitle="Tham gia 500+ gia đình hài lòng"
+          title="Tham Gia Hơn 500 Gia Đình Hài Lòng"
+          description="Đặt lịch ngay — giao nhận tận nơi, nhanh chóng, chuyên nghiệp."
+          preTitle="Được tin dùng tại Gò Vấp"
           className="mt-10"
         />
       </div>

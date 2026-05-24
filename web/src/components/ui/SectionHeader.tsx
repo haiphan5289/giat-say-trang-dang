@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import FadeIn from "@/components/ui/FadeIn";
 
 interface SectionHeaderProps {
   label: string;
@@ -16,7 +17,7 @@ export default function SectionHeader({
   descriptionClass = "max-w-xl",
 }: SectionHeaderProps) {
   return (
-    <div className={`text-center ${wrapperClass} reveal`}>
+    <FadeIn className={`text-center ${wrapperClass}`}>
       <span className="section-label mb-4 inline-flex">
         <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
         {label}
@@ -29,6 +30,6 @@ export default function SectionHeader({
           {description}
         </p>
       )}
-    </div>
+    </FadeIn>
   );
 }

@@ -5,7 +5,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingCTA from "@/components/sections/FloatingCTA";
-import ScrollRevealInit from "@/components/ScrollRevealInit";
+import StickyMobileCTA from "@/components/ui/StickyMobileCTA";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -64,6 +64,12 @@ const jsonLd = {
     opens: "07:00",
     closes: "21:00",
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    bestRating: "5",
+    reviewCount: "500",
+  },
 };
 
 export default function RootLayout({
@@ -78,11 +84,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <ScrollRevealInit />
         <Header />
         <main>{children}</main>
         <Footer />
         <FloatingCTA />
+        <StickyMobileCTA />
+        {/* spacer prevents content hiding under sticky mobile bar */}
+        <div className="h-14 md:hidden" />
 
         {/* Facebook Pixel — thay YOUR_PIXEL_ID khi có Meta Business */}
         <Script id="fb-pixel" strategy="afterInteractive">

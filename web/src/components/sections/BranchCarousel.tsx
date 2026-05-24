@@ -4,13 +4,14 @@ import { useState, useEffect } from "react";
 import { branches } from "@/data/branches";
 import { ChevronLeft, ChevronRight, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import CTABanner from "@/components/ui/CTABanner";
+import FadeIn from "@/components/ui/FadeIn";
 
 type Branch = (typeof branches)[0];
 
 function BranchCard({ branch, active, index }: { branch: Branch; active: number; index: number }) {
   return (
     <div
-      className={`reveal reveal-delay-${Math.min(index + 1, 8)} group flex-shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] rounded-2xl p-6 border transition-all duration-300 ${
+      className={`group flex-shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] rounded-2xl p-6 border transition-all duration-300 ${
         index === active
           ? "border-blue-300 bg-blue-50 shadow-md"
           : "border-slate-100 bg-white hover:border-blue-200 hover:shadow-md"
@@ -96,7 +97,7 @@ export default function BranchCarousel() {
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-cyan-50 translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12 reveal">
+        <FadeIn className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12">
           <div>
             <span className="section-label mb-3 inline-flex">
               <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
@@ -109,7 +110,7 @@ export default function BranchCarousel() {
           <p className="text-slate-500 max-w-xs text-sm sm:text-right">
             Mạng lưới rộng khắp — luôn có chi nhánh gần nhà bạn.
           </p>
-        </div>
+        </FadeIn>
 
         {/* Cards */}
         <div className="overflow-hidden">

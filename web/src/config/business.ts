@@ -1,0 +1,17 @@
+export const BUSINESS = {
+  name: "Giặt Sấy 24h Gò Vấp",
+  hotline: "0938 432 178",
+  hotlineHref: "tel:0938432178",
+  zaloHref: "https://zalo.me/0938432178",
+  facebookHref: "https://www.facebook.com/profile.php?id=61551799042694",
+  address: "Số 1 đường số 8, Thông Tay Hội, Gò Vấp, TP.HCM",
+  hours: "7:00 — 21:00, tất cả các ngày",
+  priceFrom: "13.000đ/kg",
+  responseTime: "30–60 phút",
+  mapsDirections: "https://maps.google.com/?q=10.8370625,106.6645925",
+  lat: 10.8370625,
+  lng: 106.6645925,
+  coverageAreas: ["Gò Vấp", "Bình Thạnh", "Phú Nhuận", "Quận 12", "Tân Bình"],
+  rating: "4.9",
+  reviewCount: 500,
+} as const;

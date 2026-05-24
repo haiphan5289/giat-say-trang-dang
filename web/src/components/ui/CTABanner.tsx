@@ -1,6 +1,7 @@
 import { Phone, MessageCircle } from "lucide-react";
 import { ReactNode } from "react";
 import CTAButton from "@/components/ui/CTAButton";
+import FadeIn from "@/components/ui/FadeIn";
 
 interface CTABannerProps {
   title: string;
@@ -21,7 +22,7 @@ export default function CTABanner({
 }: CTABannerProps) {
   const isDark = variant === "dark";
   return (
-    <div className={`${className} reveal relative overflow-hidden rounded-3xl`}>
+    <FadeIn className={`${className} relative overflow-hidden rounded-3xl`}>
       <div
         className={`absolute inset-0 ${
           isDark
@@ -66,6 +67,6 @@ export default function CTABanner({
           </CTAButton>
         </div>
       </div>
-    </div>
+    </FadeIn>
   );
 }

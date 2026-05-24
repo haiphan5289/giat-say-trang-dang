@@ -93,13 +93,9 @@ export default function NewsSection() {
         </StaggerGrid>
 
         <CTABanner
-          title="Đặt Lịch Ngay Hôm Nay"
-          description={
-            <>
-              Lần đầu sử dụng — giảm{" "}
-              <strong className="text-amber-300 text-xl">10%</strong> cho mọi dịch vụ.
-            </>
-          }
+          title="Tư Vấn Miễn Phí Ngay"
+          description="Gọi hotline hoặc nhắn Zalo — báo giá nhanh, không phí, không ràng buộc."
+          phoneLabel="0938 432 178"
         />
       </div>
     </section>

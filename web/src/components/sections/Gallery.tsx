@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import TiltCard from "@/components/ui/TiltCard";
 import CTABanner from "@/components/ui/CTABanner";
+import FadeIn from "@/components/ui/FadeIn";
 
 const shopPhotos = [
   {
@@ -89,11 +90,12 @@ const items = [
 
 function ShopPhotoGrid() {
   return (
+    <FadeIn>
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[220px] mb-4">
       {shopPhotos.map((item, i) => (
         <TiltCard
           key={item.label}
-          className={`reveal-fall reveal-delay-${i + 1} ${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
+          className={`${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
         >
           <Image
             src={item.image}
@@ -116,16 +118,18 @@ function ShopPhotoGrid() {
         </TiltCard>
       ))}
     </div>
+    </FadeIn>
   );
 }
 
 function ServicePhotoGrid() {
   return (
+    <FadeIn delay={0.1}>
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px]">
       {items.map((item, i) => (
         <TiltCard
           key={item.label}
-          className={`reveal-fall reveal-delay-${Math.min(i + 1, 8)} ${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
+          className={`${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
         >
           <Image
             src={item.image}
@@ -145,6 +149,7 @@ function ServicePhotoGrid() {
         </TiltCard>
       ))}
     </div>
+    </FadeIn>
   );
 }
 

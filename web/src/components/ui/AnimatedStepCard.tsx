@@ -20,11 +20,11 @@ export default function AnimatedStepCard({ step, index }: { step: StepData; inde
         whileInView: { opacity: 1, rotateX: 0, y: 0, scale: 1 },
         viewport: { once: true, margin: "-60px" },
         transition: {
-          delay: index * 0.12,
-          duration: 0.65,
+          delay: index * 0.08,
+          duration: 0.4,
           type: "spring" as const,
-          stiffness: 70,
-          damping: 14,
+          stiffness: 90,
+          damping: 16,
         },
       };
 

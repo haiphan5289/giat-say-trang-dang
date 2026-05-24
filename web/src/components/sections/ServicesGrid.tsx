@@ -3,6 +3,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
 import TiltCard from "@/components/ui/TiltCard";
 import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
+import FadeIn from "@/components/ui/FadeIn";
 const services = [
   {
     Icon: Shirt,
@@ -94,7 +95,7 @@ export default function ServicesGrid() {
         />
 
         {/* Grid */}
-        <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((service) => (
             <StaggerItem key={service.title}>
             <TiltCard
@@ -125,12 +126,12 @@ export default function ServicesGrid() {
         </StaggerGrid>
 
         {/* CTA */}
-        <div className="mt-14 text-center reveal">
-          <CTAButton href="tel:0938432178" size="lg">
-            Tư Vấn Miễn Phí
+        <FadeIn className="mt-14 text-center">
+          <CTAButton href="#pricing" size="lg">
+            Xem Bảng Giá Đầy Đủ
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </CTAButton>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

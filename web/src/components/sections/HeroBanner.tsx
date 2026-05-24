@@ -40,6 +40,7 @@ const slides = [
 const trustPoints = [
   "Công nghệ máy giặt Nhật Bản hiện đại",
   "Nước giặt chuyên dụng nhập khẩu an toàn",
+  "Có mặt lấy đồ sau 30–60 phút",
 ];
 
 const heroImages = [
@@ -91,7 +92,7 @@ function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
       <FadeIn direction="up" delay={0.4} className="flex flex-wrap gap-3 pt-2">
         <CTAButton href="tel:0938432178">
           <Phone size={20} />
-          Gọi Ngay
+          Đặt Lịch Lấy Đồ
         </CTAButton>
         <CTAButton
           href="https://zalo.me/0938432178"
@@ -145,11 +146,21 @@ function HeroImagePanel({ current }: { current: number }) {
 export default function HeroBanner() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [heroInView, setHeroInView] = useState(true);
   const pausedRef = useRef(paused);
+  const sectionRef = useRef<HTMLElement>(null);
   pausedRef.current = paused;
 
   const { scrollY } = useScroll();
   const contentY = useTransform(scrollY, [0, 500], [0, -50]);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => setHeroInView(e.isIntersecting), { threshold: 0 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -166,12 +177,13 @@ export default function HeroBanner() {
 
   return (
     <section
+      ref={sectionRef}
       id="gioi-thieu"
       className={`relative min-h-screen bg-gradient-to-br ${slide.accent} transition-all duration-700 flex items-center overflow-hidden pt-16`}
     >
-      <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-blue-500/15 -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none animate-blob" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-cyan-500/15 translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none animate-blob-delay" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-indigo-600/5 blur-3xl pointer-events-none animate-blob-slow" />
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-blue-500/15 -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none animate-blob" style={{ animationPlayState: heroInView ? "running" : "paused" }} />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-cyan-500/15 translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none animate-blob-delay" style={{ animationPlayState: heroInView ? "running" : "paused" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-indigo-600/5 blur-3xl pointer-events-none animate-blob-slow" style={{ animationPlayState: heroInView ? "running" : "paused" }} />
       <div className="absolute inset-0 pointer-events-none opacity-20 dot-pattern" />
 
       <motion.div style={{ y: contentY }} className="max-w-7xl mx-auto px-6 py-24 relative z-10 w-full">

@@ -1,7 +1,8 @@
-import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Clock, MessageCircle, Navigation } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
 import FadeIn from "@/components/ui/FadeIn";
+import { BUSINESS } from "@/config/business";
 const info = [
   {
     icon: MapPin,
@@ -106,14 +107,26 @@ export default function Location() {
               </ul>
             </div>
 
+            {/* Coverage areas */}
+            <div className="mt-5 pt-4 border-t border-slate-100">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Khu vực phục vụ</p>
+              <div className="flex flex-wrap gap-1.5">
+                {BUSINESS.coverageAreas.map((area) => (
+                  <span key={area} className="text-xs bg-blue-50 text-blue-700 border border-blue-100 rounded-full px-2.5 py-1 font-medium">
+                    {area}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             {/* CTAs */}
-            <div className="mt-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-4 flex flex-col gap-3">
-              <CTAButton href="tel:0938432178" variant="white" className="w-full">
+            <div className="mt-5 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-4 flex flex-col gap-3">
+              <CTAButton href={BUSINESS.hotlineHref} variant="white" className="w-full">
                 <Phone size={16} />
                 Gọi Ngay
               </CTAButton>
               <CTAButton
-                href="https://zalo.me/0938432178"
+                href={BUSINESS.zaloHref}
                 variant="ghost"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -121,6 +134,16 @@ export default function Location() {
               >
                 <MessageCircle size={16} />
                 Chat Zalo
+              </CTAButton>
+              <CTAButton
+                href={BUSINESS.mapsDirections}
+                variant="ghost"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <Navigation size={16} />
+                Chỉ Đường
               </CTAButton>
             </div>
           </FadeIn>
