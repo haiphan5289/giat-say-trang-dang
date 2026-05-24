@@ -24,7 +24,7 @@ const info = [
   {
     icon: Clock,
     label: "Giờ mở cửa",
-    value: "7:00 — 21:00, tất cả các ngày",
+    value: "9:00 — 20:00, tất cả các ngày",
   },
 ];
 

@@ -24,16 +24,12 @@ const faqs = [
     a: "Có. Chúng tôi có dịch vụ giặt hấp chuyên biệt — giữ nguyên form dáng, màu sắc và chất liệu. Phù hợp với vest công sở, áo dài truyền thống và trang phục dạ hội.",
   },
   {
-    q: "Có giặt nệm, sofa tại nhà không?",
-    a: "Có. Đội ngũ mang thiết bị đến tận nhà để vệ sinh nệm và sofa. Vui lòng đặt trước qua hotline để sắp xếp lịch phù hợp.",
-  },
-  {
     q: "Đặt lịch bằng cách nào?",
     a: "Gọi hotline 0938 432 178 hoặc nhắn tin qua Zalo cùng số trên. Chúng tôi xác nhận lịch và đến đúng giờ, không cần chờ đợi.",
   },
   {
     q: "Mở cửa mấy giờ, có phục vụ ngày lễ không?",
-    a: "Chúng tôi mở cửa 7:00 – 21:00 tất cả các ngày trong tuần, kể cả lễ và Tết.",
+    a: "Chúng tôi mở cửa 9:00 – 20:00 tất cả các ngày trong tuần, kể cả lễ và Tết.",
   },
   {
     q: "Đồ có bị mất hay hỏng không?",
