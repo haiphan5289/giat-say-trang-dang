@@ -9,9 +9,9 @@ const steps = [
 
 export default function PickupFlow() {
   return (
-    <div className="bg-white border-b border-slate-100 py-5 relative z-10">
+    <section id="pickup-flow" className="bg-white border-b border-slate-100 py-5 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-5">
           {steps.map((s, i) => (
             <div key={s.label} className="flex items-center gap-3 relative">
               <div className="w-11 h-11 rounded-2xl bg-blue-50 flex items-center justify-center text-xl shrink-0">
@@ -20,7 +20,7 @@ export default function PickupFlow() {
               <div className="min-w-0">
                 <p className="font-bold text-slate-800 text-sm leading-tight">{s.label}</p>
                 <p className="text-blue-600 text-xs font-semibold">{s.time}</p>
-                <p className="text-slate-400 text-xs leading-tight hidden sm:block">{s.sub}</p>
+                <p className="text-slate-400 text-xs leading-tight">{s.sub}</p>
               </div>
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-300 font-bold">
@@ -31,6 +31,6 @@ export default function PickupFlow() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

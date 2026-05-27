@@ -24,7 +24,7 @@ const info = [
   {
     icon: Clock,
     label: "Giờ mở cửa",
-    value: "9:00 — 20:00, tất cả các ngày",
+    value: BUSINESS.hours,
   },
 ];
 
@@ -54,14 +54,14 @@ export default function Location() {
           {/* Map */}
           <FadeIn
             direction="left"
-            className="lg:col-span-3 rounded-2xl overflow-hidden shadow-xl shadow-slate-200/60 min-h-[380px] ring-1 ring-slate-100"
+            className="lg:col-span-3 rounded-2xl overflow-hidden shadow-xl shadow-slate-200/60 min-h-[220px] md:min-h-[380px] ring-1 ring-slate-100"
           >
             <iframe
               title="Giặt Sấy 24h Gò Vấp - Vị trí"
               src="https://maps.google.com/maps?q=10.8370625,106.6645925&z=17&output=embed"
               width="100%"
               height="100%"
-              className="border-0 min-h-[380px] w-full h-full"
+              className="border-0 min-h-[220px] md:min-h-[380px] w-full h-full"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

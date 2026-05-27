@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "Giá giặt sấy bao nhiêu?",
-    a: "Giặt thường từ 13.000đ/kg · Giặt nhanh từ 20.000đ/kg · Giặt giày từ 50.000đ/đôi · Giặt gấu bông từ 30.000đ/món · Giặt chăn mền từ 20.000–30.000đ/cái. Giặt hấp vest, áo dài vui lòng liên hệ để báo giá chính xác.",
+    a: "Giặt thường từ 13.000đ/kg · Giặt nhanh từ 20.000đ/kg · Giặt giày từ 50.000đ/đôi · Giặt gấu bông từ 30.000đ/kg · Giặt chăn mền từ 20.000–30.000đ/kg. Giặt hấp vest, áo dài vui lòng liên hệ để báo giá chính xác.",
   },
   {
     q: "Có giao nhận tận nơi không?",
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "Mở cửa mấy giờ, có phục vụ ngày lễ không?",
-    a: "Chúng tôi mở cửa 9:00 – 20:00 tất cả các ngày trong tuần, kể cả lễ và Tết.",
+    a: "Chúng tôi mở cửa 09:00 – 20:00, thứ 2 đến thứ 7 (nghỉ chủ nhật). Riêng các ngày lễ vui lòng gọi trước để xác nhận.",
   },
   {
     q: "Đồ có bị mất hay hỏng không?",

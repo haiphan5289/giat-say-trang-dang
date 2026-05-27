@@ -5,7 +5,7 @@ export const BUSINESS = {
   zaloHref: "https://zalo.me/0938432178",
   facebookHref: "https://www.facebook.com/profile.php?id=61551799042694",
   address: "Số 1 đường số 8, Thông Tay Hội, Gò Vấp, TP.HCM",
-  hours: "9:00 — 20:00, tất cả các ngày",
+  hours: "09:00 - 20:00, tất cả các ngày trừ chủ nhật",
   priceFrom: "13.000đ/kg",
   responseTime: "30–60 phút",
   mapsDirections: "https://maps.google.com/?q=10.8370625,106.6645925",

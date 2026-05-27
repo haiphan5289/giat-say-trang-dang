@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | Giặt Sấy 24h Gò Vấp",
   },
   description:
-    "Giặt sấy 24h Gò Vấp — giặt sạch, nhanh, khử mùi hiệu quả. Giặt sấy gần đây, giao nhận tận nơi. Từ 13.000đ/kg. Mở cửa 7:00-21:00 mỗi ngày. Hotline: 0938 432 178.",
+    "Giặt sấy 24h Gò Vấp — giặt sạch, nhanh, khử mùi hiệu quả. Giặt sấy gần đây, giao nhận tận nơi. Từ 13.000đ/kg. Mở cửa 09:00-20:00 thứ 2 đến thứ 7. Hotline: 0938 432 178.",
   keywords: ["giặt sấy 24h gò vấp", "giặt sấy gần đây", "giặt sạch gò vấp", "giặt nhanh khử mùi hcm", "giặt ủi tận nơi gò vấp", "giặt hấp vest áo dài", "giặt nệm sofa tại nhà", "giặt giày gò vấp"],
   alternates: { canonical: "https://www.giatsay24hgovap.com" },
   twitter: {
@@ -60,9 +60,9 @@ const jsonLd = {
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    opens: "07:00",
-    closes: "21:00",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "09:00",
+    closes: "20:00",
   },
   aggregateRating: {
     "@type": "AggregateRating",

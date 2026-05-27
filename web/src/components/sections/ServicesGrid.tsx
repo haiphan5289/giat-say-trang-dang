@@ -1,4 +1,4 @@
-import { Shirt, Building2, Star, Heart, Cloud, ArrowRight, Zap } from "lucide-react";
+import { Shirt, Star, Heart, Cloud, ArrowRight, Zap } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
 import TiltCard from "@/components/ui/TiltCard";
@@ -19,24 +19,13 @@ const services = [
   {
     Icon: Zap,
     title: "Giặt Nhanh",
-    description: "Lấy trong ngày — giặt ưu tiên, sấy khô và trả đồ ngay trong buổi.",
+    description: "Phụ thu 20k/ đơn — giặt ưu tiên, sấy khô và trả đồ ngay trong buổi.",
     price: "Từ 20.000đ/kg",
     gradient: "from-emerald-500 to-teal-500",
     glow: "shadow-emerald-500/20",
     bg: "bg-emerald-50",
     text: "text-emerald-600",
     ring: "ring-emerald-100",
-  },
-  {
-    Icon: Building2,
-    title: "Giặt Sấy Công Nghiệp",
-    description: "Phục vụ khách sạn, nhà hàng, spa với hệ thống máy móc công suất lớn.",
-    price: "Liên hệ báo giá",
-    gradient: "from-violet-500 to-purple-600",
-    glow: "shadow-violet-500/20",
-    bg: "bg-violet-50",
-    text: "text-violet-600",
-    ring: "ring-violet-100",
   },
   {
     Icon: Star,
@@ -53,7 +42,7 @@ const services = [
     Icon: Heart,
     title: "Giặt Gấu Bông",
     description: "Vệ sinh đồ chơi mềm an toàn cho trẻ em, diệt khuẩn hiệu quả.",
-    price: "Từ 30.000đ/món",
+    price: "Từ 30.000đ/kg",
     gradient: "from-pink-500 to-rose-400",
     glow: "shadow-pink-500/20",
     bg: "bg-pink-50",
@@ -64,7 +53,7 @@ const services = [
     Icon: Cloud,
     title: "Giặt Chăn Mền",
     description: "Giặt sạch mền gối, đánh bung sợi vải, thơm mát như ngày đầu.",
-    price: "20.000đ – 30.000đ/cái",
+    price: "20.000đ – 30.000đ/kg",
     gradient: "from-indigo-500 to-blue-600",
     glow: "shadow-indigo-500/20",
     bg: "bg-indigo-50",

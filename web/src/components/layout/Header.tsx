@@ -39,8 +39,8 @@ export default function Header() {
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white font-extrabold text-sm shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 transition-shadow">
             GS
           </div>
-          <p className={`font-extrabold text-base transition-colors ${scrolled ? "text-slate-900" : "text-white"}`}>
-            Giặt Sấy{" "}
+          <p className={`font-extrabold text-base transition-colors leading-tight ${scrolled ? "text-slate-900" : "text-white"}`}>
+            Giặt Sấy<br className="sm:hidden" />{" "}
             <span className={scrolled ? "bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent" : "text-blue-300"}>
               24h Gò Vấp
             </span>

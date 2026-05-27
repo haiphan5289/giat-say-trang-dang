@@ -2,15 +2,15 @@ import { Check, Phone } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
 import FadeIn from "@/components/ui/FadeIn";
+import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 import { BUSINESS } from "@/config/business";
 
 const pricing = [
   { service: "Giặt Thường", price: "Từ 13.000đ", unit: "/kg", highlight: false, note: "Sạch · Thơm · Nhanh" },
-  { service: "Giặt Nhanh", price: "Từ 20.000đ", unit: "/kg", highlight: true, note: "Lấy trong ngày" },
+  { service: "Giặt Nhanh", price: "Từ 20.000đ", unit: "/kg", highlight: true, note: "Phụ thu 20k/ đơn" },
   { service: "Giặt Giày", price: "Từ 50.000đ", unit: "/đôi", highlight: false, note: "Phục hồi màu sắc" },
-  { service: "Giặt Gấu Bông", price: "Từ 30.000đ", unit: "/món", highlight: false, note: "An toàn cho trẻ em" },
-  { service: "Giặt Chăn Mền", price: "20k – 30k", unit: "/cái", highlight: false, note: "Đánh bung sợi vải" },
-  { service: "Giặt Công Nghiệp", price: "Liên hệ", unit: "", highlight: false, note: "Khách sạn · Spa · Nhà hàng" },
+  { service: "Giặt Gấu Bông", price: "Từ 30.000đ", unit: "/kg", highlight: false, note: "An toàn cho trẻ em" },
+  { service: "Giặt Chăn Mền", price: "20k – 30k", unit: "/kg", highlight: false, note: "Đánh bung sợi vải" },
 ];
 
 const includes = [
@@ -39,38 +39,39 @@ export default function PricingTable() {
           description="Báo giá trước khi giặt — không thu thêm bất kỳ phụ phí nào."
         />
 
-        <FadeIn className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+        <StaggerGrid className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
           {pricing.map((item) => (
-            <div
-              key={item.service}
-              className={`relative rounded-2xl border p-5 flex flex-col gap-1 transition-shadow hover:shadow-md ${
-                item.highlight
-                  ? "border-blue-300 bg-blue-50 ring-2 ring-blue-200"
-                  : "border-slate-100 bg-white"
-              }`}
-            >
-              {item.highlight && (
-                <span className="absolute -top-2.5 left-5 bg-blue-600 text-white text-[10px] font-bold px-3 py-0.5 rounded-full">
-                  PHỔ BIẾN
-                </span>
-              )}
-              <p className="font-bold text-slate-800 text-sm">{item.service}</p>
-              <p className="text-xs text-slate-400">{item.note}</p>
-              <div className="mt-auto pt-3 flex items-baseline gap-0.5">
-                <span
-                  className={`text-2xl font-extrabold ${
-                    item.highlight ? "text-blue-700" : "text-slate-900"
-                  }`}
-                >
-                  {item.price}
-                </span>
-                {item.unit && (
-                  <span className="text-sm text-slate-400 font-medium">{item.unit}</span>
+            <StaggerItem key={item.service}>
+              <div
+                className={`relative rounded-2xl border p-5 flex flex-col gap-1 transition-shadow hover:shadow-md h-full ${
+                  item.highlight
+                    ? "border-blue-300 bg-blue-50 ring-2 ring-blue-200"
+                    : "border-slate-100 bg-white"
+                }`}
+              >
+                {item.highlight && (
+                  <span className="absolute -top-2.5 left-5 bg-blue-600 text-white text-[10px] font-bold px-3 py-0.5 rounded-full">
+                    PHỔ BIẾN
+                  </span>
                 )}
+                <p className="font-bold text-slate-800 text-sm">{item.service}</p>
+                <p className="text-xs text-slate-400">{item.note}</p>
+                <div className="mt-auto pt-3 flex items-baseline gap-0.5">
+                  <span
+                    className={`text-2xl font-extrabold ${
+                      item.highlight ? "text-blue-700" : "text-slate-900"
+                    }`}
+                  >
+                    {item.price}
+                  </span>
+                  {item.unit && (
+                    <span className="text-sm text-slate-400 font-medium">{item.unit}</span>
+                  )}
+                </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </FadeIn>
+        </StaggerGrid>
 
         <FadeIn delay={0.1} className="bg-slate-50 rounded-2xl p-5 mb-8">
           <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">
