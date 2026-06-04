@@ -7,7 +7,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingCTA from "@/components/sections/FloatingCTA";
 import StickyMobileCTA from "@/components/ui/StickyMobileCTA";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin", "vietnamese"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.giatsay24hgovap.com"),
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | Giặt Sấy 24h Gò Vấp",
   },
   description:
-    "Giặt sấy 24h Gò Vấp — giặt sạch, nhanh, khử mùi hiệu quả. Giặt sấy gần đây, giao nhận tận nơi. Từ 13.000đ/kg. Mở cửa 09:00-20:00 thứ 2 đến thứ 7. Hotline: 0938 432 178.",
+    "Giặt sấy 24h Gò Vấp — giặt sạch, nhanh, khử mùi hiệu quả. Giặt sấy gần đây, giao nhận tận nơi. Từ 13.000đ/kg. Mở cửa 07:00-20:00 tất cả các ngày trừ chủ nhật. Hotline: 0938 432 178.",
   keywords: ["giặt sấy 24h gò vấp", "giặt sấy gần đây", "giặt sạch gò vấp", "giặt nhanh khử mùi hcm", "giặt ủi tận nơi gò vấp", "giặt hấp vest áo dài", "giặt nệm sofa tại nhà", "giặt giày gò vấp"],
   alternates: { canonical: "https://www.giatsay24hgovap.com" },
   twitter: {
@@ -61,7 +61,7 @@ const jsonLd = {
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    opens: "09:00",
+    opens: "07:00",
     closes: "20:00",
   },
   aggregateRating: {
@@ -92,15 +92,8 @@ export default function RootLayout({
         {/* spacer prevents content hiding under sticky mobile bar */}
         <div className="h-14 md:hidden" />
 
-        {/* Facebook Pixel — thay YOUR_PIXEL_ID khi có Meta Business */}
-        <Script id="fb-pixel" strategy="afterInteractive">
-          {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');`}
-        </Script>
-
-        {/* Google Tag Manager — thay GTM-XXXXXXX khi có Google Ads campaign */}
-        <Script id="gtm" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');`}
-        </Script>
+        {/* TODO: Thêm Facebook Pixel ID khi có Meta Business Manager */}
+        {/* TODO: Thêm GTM ID khi có Google Ads campaign */}
       </body>
     </html>
   );

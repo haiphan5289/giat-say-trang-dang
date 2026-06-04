@@ -17,7 +17,6 @@ const includes = [
   "Giao nhận tận nơi",
   "Đóng gói kỹ lưỡng",
   "Khử mùi chuyên sâu",
-  "Hoàn tiền nếu hỏng đồ",
 ];
 
 export default function PricingTable() {
@@ -27,16 +26,7 @@ export default function PricingTable() {
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         <SectionHeader
           label="Bảng giá dịch vụ"
-          title={
-            <>
-              Giá{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                Minh Bạch
-              </span>
-              , Không Phát Sinh
-            </>
-          }
-          description="Báo giá trước khi giặt — không thu thêm bất kỳ phụ phí nào."
+          title="Bảng Giá Dịch Vụ"
         />
 
         <StaggerGrid className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
