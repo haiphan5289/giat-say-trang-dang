@@ -12,11 +12,19 @@ export const metadata: Metadata = {
   title: "Giặt Ủi Tận Nơi Gò Vấp - Lấy & Giao Tận Nhà · Nhanh Chóng",
   description:
     "Dịch vụ giặt ủi tận nơi tại Gò Vấp. Nhân viên lấy đồ tại nhà, giặt sạch và giao trả trong ngày. Từ 13.000đ/kg. Hotline: 0938 432 178.",
+  keywords: ["giặt ủi tận nơi gò vấp", "giặt đồ tận nhà gò vấp", "giặt tại nhà gò vấp", "lấy giao đồ giặt gò vấp"],
   alternates: { canonical: "https://www.giatsay24hgovap.com/giat-ui-tan-noi-go-vap" },
   openGraph: {
     title: "Giặt Ủi Tận Nơi Gò Vấp - Lấy & Giao Tận Nhà · Nhanh Chóng",
     description: "Giặt ủi tận nơi Gò Vấp. Lấy tại nhà, trả trong ngày. Từ 13.000đ/kg.",
     url: "https://www.giatsay24hgovap.com/giat-ui-tan-noi-go-vap",
+    siteName: "Giặt Sấy 24h Gò Vấp",
+    images: [{ url: "/images/shop-front-1.jpg", width: 815, height: 1200, alt: "Giặt Ủi Tận Nơi Gò Vấp" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Giặt Ủi Tận Nơi Gò Vấp - Lấy & Giao Tận Nhà · Nhanh Chóng",
+    description: "Giặt ủi tận nơi Gò Vấp. Lấy tại nhà trong 30–60 phút, giặt sạch và giao trả trong ngày.",
   },
 };
 
@@ -62,10 +70,20 @@ const steps = [
   { n: "04", title: "Giao Tận Tay", desc: "Đồ thơm sạch, đóng gói kỹ, giao đúng hẹn trong ngày." },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Trang chủ", item: "https://www.giatsay24hgovap.com" },
+    { "@type": "ListItem", position: 2, name: "Giặt Ủi Tận Nơi Gò Vấp", item: "https://www.giatsay24hgovap.com/giat-ui-tan-noi-go-vap" },
+  ],
+};
+
 export default function GiatUiTanNoiGoVapPage() {
   return (
     <main className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 pt-28 pb-20 relative overflow-hidden">
@@ -163,6 +181,25 @@ export default function GiatUiTanNoiGoVapPage() {
             phoneLabel="Gọi Đặt Lịch Ngay"
             className="mt-10"
           />
+        </div>
+      </section>
+
+      {/* Dịch vụ liên quan */}
+      <section className="py-10 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4 text-center">Xem thêm dịch vụ giặt sấy</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {[
+              { href: "/giat-say-go-vap", title: "Giặt Sấy", sub: "Từ 13k/kg" },
+              { href: "/giat-giay-go-vap", title: "Giặt Giày", sub: "Từ 50k/đôi" },
+              { href: "/giat-chan-men-go-vap", title: "Giặt Chăn Mền", sub: "Từ 20k/kg" },
+            ].map((s) => (
+              <Link key={s.href} href={s.href} className="bg-white border border-slate-100 rounded-xl p-4 text-center hover:border-blue-200 hover:shadow-md hover:bg-blue-50 transition-all duration-200 group">
+                <p className="font-bold text-slate-800 text-sm group-hover:text-blue-700 transition-colors leading-tight">{s.title}</p>
+                <p className="text-xs text-slate-400 mt-1">{s.sub}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </main>

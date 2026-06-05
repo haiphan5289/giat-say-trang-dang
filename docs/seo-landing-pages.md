@@ -13,9 +13,7 @@ Tạo landing page riêng cho từng dịch vụ để tăng khả năng rank tr
 | `/giat-say-go-vap` | giặt sấy gò vấp, giặt sấy gần đây | ⭐⭐⭐⭐⭐ |
 | `/giat-giay-go-vap` | giặt giày gò vấp, vệ sinh giày gò vấp | ⭐⭐⭐⭐⭐ |
 | `/giat-chan-men-go-vap` | giặt chăn mền gò vấp, giặt mền gò vấp | ⭐⭐⭐⭐ |
-| `/giat-hap-vest-go-vap` | giặt hấp vest gò vấp, giặt áo dài gò vấp | ⭐⭐⭐⭐ |
 | `/giat-ui-tan-noi-go-vap` | giặt ủi tận nơi gò vấp, giặt đồ tận nhà | ⭐⭐⭐ |
-| `/giat-sofa-nem-go-vap` | giặt sofa gò vấp, giặt nệm tại nhà gò vấp | ⭐⭐⭐ |
 
 ---
 
@@ -66,9 +64,7 @@ Tạo landing page riêng cho từng dịch vụ để tăng khả năng rank tr
 | `/giat-say-go-vap` | ✅ | LocalBusiness + FAQPage |
 | `/giat-giay-go-vap` | ✅ | LocalBusiness + FAQPage |
 | `/giat-chan-men-go-vap` | ✅ | LocalBusiness + FAQPage |
-| `/giat-hap-vest-go-vap` | ✅ | LocalBusiness + FAQPage |
 | `/giat-ui-tan-noi-go-vap` | ✅ | LocalBusiness + FAQPage |
-| `/giat-sofa-nem-go-vap` | ✅ | LocalBusiness + FAQPage |
 
 ---
 

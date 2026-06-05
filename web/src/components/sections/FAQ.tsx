@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import FadeIn from "@/components/ui/FadeIn";
 import CTABanner from "@/components/ui/CTABanner";
+import { BUSINESS } from "@/config/business";
 
 const faqs = [
   {
@@ -29,7 +30,7 @@ const faqs = [
   },
   {
     q: "Mở cửa mấy giờ, có phục vụ ngày lễ không?",
-    a: "Chúng tôi mở cửa 09:00 – 20:00, thứ 2 đến thứ 7 (nghỉ chủ nhật). Riêng các ngày lễ vui lòng gọi trước để xác nhận.",
+    a: `Chúng tôi mở cửa ${BUSINESS.hours}. Riêng các ngày lễ vui lòng gọi trước để xác nhận.`,
   },
   {
     q: "Đồ có bị mất hay hỏng không?",

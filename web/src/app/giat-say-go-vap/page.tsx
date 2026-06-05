@@ -12,11 +12,19 @@ export const metadata: Metadata = {
   title: "Giặt Sấy Gò Vấp - Nhanh · Sạch · Giao Nhận Tận Nơi",
   description:
     "Dịch vụ giặt sấy tại Gò Vấp, TP.HCM. Giặt sạch, khử mùi, sấy khô. Giao nhận tận nơi trong vòng 30–60 phút. Từ 13.000đ/kg. Hotline: 0938 432 178.",
+  keywords: ["giặt sấy gò vấp", "giặt sấy gần đây", "giặt sạch gò vấp", "giặt sấy tận nơi", "dịch vụ giặt sấy hcm"],
   alternates: { canonical: "https://www.giatsay24hgovap.com/giat-say-go-vap" },
   openGraph: {
     title: "Giặt Sấy Gò Vấp - Nhanh · Sạch · Giao Nhận Tận Nơi",
     description: "Dịch vụ giặt sấy tại Gò Vấp. Từ 13.000đ/kg. Giao nhận tận nơi. Hotline: 0938 432 178.",
     url: "https://www.giatsay24hgovap.com/giat-say-go-vap",
+    siteName: "Giặt Sấy 24h Gò Vấp",
+    images: [{ url: "/images/shop-front-1.jpg", width: 815, height: 1200, alt: "Giặt Sấy 24h Gò Vấp" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Giặt Sấy Gò Vấp - Nhanh · Sạch · Giao Nhận Tận Nơi",
+    description: "Dịch vụ giặt sấy tại Gò Vấp. Từ 13.000đ/kg. Giao nhận tận nơi. Hotline: 0938 432 178.",
   },
 };
 
@@ -73,10 +81,20 @@ const steps = [
   { n: "04", title: "Giao Về Tận Tay", desc: "Đồ thơm sạch, đóng gói kỹ, giao đúng hẹn trong ngày." },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Trang chủ", item: "https://www.giatsay24hgovap.com" },
+    { "@type": "ListItem", position: 2, name: "Giặt Sấy Gò Vấp", item: "https://www.giatsay24hgovap.com/giat-say-go-vap" },
+  ],
+};
+
 export default function GiatSayGoVapPage() {
   return (
     <main className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 pt-28 pb-20 relative overflow-hidden">
@@ -196,6 +214,25 @@ export default function GiatSayGoVapPage() {
           <SectionHeader label="FAQ" title="Câu Hỏi Thường Gặp" description="Về dịch vụ giặt sấy tại Gò Vấp." wrapperClass="mb-10" />
           <LandingFAQ items={faqs} />
           <CTABanner title="Còn Thắc Mắc? Gọi Ngay" description="Tư vấn miễn phí — phản hồi trong vài phút." className="mt-10" />
+        </div>
+      </section>
+
+      {/* Dịch vụ liên quan */}
+      <section className="py-10 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4 text-center">Xem thêm dịch vụ giặt sấy</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {[
+              { href: "/giat-giay-go-vap", title: "Giặt Giày", sub: "Từ 50k/đôi" },
+              { href: "/giat-chan-men-go-vap", title: "Giặt Chăn Mền", sub: "Từ 20k/kg" },
+              { href: "/giat-ui-tan-noi-go-vap", title: "Giặt Ủi Tận Nơi", sub: "Miễn phí lấy giao" },
+            ].map((s) => (
+              <Link key={s.href} href={s.href} className="bg-white border border-slate-100 rounded-xl p-4 text-center hover:border-blue-200 hover:shadow-md hover:bg-blue-50 transition-all duration-200 group">
+                <p className="font-bold text-slate-800 text-sm group-hover:text-blue-700 transition-colors leading-tight">{s.title}</p>
+                <p className="text-xs text-slate-400 mt-1">{s.sub}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </main>

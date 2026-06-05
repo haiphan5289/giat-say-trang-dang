@@ -40,7 +40,7 @@ Landing page dịch vụ giặt sấy chuyên nghiệp tại Gò Vấp, TP.HCM.
 ```
 web/src/
 ├── app/
-│   ├── layout.tsx          — RootLayout: metadata, JSON-LD, Header, Footer
+│   ├── layout.tsx          — RootLayout: metadata, JSON-LD (LocalBusiness + AggregateRating), Header, Footer, StickyMobileCTA
 │   ├── page.tsx            — Trang chủ: sections dynamic import
 │   ├── tin-tuc/
 │   │   └── page.tsx        — Trang tin tức (static listing)
@@ -49,20 +49,20 @@ web/src/
 │   └── globals.css         — CSS utilities, animation keyframes, design tokens
 ├── components/
 │   ├── layout/
-│   │   ├── Header.tsx      — Sticky header (transparent → white khi scroll), mobile menu
+│   │   ├── Header.tsx      — Sticky header (transparent → white khi scroll), logo "GS" badge, mobile menu
 │   │   └── Footer.tsx      — 4-column footer với contact info
 │   ├── sections/
-│   │   ├── HeroBanner.tsx  — Hero slider 3 slides, Ken-Burns, parallax
-│   │   ├── PickupFlow.tsx   — 4 bước quy trình nhanh (strip dưới hero)
-│   │   ├── ServicesGrid.tsx — 6 dịch vụ, grid 1→2→3 cột
-│   │   ├── PricingTable.tsx — Bảng giá 5 dịch vụ
+│   │   ├── HeroBanner.tsx  — Hero slider 3 slides, Ken-Burns, parallax, trust points
+│   │   ├── PickupFlow.tsx   — 4 bước quy trình nhanh (strip dưới hero, id: #pickup-flow)
+│   │   ├── ServicesGrid.tsx — 5 dịch vụ, grid 1→2→3 cột
+│   │   ├── PricingTable.tsx — Bảng giá 5 dịch vụ (id: #pricing)
 │   │   ├── ProcessSteps.tsx — 4 bước quy trình chi tiết với connector gradient
-│   │   ├── Gallery.tsx      — Photo grid cửa hàng + dịch vụ (8 ảnh)
-│   │   ├── Testimonials.tsx — Stats row + 6 review cards
+│   │   ├── Gallery.tsx      — Photo grid cửa hàng + dịch vụ (3 + 8 ảnh)
+│   │   ├── Testimonials.tsx — Stats row + 6 review cards (nền slate-50)
 │   │   ├── BranchCarousel.tsx — (chưa dùng) Carousel chi nhánh
-│   │   ├── FAQ.tsx          — 8 câu hỏi accordion + FAQPage JSON-LD
+│   │   ├── FAQ.tsx          — 7 câu hỏi accordion + FAQPage JSON-LD
 │   │   ├── NewsSection.tsx  — (chưa dùng) 3 bài viết mới nhất
-│   │   ├── Location.tsx     — Google Maps embed + contact card
+│   │   ├── Location.tsx     — Google Maps embed + contact card + coverage areas
 │   │   └── FloatingCTA.tsx  — Widget nổi: Facebook / Zalo / Phone / Scroll Top
 │   └── ui/
 │       ├── CTAButton.tsx       — Shared button (variant: primary|white|ghost, size: sm|md|lg)
@@ -74,7 +74,11 @@ web/src/
 │       ├── AnimatedStepCard.tsx — Step card 3D flip entrance
 │       ├── AnimatedConnector.tsx — Đường kết nối gradient giữa các bước
 │       ├── CountUp.tsx         — Số đếm lên khi scroll vào
-│       └── StickyMobileCTA.tsx — CTA cố định dưới màn hình mobile
+│       └── StickyMobileCTA.tsx — CTA bar 2 nút (Zalo + Phone) cố định dưới mobile
+├── config/
+│   └── business.ts         — Centralized business constants (BUSINESS object)
+├── hooks/
+│   └── useScrollReveal.ts  — IntersectionObserver hook cho .reveal / .reveal-fall classes
 └── data/
     ├── testimonials.ts     — 6 reviews + 4 stats
     ├── news.ts             — 3 bài viết blog
@@ -109,23 +113,24 @@ Slider tự động 3 slides, xoay mỗi **6 giây**.
 Tính năng:
 - Nút Pause/Play + dot indicator (touch-target ≥ 44px)
 - Badge nổi "Giảm 10% đơn đầu tiên" (`animate-float`)
-- CTA: **Gọi Ngay** + **Chat Zalo**
-- Ảnh phải (desktop only): Ken-Burns slideshow 3 ảnh thực cửa hàng
+- CTA: **Đặt Lịch Lấy Đồ** (tel) + **Chat Zalo**
+- Trust points (3 dòng): "Công nghệ máy giặt Nhật Bản hiện đại", "Nước giặt chuyên dụng nhập khẩu an toàn", "Có mặt lấy đồ sau 30–60 phút"
+- Ảnh phải (desktop only): Ken-Burns slideshow 3 ảnh thực cửa hàng + badge "Đang nhận đơn" + badge "Từ 13k/kg"
 - Parallax: `useScroll + useTransform` — nội dung trượt nhẹ khi scroll
 - `<span class="sr-only">Giặt Sấy 24h Gò Vấp</span>` trong `<h1>` cho SEO
 - Background: gradient thay đổi theo slide + 3 blob animation + dot pattern overlay
+- Blob animations **tự dừng** (`animationPlayState: paused`) khi hero scroll ra khỏi viewport (IntersectionObserver)
 
 ---
 
 ### 2. ServicesGrid (`#dich-vu`)
 
-6 dịch vụ, layout grid **1 → 2 → 3 cột** (mobile → tablet → desktop).
+5 dịch vụ, layout grid **1 → 2 → 3 cột** (mobile → tablet → desktop).
 
 | Dịch vụ | Giá |
 |---|---|
 | Giặt Thường | Từ 13.000đ/kg |
 | Giặt Nhanh | Từ 20.000đ/kg (phụ thu 20k/đơn) |
-| Giặt Sấy Công Nghiệp | Liên hệ báo giá |
 | Giặt Giày | Từ 50.000đ/đôi |
 | Giặt Gấu Bông | Từ 30.000đ/kg |
 | Giặt Chăn Mền | 20.000–30.000đ/kg |
@@ -133,7 +138,7 @@ Tính năng:
 - Mỗi card: `TiltCard` (3D tilt hover) + `StaggerItem` (spring animation khi scroll vào)
 - Icon gradient màu riêng, hover: icon scale 1.1
 - Badge giá màu theo từng dịch vụ
-- CTA cuối: "Tư Vấn Miễn Phí" → `tel:0938432178`
+- CTA cuối: "Xem Bảng Giá Đầy Đủ" → `#pricing`
 
 ---
 
@@ -151,7 +156,7 @@ Tính năng:
 - `AnimatedStepCard`: 3D flip entrance (rotateX 50→0), `useReducedMotion()` support
 - `AnimatedConnector`: đường gradient blue→violet→amber, chỉ hiện trên desktop
 - Wave SVG divider trên/dưới section
-- `CTABanner`: "Đặt Lịch Ngay Hôm Nay — Giảm 10% lần đầu" (**chỉ banner duy nhất có 10%**)
+- `CTABanner`: title "Đặt Lịch Ngay Hôm Nay", `phoneLabel="0938 432 178"`, description "Giảm 10%" (**chỉ banner duy nhất có 10%**)
 
 ---
 
@@ -184,8 +189,8 @@ Stats row + 6 review cards khách hàng.
 
 | Số liệu | Label |
 |---|---|
-| 500+ | Khách hàng tin dùng |
-| 1 | Chi nhánh Gò Vấp |
+| 500+ | Khách hàng Gò Vấp tin dùng |
+| 1 | Chi nhánh tại Gò Vấp |
 | 10+ | Năm kinh nghiệm |
 | 99% | Khách hàng hài lòng |
 
@@ -197,11 +202,12 @@ Stats row + 6 review cards khách hàng.
 - Chị Võ Thị Thu — Giặt Sấy Gia Đình
 - Anh Đinh Quốc Hùng — Giặt Chăn Mền
 
+- Background section: `bg-slate-50`
 - `CountUp` số đếm lên khi scroll vào stats
-- Avatar: chữ cái đầu tên + gradient màu
+- Avatar: chữ cái cuối tên + gradient màu
 - Rating badge = tên dịch vụ
-- Indicator: "4.9/5 · 500+ đánh giá thực tế"
-- `CTABanner` cuối: "Tham Gia Hơn 500 Gia Đình Hài Lòng" (không có 10%)
+- Indicator: "4.9/5 · Dựa trên 500+ đánh giá thực tế"
+- `CTABanner` cuối: "Tham Gia Hơn 500 Gia Đình Hài Lòng", `preTitle="Được tin dùng tại Gò Vấp"` (không có 10%)
 
 ---
 
@@ -219,7 +225,7 @@ Dữ liệu từ `data/branches.ts` — hiện chỉ có **1 chi nhánh thật**
 
 ### 7. FAQ (`#faq`)
 
-8 câu hỏi thường gặp dạng accordion.
+7 câu hỏi thường gặp dạng accordion.
 
 | # | Câu hỏi |
 |---|---|
@@ -227,14 +233,16 @@ Dữ liệu từ `data/branches.ts` — hiện chỉ có **1 chi nhánh thật**
 | 2 | Giá giặt sấy bao nhiêu? |
 | 3 | Có giao nhận tận nơi không? |
 | 4 | Có nhận giặt vest, áo dài, đồ cao cấp không? |
-| 5 | Có giặt nệm, sofa tại nhà không? |
-| 6 | Đặt lịch bằng cách nào? |
-| 7 | Mở cửa mấy giờ, có phục vụ ngày lễ không? |
-| 8 | Đồ có bị mất hay hỏng không? |
+| 5 | Đặt lịch bằng cách nào? |
+| 6 | Mở cửa mấy giờ, có phục vụ ngày lễ không? |
+| 7 | Đồ có bị mất hay hỏng không? |
+
+> ⚠️ Giờ mở cửa hiển thị trong FAQ: "09:00 – 20:00, thứ 2 đến thứ 7" — khác với `BUSINESS.hours` ("07:00 - 20:00, tất cả các ngày trừ chủ nhật"). Cần đồng bộ.
 
 - Accordion `useState` — click để mở/đóng
 - `FadeIn` stagger 40ms mỗi item
 - **`FAQPage` JSON-LD schema** nhúng trực tiếp → Google rich results (câu trả lời hiện ngay trên SERP)
+- `CTABanner` cuối: "Còn Thắc Mắc? Nhắn Ngay", `phoneLabel="Chat hoặc Gọi ngay"` (không có 10%)
 
 ---
 
@@ -267,9 +275,10 @@ Google Maps embed + Contact info card (tỉ lệ 3:2 desktop).
 | Zalo | `zalo.me/0938432178` |
 | Giờ mở cửa | 07:00 - 20:00, tất cả các ngày trừ chủ nhật |
 
-- Bản đồ tọa độ `10.8370625, 106.6645925` zoom 17, `loading="lazy"`
+- Bản đồ tọa độ `10.8370625, 106.6645925` zoom 17, `loading="lazy"`, tỉ lệ `lg:col-span-3 : lg:col-span-2`
 - `FadeIn` direction left (map) / right (card)
-- CTA: Gọi Ngay + Chat Zalo
+- Coverage areas: Gò Vấp, Bình Thạnh, Phú Nhuận, Quận 12, Tân Bình (từ `BUSINESS.coverageAreas`)
+- CTA (3 nút): Gọi Ngay + Chat Zalo + **Chỉ Đường** (→ Google Maps directions)
 
 ---
 
@@ -294,9 +303,7 @@ Static page listing tất cả bài viết từ `data/news.ts`.
 | `/giat-say-go-vap` | giặt sấy gò vấp, giặt sấy gần đây | ⭐⭐⭐⭐⭐ |
 | `/giat-giay-go-vap` | giặt giày gò vấp, vệ sinh giày | ⭐⭐⭐⭐⭐ |
 | `/giat-chan-men-go-vap` | giặt chăn mền gò vấp | ⭐⭐⭐⭐ |
-| `/giat-hap-vest-go-vap` | giặt hấp vest gò vấp, giặt áo dài | ⭐⭐⭐⭐ |
 | `/giat-ui-tan-noi-go-vap` | giặt ủi tận nơi gò vấp | ⭐⭐⭐ |
-| `/giat-sofa-nem-go-vap` | giặt sofa nệm gò vấp | ⭐⭐⭐ |
 
 ### Cấu trúc mỗi landing page
 
@@ -347,6 +354,17 @@ Breadcrumb → Hero (H1 + từ khóa) → Loại dịch vụ
 
 - Brand: logo, tagline, icon Facebook + Zalo
 - Bottom bar: © 2025 + "đang hoạt động" dot pulse xanh
+
+### StickyMobileCTA
+
+Hiện sau khi `scrollY > 400`, fixed bottom, chỉ mobile (`md:hidden`). 2 nút ngang:
+
+| Nút | Hành động | Style |
+|---|---|---|
+| Chat Zalo | `BUSINESS.zaloHref` | `bg-sky-500` |
+| Gọi Ngay | `BUSINESS.hotlineHref` + `phone-pulse` | `bg-green-500` |
+
+`<div class="h-14 md:hidden" />` spacer trong layout để content không bị che.
 
 ### FloatingCTA
 
@@ -405,9 +423,10 @@ Luôn có 2 nút: Phone (white) + Zalo (ghost).
 
 | Section | Nội dung | Có 10%? |
 |---|---|---|
-| ProcessSteps | "Đặt Lịch Ngay Hôm Nay — Giảm 10% lần đầu" | ✅ Duy nhất |
+| ProcessSteps | "Đặt Lịch Ngay Hôm Nay" (phoneLabel: số điện thoại) | ✅ Duy nhất |
 | Gallery | "Đặt Lịch Giặt Sấy Ngay" (dark variant) | ❌ |
 | Testimonials | "Tham Gia Hơn 500 Gia Đình Hài Lòng" | ❌ |
+| FAQ | "Còn Thắc Mắc? Nhắn Ngay" (phoneLabel: "Chat hoặc Gọi ngay") | ❌ |
 | BranchCarousel | "Giao Nhận Tận Nơi Toàn Gò Vấp" | ❌ |
 | NewsSection | "Tư Vấn Miễn Phí Ngay" | ❌ |
 
@@ -461,7 +480,7 @@ Số đếm lên khi `whileInView`. Dùng trong stats row của Testimonials.
 
 | Kỹ thuật | Áp dụng |
 |---|---|
-| `dynamic()` import | 8 section dưới fold (tất cả trừ HeroBanner) |
+| `dynamic()` import | 7 section dưới fold (tất cả trừ HeroBanner và PickupFlow) |
 | `content-visibility: auto` | `.section-lazy` wrapper quanh mỗi dynamic section |
 | `whileInView` (Framer) | Scroll reveal thống nhất — không dùng IntersectionObserver riêng |
 | `loading="lazy"` | Google Maps iframe |
@@ -509,11 +528,11 @@ Số đếm lên khi `whileInView`. Dùng trong stats row của Testimonials.
 | Google Business Profile | ✅ Đã có | Quan trọng nhất để rank "giặt sấy gần đây" |
 | sitemap.xml | ✅ Auto | `/sitemap.xml` từ `sitemap.ts` — 8 URL (homepage + /tin-tuc + 6 landing pages) |
 | robots.txt | ✅ Auto | `/robots.txt` từ `robots.ts` |
-| JSON-LD LocalBusiness | ✅ | `layout.tsx` — tên, địa chỉ, geo, giờ mở cửa |
-| JSON-LD FAQPage | ✅ | `FAQ.tsx` — 8 câu hỏi → Google rich results |
+| JSON-LD LocalBusiness | ✅ | `layout.tsx` — tên, địa chỉ, geo, giờ mở cửa, `aggregateRating` (4.9/5 · 500 reviews) |
+| JSON-LD FAQPage | ✅ | `FAQ.tsx` — 7 câu hỏi → Google rich results |
 | Title / OG / Twitter / canonical | ✅ | `layout.tsx` |
 | /tin-tuc page | ✅ | Trang tin tức riêng, metadata đầy đủ |
-| 6 landing pages SEO | ✅ | `/giat-say-go-vap`, `/giat-giay-go-vap`, `/giat-chan-men-go-vap`, `/giat-hap-vest-go-vap`, `/giat-ui-tan-noi-go-vap`, `/giat-sofa-nem-go-vap` |
+| 4 landing pages SEO | ✅ | `/giat-say-go-vap`, `/giat-giay-go-vap`, `/giat-chan-men-go-vap`, `/giat-ui-tan-noi-go-vap` |
 | Google Search Console | ⏳ Chưa verify | Thay `REPLACE_WITH_GOOGLE_VERIFICATION_CODE` trong `layout.tsx` |
 | Facebook Pixel | ⏳ Chờ Pixel ID | Script đã xóa — thêm lại khi có Meta Business Manager |
 | Google Tag Manager | ⏳ Chờ GTM ID | Script đã xóa — thêm lại khi có Google Ads campaign |
@@ -536,12 +555,14 @@ Số đếm lên khi `whileInView`. Dùng trong stats row của Testimonials.
 ```
 title:       Giặt Sấy 24h Gò Vấp - Sạch · Nhanh · Khử Mùi · Giao Nhận Tận Nơi
 template:    %s | Giặt Sấy 24h Gò Vấp
-description: Giặt sấy 24h Gò Vấp — giặt sạch, nhanh, khử mùi. Từ 13.000đ/kg.
-             Giao nhận tận nơi. Mở cửa 07:00-20:00 tất cả các ngày trừ chủ nhật. Hotline: 0938 432 178.
+description: Giặt sấy 24h Gò Vấp — giặt sạch, nhanh, khử mùi hiệu quả. Giặt sấy gần đây,
+             giao nhận tận nơi. Từ 13.000đ/kg. Mở cửa 07:00-20:00 tất cả các ngày trừ chủ nhật.
+             Hotline: 0938 432 178.
 canonical:   https://www.giatsay24hgovap.com
 og:image:    /images/shop-front-1.jpg (815×1200)
 locale:      vi_VN
 twitter:     summary_large_image
+aggregateRating: 4.9/5 · reviewCount: 500 (JSON-LD)
 ```
 
 ---
@@ -560,10 +581,12 @@ twitter:     summary_large_image
 
 ## Ghi Chú Kỹ Thuật
 
-- `"use client"` chỉ ở component thực sự cần hook/event: `Header`, `FloatingCTA`, `HeroBanner`, `TiltCard`, `StaggerGrid`, `AnimatedStepCard`, `AnimatedConnector`, `FadeIn`, `BranchCarousel`, `FAQ`, `CountUp`
+- `"use client"` chỉ ở component thực sự cần hook/event: `Header`, `FloatingCTA`, `StickyMobileCTA`, `HeroBanner`, `TiltCard`, `StaggerGrid`, `AnimatedStepCard`, `AnimatedConnector`, `FadeIn`, `BranchCarousel`, `FAQ`, `CountUp`
 - Tất cả section còn lại là **Server Components**
 - `suppressHydrationWarning` trên `<html>` + `<body>` — tránh hydration mismatch từ browser extensions
 - FB Pixel + GTM script **đã xóa** — thêm lại khi có ID thật (xem TODO trong `layout.tsx`)
 - Font Inter load cả `latin` + `vietnamese` subset
+- `config/business.ts` — export `BUSINESS` object (hotline, zalo, hours, coverageAreas, coords, v.v.) dùng chung toàn app, tránh hardcode
+- `hooks/useScrollReveal.ts` — `useScrollReveal()` hook theo dõi `.reveal, .reveal-fall` class; hiện chưa import vào component nào (legacy/unused)
 - `LandingFAQ` (`ui/LandingFAQ.tsx`) — component FAQ dùng chung cho 6 landing pages
 - `npx next build` → 14 route tĩnh, compile 0 error

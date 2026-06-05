@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: "Giặt sấy gần đây — sạch, nhanh, khử mùi. Giao nhận tận nơi. Từ 13.000đ/kg. Hotline 0938 432 178.",
     images: ["/images/shop-front-1.jpg"],
   },
-  verification: { google: "REPLACE_WITH_GOOGLE_VERIFICATION_CODE" },
+  verification: { google: "icIyIBiGHqRzlTao9gdrk4Y7T1N1tGxuOTHLPlS4UJU" },
   openGraph: {
     title: "Giặt Sấy 24h Gò Vấp - Sạch · Nhanh · Khử Mùi",
     description: "Giặt sấy 24h Gò Vấp — giặt sạch, nhanh, khử mùi. Giặt sấy gần đây, giao nhận tận nơi. Hotline: 0938 432 178",
