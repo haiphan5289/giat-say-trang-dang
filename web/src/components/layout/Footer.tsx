@@ -46,8 +46,24 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white font-extrabold text-sm shadow-lg shadow-blue-500/25">
-                GS
+              <div className="w-10 h-10 rounded-xl bg-[#1B3FA0] flex items-center justify-center shadow-lg shadow-blue-800/40">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
+                  <rect x="2" y="2" width="28" height="28" rx="5" fill="#1B3FA0"/>
+                  <rect x="2" y="2" width="28" height="9" rx="5" fill="#17367A"/>
+                  <rect x="2" y="8" width="28" height="3" fill="#17367A"/>
+                  <rect x="4" y="4.5" width="6" height="2" rx="1" fill="white" opacity="0.6"/>
+                  <circle cx="16" cy="5.5" r="2" fill="white" opacity="0.8"/>
+                  <circle cx="22" cy="5.5" r="1.5" fill="none" stroke="white" strokeWidth="0.8" opacity="0.7"/>
+                  <rect x="25" y="4.5" width="3" height="2" rx="0.5" fill="white" opacity="0.5"/>
+                  <circle cx="16" cy="19" r="8" fill="white"/>
+                  <circle cx="16" cy="19" r="7" fill="#7EC8E3"/>
+                  <circle cx="16" cy="19" r="5.5" fill="white"/>
+                  <rect x="10.5" y="20.5" width="11" height="5" fill="#5BAECC"/>
+                  <ellipse cx="16" cy="20.5" rx="5.5" ry="1.5" fill="#7EC8E3"/>
+                  <circle cx="13.5" cy="18" r="1.2" fill="white" opacity="0.9"/>
+                  <circle cx="17" cy="16.5" r="1" fill="white" opacity="0.85"/>
+                  <circle cx="20" cy="18.5" r="0.9" fill="white" opacity="0.8"/>
+                </svg>
               </div>
               <span className="font-extrabold text-white text-base">
                 Giặt Sấy{" "}

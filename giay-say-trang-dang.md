@@ -13,7 +13,7 @@ Landing page dịch vụ giặt sấy chuyên nghiệp tại Gò Vấp, TP.HCM.
 | Hotline | 0938 432 178 |
 | Zalo | https://zalo.me/0938432178 |
 | Facebook | https://www.facebook.com/profile.php?id=61551799042694 |
-| Giờ mở cửa | 07:00 - 20:00, tất cả các ngày trừ chủ nhật |
+| Giờ mở cửa | 08:00 - 20:00, tất cả các ngày trừ chủ nhật |
 | Website | https://www.giatsay24hgovap.com |
 | Tọa độ | 10.8370625, 106.6645925 |
 
@@ -237,7 +237,7 @@ Dữ liệu từ `data/branches.ts` — hiện chỉ có **1 chi nhánh thật**
 | 6 | Mở cửa mấy giờ, có phục vụ ngày lễ không? |
 | 7 | Đồ có bị mất hay hỏng không? |
 
-> Giờ mở cửa trong FAQ lấy từ `BUSINESS.hours` — đã đồng bộ ("07:00 - 20:00, tất cả các ngày trừ chủ nhật").
+> Giờ mở cửa trong FAQ lấy từ `BUSINESS.hours` — đã đồng bộ ("08:00 - 20:00, tất cả các ngày trừ chủ nhật").
 
 - Accordion `useState` — click để mở/đóng
 - `FadeIn` stagger 40ms mỗi item
@@ -273,7 +273,7 @@ Google Maps embed + Contact info card (tỉ lệ 3:2 desktop).
 | Địa chỉ | Số 1 đường số 8, Thông Tay Hội, HCM |
 | Hotline | `tel:0938432178` |
 | Zalo | `zalo.me/0938432178` |
-| Giờ mở cửa | 07:00 - 20:00, tất cả các ngày trừ chủ nhật |
+| Giờ mở cửa | 08:00 - 20:00, tất cả các ngày trừ chủ nhật |
 
 - Bản đồ tọa độ `10.8370625, 106.6645925` zoom 17, `loading="lazy"`, tỉ lệ `lg:col-span-3 : lg:col-span-2`
 - `FadeIn` direction left (map) / right (card)
@@ -556,7 +556,7 @@ Số đếm lên khi `whileInView`. Dùng trong stats row của Testimonials.
 title:       Giặt Sấy 24h Gò Vấp - Sạch · Nhanh · Khử Mùi · Giao Nhận Tận Nơi
 template:    %s | Giặt Sấy 24h Gò Vấp
 description: Giặt sấy 24h Gò Vấp — giặt sạch, nhanh, khử mùi hiệu quả. Giặt sấy gần đây,
-             giao nhận tận nơi. Từ 13.000đ/kg. Mở cửa 07:00-20:00 tất cả các ngày trừ chủ nhật.
+             giao nhận tận nơi. Từ 13.000đ/kg. Mở cửa 08:00-20:00 tất cả các ngày trừ chủ nhật.
              Hotline: 0938 432 178.
 canonical:   https://www.giatsay24hgovap.com
 og:image:    /images/shop-front-1.jpg (815×1200)

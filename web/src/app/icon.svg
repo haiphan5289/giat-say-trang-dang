@@ -1,33 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Background -->
-  <rect width="32" height="32" rx="8" fill="#0ea5e9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Body -->
+  <rect x="16" y="16" width="480" height="480" rx="64" ry="64" fill="#1B3FA0"/>
 
-  <!-- Washing machine body -->
-  <rect x="6" y="5" width="20" height="22" rx="2" fill="white" opacity="0.15"/>
-  <rect x="6" y="5" width="20" height="22" rx="2" stroke="white" stroke-width="1.5"/>
+  <!-- Top control panel darker bg -->
+  <rect x="16" y="16" width="480" height="120" rx="64" ry="64" fill="#17367A"/>
+  <rect x="16" y="96" width="480" height="40" fill="#17367A"/>
 
-  <!-- Control panel top -->
-  <rect x="6" y="5" width="20" height="6" rx="2" fill="white" opacity="0.25"/>
+  <!-- Left dash -->
+  <rect x="52" y="60" width="80" height="14" rx="7" fill="#FFFFFF" opacity="0.65"/>
+  <!-- Circle knob -->
+  <circle cx="210" cy="67" r="22" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="210" cy="67" r="11" fill="#17367A"/>
+  <!-- Lines (hamburger) -->
+  <rect x="255" y="54" width="10" height="26" rx="3" fill="#FFFFFF" opacity="0.7"/>
+  <rect x="271" y="54" width="10" height="26" rx="3" fill="#FFFFFF" opacity="0.7"/>
+  <rect x="287" y="54" width="10" height="26" rx="3" fill="#FFFFFF" opacity="0.7"/>
+  <!-- Circle with slash -->
+  <circle cx="338" cy="67" r="18" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.75"/>
+  <line x1="327" y1="56" x2="349" y2="78" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.75"/>
+  <!-- Small rect button -->
+  <rect x="372" y="55" width="60" height="24" rx="6" fill="#FFFFFF" opacity="0.55"/>
 
-  <!-- Power button dot -->
-  <circle cx="23" cy="8" r="1.2" fill="white"/>
+  <!-- Door outer white ring -->
+  <circle cx="256" cy="308" r="178" fill="#FFFFFF"/>
+  <!-- Door inner light-blue ring -->
+  <circle cx="256" cy="308" r="162" fill="#7EC8E3"/>
+  <!-- Door glass white -->
+  <circle cx="256" cy="308" r="142" fill="#FFFFFF"/>
 
-  <!-- Small indicator dots -->
-  <circle cx="9" cy="8" r="0.8" fill="white" opacity="0.7"/>
-  <circle cx="11.5" cy="8" r="0.8" fill="white" opacity="0.5"/>
+  <!-- Water + bubbles clipped to drum -->
+  <clipPath id="drum">
+    <circle cx="256" cy="308" r="142"/>
+  </clipPath>
+  <!-- Water body -->
+  <rect x="114" y="346" width="284" height="110" fill="#5BAECC" clip-path="url(#drum)"/>
+  <!-- Water surface wave -->
+  <ellipse cx="256" cy="346" rx="142" ry="20" fill="#7EC8E3" clip-path="url(#drum)"/>
+  <!-- Bubble dots in water -->
+  <circle cx="188" cy="378" r="11" fill="#1B3FA0" opacity="0.25" clip-path="url(#drum)"/>
+  <circle cx="242" cy="392" r="8"  fill="#1B3FA0" opacity="0.2"  clip-path="url(#drum)"/>
+  <circle cx="306" cy="374" r="13" fill="#1B3FA0" opacity="0.25" clip-path="url(#drum)"/>
 
-  <!-- Drum circle outer -->
-  <circle cx="16" cy="19" r="7" stroke="white" stroke-width="1.5"/>
-
-  <!-- Drum circle inner -->
-  <circle cx="16" cy="19" r="4.5" stroke="white" stroke-width="1" opacity="0.5"/>
-
-  <!-- Water ripple lines inside drum -->
-  <path d="M12.5 19 Q14 17.5 16 19 Q18 20.5 19.5 19" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
-
-  <!-- Drum holes -->
-  <circle cx="13" cy="16" r="0.7" fill="white" opacity="0.6"/>
-  <circle cx="19" cy="16" r="0.7" fill="white" opacity="0.6"/>
-  <circle cx="13" cy="22" r="0.7" fill="white" opacity="0.6"/>
-  <circle cx="19" cy="22" r="0.7" fill="white" opacity="0.6"/>
+  <!-- Foam bubbles above water line -->
+  <circle cx="206" cy="300" r="18" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="256" cy="270" r="14" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="300" cy="295" r="12" fill="#FFFFFF" opacity="0.8"/>
+  <!-- Water drops -->
+  <circle cx="228" cy="248" r="9" fill="#7EC8E3"/>
+  <circle cx="272" cy="238" r="7" fill="#7EC8E3"/>
 </svg>

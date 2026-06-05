@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -12,11 +11,11 @@ const inter = Inter({ subsets: ["latin", "vietnamese"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.giatsay24hgovap.com"),
   title: {
-    default: "Giặt Sấy 24h Gò Vấp - Sạch · Nhanh · Khử Mùi · Giao Nhận Tận Nơi",
+    default: "Giặt Sấy 24h Gò Vấp - Nhận & Trả Trong Ngày · Từ 13K/kg",
     template: "%s | Giặt Sấy 24h Gò Vấp",
   },
   description:
-    "Giặt sấy 24h Gò Vấp — giặt sạch, nhanh, khử mùi hiệu quả. Giặt sấy gần đây, giao nhận tận nơi. Từ 13.000đ/kg. Mở cửa 07:00-20:00 tất cả các ngày trừ chủ nhật. Hotline: 0938 432 178.",
+    "⚡ Giặt sạch, sấy khô — hoàn trả trong ngày. 🛵 Giao nhận tận nơi Gò Vấp. Từ 13.000đ/kg. Mở cửa 08:00–20:00 tất cả các ngày trừ chủ nhật. ☎️ Hotline: 0938 432 178.",
   keywords: ["giặt sấy 24h gò vấp", "giặt sấy gần đây", "giặt sạch gò vấp", "giặt nhanh khử mùi hcm", "giặt ủi tận nơi gò vấp", "giặt hấp vest áo dài", "giặt nệm sofa tại nhà", "giặt giày gò vấp"],
   alternates: { canonical: "https://www.giatsay24hgovap.com" },
   twitter: {
@@ -61,7 +60,7 @@ const jsonLd = {
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    opens: "07:00",
+    opens: "08:00",
     closes: "20:00",
   },
   aggregateRating: {

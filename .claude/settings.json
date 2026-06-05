@@ -45,7 +45,8 @@
       "Edit(/.claude/skills/ct-quality-engineer/**)",
       "Bash(xargs ls)",
       "Bash(npx next *)",
-      "Edit(/.claude/skills/ct-ai-persona-pattern/**)"
+      "Edit(/.claude/skills/ct-ai-persona-pattern/**)",
+      "Bash(grep -r \"GS\" /Users/hai.phan/Desktop/haiphan/giat-say-trang-dang/web/src --include=\"*.tsx\" --include=\"*.ts\" --include=\"*.json\" ! -path \"*/node_modules/*\" -n)"
     ],
     "additionalDirectories": [
       "/Users/hai.phan/Library/Developer/Xcode/DerivedData"

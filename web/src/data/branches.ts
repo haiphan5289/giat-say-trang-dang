@@ -13,7 +13,7 @@ export const branches: Branch[] = [
     name: "Giặt Sấy 24h Gò Vấp",
     address: "Số 1 đường số 8, Thông Tay Hội, Gò Vấp, TP.HCM",
     phone: "0938 432 178",
-    hours: "07:00 - 20:00, tất cả các ngày trừ chủ nhật",
+    hours: "08:00 - 20:00, tất cả các ngày trừ chủ nhật",
     mapUrl: "https://maps.google.com/?q=10.8370625,106.6645925",
   },
 ];
