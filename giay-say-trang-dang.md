@@ -30,7 +30,7 @@ Landing page dịch vụ giặt sấy chuyên nghiệp tại Gò Vấp, TP.HCM.
 | Icons | Lucide React |
 | Images | `next/image` (tối ưu tự động) |
 | Language | TypeScript |
-| Deploy | Vercel |
+| Deploy | [Vercel](https://vercel.com/hai-phan-s-projects/giat-say-trang-dang/deployments) |
 | Type check | `npx tsc --noEmit` |
 
 ---
@@ -237,7 +237,7 @@ Dữ liệu từ `data/branches.ts` — hiện chỉ có **1 chi nhánh thật**
 | 6 | Mở cửa mấy giờ, có phục vụ ngày lễ không? |
 | 7 | Đồ có bị mất hay hỏng không? |
 
-> ⚠️ Giờ mở cửa hiển thị trong FAQ: "09:00 – 20:00, thứ 2 đến thứ 7" — khác với `BUSINESS.hours` ("07:00 - 20:00, tất cả các ngày trừ chủ nhật"). Cần đồng bộ.
+> Giờ mở cửa trong FAQ lấy từ `BUSINESS.hours` — đã đồng bộ ("07:00 - 20:00, tất cả các ngày trừ chủ nhật").
 
 - Accordion `useState` — click để mở/đóng
 - `FadeIn` stagger 40ms mỗi item
@@ -526,14 +526,14 @@ Số đếm lên khi `whileInView`. Dùng trong stats row của Testimonials.
 | Hạng mục | Trạng thái | Ghi chú |
 |---|---|---|
 | Google Business Profile | ✅ Đã có | Quan trọng nhất để rank "giặt sấy gần đây" |
-| sitemap.xml | ✅ Auto | `/sitemap.xml` từ `sitemap.ts` — 8 URL (homepage + /tin-tuc + 6 landing pages) |
+| sitemap.xml | ✅ Auto | `/sitemap.xml` từ `sitemap.ts` — 6 URL (homepage + /tin-tuc + 4 landing pages) |
 | robots.txt | ✅ Auto | `/robots.txt` từ `robots.ts` |
 | JSON-LD LocalBusiness | ✅ | `layout.tsx` — tên, địa chỉ, geo, giờ mở cửa, `aggregateRating` (4.9/5 · 500 reviews) |
 | JSON-LD FAQPage | ✅ | `FAQ.tsx` — 7 câu hỏi → Google rich results |
 | Title / OG / Twitter / canonical | ✅ | `layout.tsx` |
 | /tin-tuc page | ✅ | Trang tin tức riêng, metadata đầy đủ |
 | 4 landing pages SEO | ✅ | `/giat-say-go-vap`, `/giat-giay-go-vap`, `/giat-chan-men-go-vap`, `/giat-ui-tan-noi-go-vap` |
-| Google Search Console | ⏳ Chưa verify | Thay `REPLACE_WITH_GOOGLE_VERIFICATION_CODE` trong `layout.tsx` |
+| Google Search Console | ✅ Verified | HTML tag method, verified + sitemap submitted 2026-06-05 |
 | Facebook Pixel | ⏳ Chờ Pixel ID | Script đã xóa — thêm lại khi có Meta Business Manager |
 | Google Tag Manager | ⏳ Chờ GTM ID | Script đã xóa — thêm lại khi có Google Ads campaign |
 
