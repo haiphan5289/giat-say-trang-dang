@@ -1,4 +1,5 @@
 import { Shirt, Star, Heart, Cloud, ArrowRight, Zap } from "lucide-react";
+import Link from "next/link";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
 import TiltCard from "@/components/ui/TiltCard";
@@ -15,6 +16,7 @@ const services = [
     bg: "bg-blue-50",
     text: "text-blue-600",
     ring: "ring-blue-100",
+    href: "/giat-say-go-vap",
   },
   {
     Icon: Zap,
@@ -26,6 +28,7 @@ const services = [
     bg: "bg-emerald-50",
     text: "text-emerald-600",
     ring: "ring-emerald-100",
+    href: "/giat-say-go-vap",
   },
   {
     Icon: Star,
@@ -37,6 +40,7 @@ const services = [
     bg: "bg-orange-50",
     text: "text-orange-600",
     ring: "ring-orange-100",
+    href: "/giat-giay-go-vap",
   },
   {
     Icon: Heart,
@@ -48,6 +52,7 @@ const services = [
     bg: "bg-pink-50",
     text: "text-pink-600",
     ring: "ring-pink-100",
+    href: "/giat-say-go-vap",
   },
   {
     Icon: Cloud,
@@ -59,6 +64,7 @@ const services = [
     bg: "bg-indigo-50",
     text: "text-indigo-600",
     ring: "ring-indigo-100",
+    href: "/giat-chan-men-go-vap",
   },
 ];
 
@@ -87,6 +93,7 @@ export default function ServicesGrid() {
         <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((service) => (
             <StaggerItem key={service.title}>
+            <Link href={service.href} className="block h-full">
             <TiltCard
               className="group bg-white border border-slate-100 hover:border-transparent rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300 cursor-pointer hover:-translate-y-1.5 relative overflow-hidden h-full"
             >
@@ -106,10 +113,16 @@ export default function ServicesGrid() {
               <p className="text-slate-500 text-sm leading-relaxed mb-4">
                 {service.description}
               </p>
-              <span className={`inline-block text-xs font-bold ${service.text} ${service.bg} border ${service.ring} px-3 py-1.5 rounded-full ring-2`}>
-                {service.price}
-              </span>
+              <div className="flex items-center justify-between">
+                <span className={`inline-block text-xs font-bold ${service.text} ${service.bg} border ${service.ring} px-3 py-1.5 rounded-full ring-2`}>
+                  {service.price}
+                </span>
+                <span className={`text-xs font-semibold ${service.text} flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity`}>
+                  Xem thêm <ArrowRight size={12} />
+                </span>
+              </div>
             </TiltCard>
+            </Link>
             </StaggerItem>
           ))}
         </StaggerGrid>

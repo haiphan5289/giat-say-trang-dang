@@ -12,6 +12,6 @@ export const BUSINESS = {
   lat: 10.8370625,
   lng: 106.6645925,
   coverageAreas: ["Gò Vấp", "Bình Thạnh", "Phú Nhuận", "Quận 12", "Tân Bình"],
-  rating: "4.9",
-  reviewCount: 500,
+  rating: "5.0",
+  reviewCount: 11,
 } as const;

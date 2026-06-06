@@ -5,6 +5,13 @@ import { newsPosts } from "@/data/news";
 import { ArrowLeft, ArrowRight, Calendar, Tag } from "lucide-react";
 import TiltCard from "@/components/ui/TiltCard";
 
+const relatedServices = [
+  { href: "/giat-say-go-vap", title: "Giặt Sấy Gò Vấp", sub: "Từ 13.000đ/kg" },
+  { href: "/giat-giay-go-vap", title: "Giặt Giày Gò Vấp", sub: "Từ 50.000đ/đôi" },
+  { href: "/giat-chan-men-go-vap", title: "Giặt Chăn Mền Gò Vấp", sub: "Từ 20.000đ/kg" },
+  { href: "/giat-ui-tan-noi-go-vap", title: "Giặt Ủi Tận Nơi", sub: "Miễn phí lấy & giao" },
+];
+
 export const metadata: Metadata = {
   title: "Tin Tức & Mẹo Hay",
   description:
@@ -79,6 +86,23 @@ export default function NewsPage() {
               </div>
             </TiltCard>
           ))}
+        </div>
+
+        {/* Dịch vụ liên quan */}
+        <div className="mt-16 pt-10 border-t border-slate-100">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-5">Dịch vụ của chúng tôi</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {relatedServices.map((s) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="bg-white border border-slate-100 rounded-xl p-4 text-center hover:border-blue-200 hover:shadow-md hover:bg-blue-50 transition-all duration-200 group"
+              >
+                <p className="font-bold text-slate-800 text-sm group-hover:text-blue-700 transition-colors leading-tight">{s.title}</p>
+                <p className="text-xs text-slate-400 mt-1">{s.sub}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </main>
