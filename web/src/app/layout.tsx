@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | Giặt Sấy 24h Gò Vấp",
   },
   description:
-    "⚡ Giặt sạch, sấy khô — hoàn trả trong ngày. 🛵 Giao nhận tận nơi Gò Vấp. Từ 13.000đ/kg. Mở cửa 08:00–20:00 tất cả các ngày trừ chủ nhật. ☎️ Hotline: 0938 432 178.",
+    "Giặt sạch · Sấy thơm · Giao tận nhà Gò Vấp. Từ 13.000đ/kg — lấy tận nhà. Chăn mền, giày, quần áo. Mở cửa T2–T7.",
   keywords: ["giặt sấy 24h gò vấp", "giặt sấy gần đây", "giặt sạch gò vấp", "giặt nhanh khử mùi hcm", "giặt ủi tận nơi gò vấp", "giặt hấp vest áo dài", "giặt nệm sofa tại nhà", "giặt giày gò vấp"],
   alternates: { canonical: "https://www.giatsay24hgovap.com" },
   twitter: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   verification: { google: "icIyIBiGHqRzlTao9gdrk4Y7T1N1tGxuOTHLPlS4UJU" },
   openGraph: {
     title: "Giặt Sấy 24h Gò Vấp - Sạch · Nhanh · Khử Mùi",
-    description: "Giặt sấy 24h Gò Vấp — giặt sạch, nhanh, khử mùi. Giặt sấy gần đây, giao nhận tận nơi. Hotline: 0938 432 178",
+    description: "Giặt sạch · Sấy thơm · Giao tận nhà Gò Vấp. Từ 13.000đ/kg — lấy tận nhà. Chăn mền, giày, quần áo. Mở cửa T2–T7.",
     images: [{ url: "/images/shop-front-1.jpg", width: 815, height: 1200, alt: "Giặt Sấy 24h Gò Vấp" }],
     locale: "vi_VN",
     type: "website",
@@ -68,7 +68,7 @@ const jsonLd = {
     "@type": "AggregateRating",
     ratingValue: "5.0",
     bestRating: "5",
-    reviewCount: "11",
+    reviewCount: "16",
   },
 };
 
