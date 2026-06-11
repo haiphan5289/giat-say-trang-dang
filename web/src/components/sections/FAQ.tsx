@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "Có giao nhận tận nơi không?",
-    a: "Có. Chúng tôi lấy và trả đồ tận địa chỉ trong khu vực Gò Vấp và các quận lân cận. Gọi hotline 0938 432 178 hoặc nhắn Zalo để đặt lịch.",
+    a: "Có. Chúng tôi lấy và trả đồ tận địa chỉ trong khu vực Gò Vấp và các quận lân cận. Gọi hotline 0938 432 178 để đặt lịch.",
   },
   {
     q: "Có nhận giặt vest, áo dài, đồ cao cấp không?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Đặt lịch bằng cách nào?",
-    a: "Gọi hotline 0938 432 178 hoặc nhắn tin qua Zalo cùng số trên. Chúng tôi xác nhận lịch và đến đúng giờ, không cần chờ đợi.",
+    a: "Gọi hotline 0938 432 178. Chúng tôi xác nhận lịch và đến đúng giờ, không cần chờ đợi.",
   },
   {
     q: "Mở cửa mấy giờ, có phục vụ ngày lễ không?",
@@ -111,9 +111,9 @@ export default function FAQ() {
         </div>
 
         <CTABanner
-          title="Còn Thắc Mắc? Nhắn Ngay"
-          description="Chat Zalo — phản hồi trong vài phút, không cần chờ đợi."
-          phoneLabel="Chat hoặc Gọi ngay"
+          title="Còn Thắc Mắc? Gọi Ngay"
+          description="Gọi hotline — phản hồi trong vài phút, không cần chờ đợi."
+          phoneLabel="Gọi Ngay"
           className="mt-10"
         />
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
 import { BUSINESS } from "@/config/business";
 
 export default function StickyMobileCTA() {
@@ -19,24 +19,14 @@ export default function StickyMobileCTA() {
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="grid grid-cols-2 shadow-[0_-4px_24px_rgba(0,0,0,0.18)]">
-        <a
-          href={BUSINESS.zaloHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 bg-sky-500 active:bg-sky-600 text-white font-bold py-4 text-[15px]"
-          aria-label="Chat Zalo"
-        >
-          <MessageCircle size={20} />
-          Chat Zalo
-        </a>
+      <div className="shadow-[0_-4px_24px_rgba(0,0,0,0.18)]">
         <a
           href={BUSINESS.hotlineHref}
-          className="flex items-center justify-center gap-2 bg-green-500 active:bg-green-600 text-white font-bold py-4 text-[15px] phone-pulse"
+          className="flex items-center justify-center gap-2 bg-green-500 active:bg-green-600 text-white font-bold py-4 text-[15px] phone-pulse w-full"
           aria-label="Gọi ngay"
         >
           <Phone size={20} />
-          Gọi Ngay
+          Gọi Ngay — {BUSINESS.hotline}
         </a>
       </div>
     </div>

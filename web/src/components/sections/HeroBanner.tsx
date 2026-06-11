@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Phone, MessageCircle, ChevronLeft, ChevronRight, CheckCircle, Pause, Play } from "lucide-react";
+import { Phone, ChevronLeft, ChevronRight, CheckCircle, Pause, Play } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import CTAButton from "@/components/ui/CTAButton";
 import FadeIn from "@/components/ui/FadeIn";
@@ -93,15 +93,6 @@ function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
         <CTAButton href="tel:0938432178">
           <Phone size={20} />
           Đặt Lịch Lấy Đồ
-        </CTAButton>
-        <CTAButton
-          href="https://zalo.me/0938432178"
-          variant="ghost"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <MessageCircle size={20} />
-          Chat Zalo
         </CTAButton>
       </FadeIn>
     </div>

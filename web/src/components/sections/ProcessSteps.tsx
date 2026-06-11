@@ -9,7 +9,7 @@ const steps = [
     emoji: "📞",
     title: "Tư Vấn Dịch Vụ",
     description:
-      "Gọi hotline hoặc Zalo để được tư vấn, báo giá chi tiết và đặt lịch lấy đồ thuận tiện.",
+      "Gọi hotline để được tư vấn, báo giá chi tiết và đặt lịch lấy đồ thuận tiện.",
     gradient: "from-blue-500 to-cyan-500",
     shadow: "shadow-blue-500/30",
   },

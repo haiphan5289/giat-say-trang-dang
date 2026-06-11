@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, MessageCircle, CheckCircle, ArrowLeft } from "lucide-react";
+import { Phone, CheckCircle, ArrowLeft } from "lucide-react";
 import CTAButton from "@/components/ui/CTAButton";
 import CTABanner from "@/components/ui/CTABanner";
 import LandingFAQ, { type FAQItem } from "@/components/ui/LandingFAQ";
@@ -69,7 +69,7 @@ const shoeTypes = [
 ];
 
 const steps = [
-  { n: "01", title: "Đặt Lịch", desc: "Gọi hoặc Zalo, cho biết loại giày và mức độ bẩn." },
+  { n: "01", title: "Đặt Lịch", desc: "Gọi hotline, cho biết loại giày và mức độ bẩn." },
   { n: "02", title: "Lấy Giày Tận Nơi", desc: "Nhân viên đến lấy, kiểm tra và báo giá tại chỗ." },
   { n: "03", title: "Vệ Sinh Chuyên Sâu", desc: "Làm sạch từng bộ phận, khử mùi, sấy đúng nhiệt độ." },
   { n: "04", title: "Giao Về Tận Tay", desc: "Giày sạch, thơm, đóng gói cẩn thận, giao đúng hẹn." },
@@ -125,9 +125,6 @@ export default function GiatGiayGoVapPage() {
             <div className="flex flex-wrap gap-3">
               <CTAButton href={BUSINESS.hotlineHref} size="lg">
                 <Phone size={20} /> Đặt Lịch — {BUSINESS.hotline}
-              </CTAButton>
-              <CTAButton href={BUSINESS.zaloHref} variant="ghost" size="lg" target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={20} /> Chat Zalo
               </CTAButton>
             </div>
           </FadeIn>

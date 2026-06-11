@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Phone, MessageCircle, ChevronUp } from "lucide-react";
+import { Phone, ChevronUp } from "lucide-react";
 
 function FacebookIcon({ size = 22 }: { size?: number }) {
   return (
@@ -39,20 +39,6 @@ export default function FloatingCTA() {
         <FacebookIcon size={22} />
         <span className="absolute right-14 bg-slate-800 text-white text-xs rounded-xl px-3 py-1.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
           Fanpage Facebook
-        </span>
-      </a>
-
-      {/* Zalo */}
-      <a
-        href="https://zalo.me/0938432178"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group w-12 h-12 bg-gradient-to-br from-sky-400 to-blue-500 hover:from-sky-300 hover:to-blue-400 rounded-2xl flex items-center justify-center shadow-lg shadow-sky-400/30 transition-all hover:scale-110 relative"
-        aria-label="Zalo"
-      >
-        <MessageCircle size={22} className="text-white" />
-        <span className="absolute right-14 bg-slate-800 text-white text-xs rounded-xl px-3 py-1.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
-          Chat Zalo
         </span>
       </a>
 

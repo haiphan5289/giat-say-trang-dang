@@ -1,7 +1,7 @@
 import { BUSINESS } from "@/config/business";
 
 const steps = [
-  { emoji: "📅", label: "Đặt lịch", time: "2 phút", sub: "Gọi hoặc nhắn Zalo" },
+  { emoji: "📅", label: "Đặt lịch", time: "2 phút", sub: "Gọi hotline" },
   { emoji: "🚗", label: "Lấy đồ tận nơi", time: BUSINESS.responseTime, sub: "Nhân viên đến nhà bạn" },
   { emoji: "🧺", label: "Giặt & khử mùi", time: "2–4 tiếng", sub: "Xử lý chuyên nghiệp" },
   { emoji: "📦", label: "Giao về tận tay", time: "Trong ngày", sub: "Đúng hẹn, thơm sạch" },

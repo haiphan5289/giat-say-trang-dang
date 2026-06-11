@@ -1,6 +1,6 @@
 # SEO & Growth — giatsay24hgovap.com
 
-> Cập nhật lần cuối: 2026-06-10
+> Cập nhật lần cuối: 2026-06-10 (GTM + GA4 verified live)
 
 ---
 
@@ -15,7 +15,7 @@
 | Google Business | 7/10 🟡 |
 | Reviews | 6/10 🟡 |
 | Blog/Content | 2/10 🔴 |
-| GTM / Ads Tracking | 0/10 ⏳ Chưa cài |
+| GTM / Ads Tracking | 8/10 ✅ GTM + GA4 live |
 
 ---
 
@@ -27,6 +27,11 @@
 - Google Business verified — địa chỉ, SĐT, giờ khớp website
 - 11 Google Reviews 5.0★ — đồng bộ AggregateRating trong `layout.tsx`
 - Blog index `/tin-tuc` + 3 bài mẫu trong `data/news.ts`
+- **GTM** `GTM-54R3MFLD` — script cài trong `layout.tsx`, đã publish v1
+- **GA4** `G-MTNLMFDDP5` — property `giatsay24hgovap.com`, track click Hotline + Zalo
+- GTM Tags: `GA4 - Configuration`, `GA4 - Click Hotline`, `GA4 - Click Zalo`
+- GTM Triggers: `Click - Hotline` (`tel:`), `Click - Zalo` (`zalo.me`)
+- GTM Preview verified: `GA4 - Configuration` ✅, `GA4 - Click Hotline` ✅, `GA4 - Click Zalo` ✅ — data đang gửi lên GA4 thật
 
 ---
 
@@ -37,7 +42,7 @@
 ### P1 — Tuần này (tạo khách nhanh nhất)
 
 - [ ] **Chạy Google Search Ads** — 200k–300k/ngày, landing pages: `/giat-say-go-vap`, `/giat-chan-men-go-vap`, `/giat-giay-go-vap`
-- [ ] **Cài GTM + Conversion Tracking** — theo dõi Click Hotline, Click Zalo, Form Submit → biết keyword nào ra khách. Thay placeholder tại `layout.tsx:95`
+- [x] **Cài GTM + GA4** — `GTM-54R3MFLD` + `G-MTNLMFDDP5`, track Hotline + Zalo ✅ Live & verified
 - [ ] **Tăng Google Reviews: 11 → 30** — xin review sau mỗi đơn hoàn thành. Cập nhật `aggregateRating.reviewCount` trong `layout.tsx`
 - [ ] **Google Business Posts + Ảnh** — 1–2 bài/tuần, mục tiêu 50+ ảnh thực tế (máy giặt, máy sấy, chăn mền, giày, cửa hàng)
 
@@ -135,7 +140,7 @@ Mỗi trang phải khác nhau **30–40%** — không clone, không chỉ thay t
 
 | File | Mục đích |
 |---|---|
-| `web/src/app/layout.tsx` | JSON-LD LocalBusiness, AggregateRating, Pixel/GTM placeholder |
+| `web/src/app/layout.tsx` | JSON-LD LocalBusiness, AggregateRating, GTM script (`GTM-54R3MFLD`) |
 | `web/src/app/sitemap.ts` | Thêm URL khi tạo landing page mới |
 | `web/src/data/news.ts` | Data bài blog |
 | `web/src/app/tin-tuc/page.tsx` | Blog index |

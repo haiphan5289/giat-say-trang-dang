@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, MessageCircle, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock, Navigation } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
 import FadeIn from "@/components/ui/FadeIn";
@@ -14,12 +14,6 @@ const info = [
     label: "Hotline",
     value: "0938 432 178",
     href: "tel:0938432178",
-  },
-  {
-    icon: MessageCircle,
-    label: "Zalo",
-    value: "0938 432 178",
-    href: "https://zalo.me/0938432178",
   },
   {
     icon: Clock,
@@ -140,16 +134,6 @@ export default function Location() {
               <CTAButton href={BUSINESS.hotlineHref} variant="white" className="w-full">
                 <Phone size={16} />
                 Gọi Ngay
-              </CTAButton>
-              <CTAButton
-                href={BUSINESS.zaloHref}
-                variant="ghost"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full"
-              >
-                <MessageCircle size={16} />
-                Chat Zalo
               </CTAButton>
               <CTAButton
                 href={BUSINESS.mapsDirections}

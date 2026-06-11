@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, MessageCircle, CheckCircle, ArrowLeft, Clock, MapPin, Star } from "lucide-react";
+import { Phone, CheckCircle, ArrowLeft, Clock, MapPin, Star } from "lucide-react";
 import CTAButton from "@/components/ui/CTAButton";
 import CTABanner from "@/components/ui/CTABanner";
 import LandingFAQ, { type FAQItem } from "@/components/ui/LandingFAQ";
@@ -47,11 +47,11 @@ const faqs: FAQItem[] = [
   },
   {
     q: "Mở cửa mấy giờ?",
-    a: `Mở cửa ${BUSINESS.hours}. Gọi hotline ${BUSINESS.hotline} hoặc nhắn Zalo để đặt lịch, nhân viên phản hồi trong vài phút.`,
+    a: `Mở cửa ${BUSINESS.hours}. Gọi hotline ${BUSINESS.hotline} để đặt lịch, nhân viên phản hồi trong vài phút.`,
   },
   {
     q: "Đặt lịch bằng cách nào?",
-    a: "Gọi hotline 0938 432 178 hoặc nhắn tin Zalo cùng số trên. Cho biết địa chỉ, số kg ước tính và khung giờ thuận tiện — nhân viên xác nhận ngay.",
+    a: "Gọi hotline 0938 432 178. Cho biết địa chỉ, số kg ước tính và khung giờ thuận tiện — nhân viên xác nhận ngay.",
   },
 ];
 
@@ -75,7 +75,7 @@ const pricing = [
 ];
 
 const steps = [
-  { n: "01", title: "Đặt Lịch", desc: "Gọi hotline hoặc nhắn Zalo, cho biết địa chỉ và số lượng đồ cần giặt." },
+  { n: "01", title: "Đặt Lịch", desc: "Gọi hotline, cho biết địa chỉ và số lượng đồ cần giặt." },
   { n: "02", title: "Lấy Đồ Tận Nơi", desc: "Nhân viên đến đúng giờ, kiểm kê và giao biên nhận tại chỗ." },
   { n: "03", title: "Giặt & Khử Mùi", desc: "Phân loại chất liệu, giặt đúng chế độ, sấy khô và gấp phẳng." },
   { n: "04", title: "Giao Về Tận Tay", desc: "Đồ thơm sạch, đóng gói kỹ, giao đúng hẹn trong ngày." },
@@ -132,9 +132,6 @@ export default function GiatSayGoVapPage() {
             <div className="flex flex-wrap gap-3">
               <CTAButton href={BUSINESS.hotlineHref} size="lg">
                 <Phone size={20} /> Đặt Lịch Ngay — {BUSINESS.hotline}
-              </CTAButton>
-              <CTAButton href={BUSINESS.zaloHref} variant="ghost" size="lg" target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={20} /> Chat Zalo
               </CTAButton>
             </div>
           </FadeIn>

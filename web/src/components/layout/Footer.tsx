@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Clock } from "lucide-react";
 
 function FacebookIcon({ size = 17 }: { size?: number }) {
   return (
@@ -83,15 +83,6 @@ export default function Footer() {
                 aria-label="Facebook"
               >
                 <FacebookIcon size={17} />
-              </a>
-              <a
-                href="https://zalo.me/0938432178"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-blue-500 flex items-center justify-center text-slate-400 hover:text-white transition-all"
-                aria-label="Zalo"
-              >
-                <MessageCircle size={17} />
               </a>
             </div>
           </div>

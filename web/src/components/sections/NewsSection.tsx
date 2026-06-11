@@ -94,7 +94,7 @@ export default function NewsSection() {
 
         <CTABanner
           title="Tư Vấn Miễn Phí Ngay"
-          description="Gọi hotline hoặc nhắn Zalo — báo giá nhanh, không phí, không ràng buộc."
+          description="Gọi hotline — báo giá nhanh, không phí, không ràng buộc."
           phoneLabel="0938 432 178"
         />
       </div>

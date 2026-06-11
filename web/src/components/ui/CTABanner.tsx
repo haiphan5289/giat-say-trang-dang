@@ -1,4 +1,4 @@
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
 import { ReactNode } from "react";
 import CTAButton from "@/components/ui/CTAButton";
 import FadeIn from "@/components/ui/FadeIn";
@@ -55,15 +55,6 @@ export default function CTABanner({
           <CTAButton href="tel:0938432178" variant="white">
             <Phone size={20} />
             {phoneLabel}
-          </CTAButton>
-          <CTAButton
-            href="https://zalo.me/0938432178"
-            variant="ghost"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MessageCircle size={20} />
-            Chat Zalo
           </CTAButton>
         </div>
       </div>
