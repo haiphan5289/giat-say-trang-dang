@@ -86,7 +86,7 @@ export default function ServicesGrid() {
               </span>
             </>
           }
-          description="Giặt sạch – sấy thơm – chăm sóc quần áo toàn diện — chúng tôi xử lý mọi loại vải với chất lượng cao nhất."
+          description="Giặt sạch – sấy thơm – chăm sóc quần áo toàn diện — chúng tôi xử lý mọi loại vải với quy trình chuyên nghiệp."
         />
 
         {/* Grid */}
