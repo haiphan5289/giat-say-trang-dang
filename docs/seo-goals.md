@@ -13,35 +13,37 @@
 
 ## KPI 3 Tháng Đầu
 
-| Hạng mục | Mục tiêu |
-|---|---|
-| Landing Pages | 6 trang dịch vụ hoàn chỉnh |
-| Blog | 20 bài (1000–2000 từ/bài) |
-| Google Maps Reviews | 20+ reviews thật |
-| Google Business Posts | 1–2 bài/tuần |
-| PageSpeed Mobile | > 90 điểm |
-| PageSpeed Desktop | > 90 điểm |
+| Hạng mục | Mục tiêu | Hiện tại |
+|---|---|---|
+| Landing Pages | 6 trang dịch vụ hoàn chỉnh | 4/6 ✅ |
+| Blog | 20 bài (1000–2000 từ/bài) | 0/20 🔴 |
+| Google Maps Reviews | 20+ reviews thật | 20 ✅ |
+| Google Business Posts | 1–2 bài/tuần | 2 bài tuần 1 ✅ |
+| PageSpeed Mobile | > 90 điểm | Chưa đo |
+| PageSpeed Desktop | > 90 điểm | Chưa đo |
 
 ---
 
-## Việc cần làm — Tuần này
+## Việc cần làm — Tuần này (cập nhật 2026-06-16)
 
-- [ ] Hoàn thiện Landing Page "Giặt Sấy Gò Vấp"
-- [ ] Thêm Schema LocalBusiness + FAQ vào website
-- [ ] Viết 5 bài blog đầu tiên
-- [ ] Đăng 1 bài lên Google Business Profile
-- [ ] Nhắn khách cũ xin review
+- [x] Hoàn thiện Landing Page "Giặt Sấy Gò Vấp" ✅
+- [x] Thêm Schema LocalBusiness + FAQ vào website ✅
+- [x] Đăng 2 bài lên Google Business Profile (quần áo + giày) ✅
+- [x] Xin review khách cũ → đạt 20 reviews ✅
+- [ ] Deploy lên Vercel (reviewCount: 20 đang chờ)
+- [ ] Thêm Negative Keywords vào Google Ads
+- [ ] Viết 5 bài blog đầu tiên 🔴
 
 ---
 
 ## Landing Pages cần có (theo thứ tự ưu tiên)
 
-- [ ] Giặt Sấy Gò Vấp ← quan trọng nhất
-- [ ] Giặt Chăn Mền Gò Vấp
+- [x] Giặt Sấy Gò Vấp ✅
+- [x] Giặt Chăn Mền Gò Vấp ✅
+- [x] Giặt Giày Gò Vấp ✅
+- [x] Giặt Sấy Giao Nhận Tận Nơi Gò Vấp ✅
 - [ ] Giặt Rèm Cửa Gò Vấp
 - [ ] Giặt Hấp Quần Áo Gò Vấp
-- [ ] Giặt Giày Gò Vấp
-- [ ] Giặt Sấy Giao Nhận Tận Nơi Gò Vấp
 
 ---
 
@@ -83,17 +85,20 @@
 - [x] Google Business Profile — verified
 - [x] Website live — giatsay24hgovap.com
 - [x] Schema LocalBusiness cơ bản
-- [x] 11 Google reviews (5.0 sao)
+- [x] Google reviews — 20 reviews 5.0 ⭐ (cập nhật 2026-06-16)
 - [x] Search Console verified — 2026-06-05
 - [x] Sitemap submitted — 2026-06-05 (6 URLs, Status: Success)
 - [x] Landing pages dịch vụ — 4 trang: /giat-say-go-vap, /giat-giay-go-vap, /giat-chan-men-go-vap, /giat-ui-tan-noi-go-vap
 - [x] Giờ mở cửa đồng bộ 08:00–20:00 toàn project
 - [x] Meta title + description cập nhật emoji + USP
 - [x] Icon máy giặt — thay "GS" ở Header, Footer, Location
-- [ ] Deploy changes lên Vercel (icon + giờ 08:00)
-- [ ] Google Business Posts — 1-2 bài/tuần
-- [ ] Xin review khách cũ (mục tiêu: 20+ reviews)
-- [ ] Blog content — 20 bài
+- [x] GTM + GA4 live — track click_hotline + click_zalo
+- [x] Google Ads campaign chạy — PMax, 200k/ngày, 5km radius Gò Vấp
+- [x] Google Business Posts — 2 bài tuần 1 (quần áo + giày)
+- [ ] Deploy changes lên Vercel (reviewCount: 20)
+- [ ] Negative Keywords trong Google Ads
+- [ ] Liên hệ Google Support — Map ad 404 (script: docs/google-ads-map-404-issue.md)
+- [ ] Blog content — 20 bài 🔴
 
 # SEO Audit Notes — Giặt Sấy 24h Gò Vấp
 

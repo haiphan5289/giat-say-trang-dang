@@ -4,6 +4,14 @@ import { useState, useEffect } from "react";
 import { Phone } from "lucide-react";
 import { BUSINESS } from "@/config/business";
 
+function FacebookIcon() {
+  return (
+    <svg width={20} height={20} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+}
+
 export default function StickyMobileCTA() {
   const [visible, setVisible] = useState(false);
 
@@ -19,14 +27,24 @@ export default function StickyMobileCTA() {
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="shadow-[0_-4px_24px_rgba(0,0,0,0.18)]">
+      <div className="flex shadow-[0_-4px_24px_rgba(0,0,0,0.18)]">
+        <a
+          href={BUSINESS.facebookHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 bg-blue-600 active:bg-blue-700 text-white font-bold py-4 text-[15px] w-1/2"
+          aria-label="Facebook"
+        >
+          <FacebookIcon />
+          Facebook
+        </a>
         <a
           href={BUSINESS.hotlineHref}
-          className="flex items-center justify-center gap-2 bg-green-500 active:bg-green-600 text-white font-bold py-4 text-[15px] phone-pulse w-full"
+          className="flex items-center justify-center gap-2 bg-green-500 active:bg-green-600 text-white font-bold py-4 text-[15px] phone-pulse w-1/2"
           aria-label="Gọi ngay"
         >
           <Phone size={20} />
-          Gọi Ngay — {BUSINESS.hotline}
+          Gọi Ngay
         </a>
       </div>
     </div>

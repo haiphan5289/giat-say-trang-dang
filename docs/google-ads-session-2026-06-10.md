@@ -15,6 +15,37 @@
 
 ---
 
+## Cập Nhật 2026-06-16
+
+| | |
+|---|---|
+| **Google Reviews** | 20 reviews ⭐ (tăng từ 16) ✅ |
+| **reviewCount trong layout.tsx** | Đã cập nhật lên 20 ✅ |
+| **Google Business Posts** | Đã đăng 2 bài tuần này: quần áo trước/sau + giày Adidas trước/sau ✅ |
+
+### Conversion Tracking — Kết Quả Kiểm Tra
+
+| Conversion | Trạng thái | Lượt |
+|---|---|---|
+| click_hotline (GA4) | Không có lượt chuyển đổi gần đây | 0 |
+| click_zalo (GA4) | Không có lượt chuyển đổi gần đây | 0 |
+| Local actions - Directions | **Đang hoạt động** ✅ | **6** |
+
+**Giải thích:** click_hotline/zalo = 0 trong Google Ads là **bình thường** — GA4 ghi nhận tất cả nguồn (organic, direct), còn Google Ads chỉ đếm khi khách click ad rồi mới gọi/nhắn. 6 lượt "Xem đường đi" là conversion thật từ ads — chứng tỏ campaign đang hoạt động hiệu quả.
+
+### Fixes đã thực hiện (2026-06-15)
+
+| Fix | Kết quả |
+|---|---|
+| Tắt Final URL Expansion | ✅ Text search ads không còn redirect sai |
+| Đổi location targeting → Bán kính 5km quanh tiệm | ✅ Không còn target toàn TP.HCM |
+| Nạp thêm tiền (MoMo) | ✅ Campaign tiếp tục chạy |
+| Tạo `docs/google-ads-map-404-issue.md` | ✅ Document vấn đề Map local ad 404 |
+
+**Vấn đề chưa fix:** Sponsored Map ad "Website" button → vẫn 404 (cần liên hệ Google Support — script có trong `docs/google-ads-map-404-issue.md`)
+
+---
+
 ## Cập Nhật 2026-06-11
 
 | | |
