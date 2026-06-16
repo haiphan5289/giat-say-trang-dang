@@ -4,6 +4,28 @@ import { useState, useEffect } from "react";
 import { Phone } from "lucide-react";
 import { BUSINESS } from "@/config/business";
 
+const FB_PAGE_ID = "61551799042694";
+
+function openFacebook() {
+  let timer: ReturnType<typeof setTimeout>;
+
+  const onHidden = () => {
+    if (document.hidden) {
+      clearTimeout(timer);
+      document.removeEventListener("visibilitychange", onHidden);
+    }
+  };
+
+  document.addEventListener("visibilitychange", onHidden);
+
+  timer = setTimeout(() => {
+    document.removeEventListener("visibilitychange", onHidden);
+    window.location.href = BUSINESS.facebookHref;
+  }, 1500);
+
+  window.location.href = `fb://profile/${FB_PAGE_ID}`;
+}
+
 function FacebookIcon() {
   return (
     <svg width={20} height={20} viewBox="0 0 24 24" fill="currentColor">
@@ -28,16 +50,14 @@ export default function StickyMobileCTA() {
       }`}
     >
       <div className="flex shadow-[0_-4px_24px_rgba(0,0,0,0.18)]">
-        <a
-          href={BUSINESS.facebookHref}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={openFacebook}
           className="flex items-center justify-center gap-2 bg-blue-600 active:bg-blue-700 text-white font-bold py-4 text-[15px] w-1/2"
           aria-label="Facebook"
         >
           <FacebookIcon />
           Facebook
-        </a>
+        </button>
         <a
           href={BUSINESS.hotlineHref}
           className="flex items-center justify-center gap-2 bg-green-500 active:bg-green-600 text-white font-bold py-4 text-[15px] phone-pulse w-1/2"
