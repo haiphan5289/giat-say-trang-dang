@@ -168,7 +168,7 @@ export default function Gallery() {
               </span>
             </>
           }
-          description="Từ quần áo đến nội thất — mọi dịch vụ được thực hiện với tiêu chuẩn chuyên nghiệp cao nhất."
+          description="Từ quần áo đến nội thất — mọi dịch vụ được thực hiện với tiêu chuẩn chuyên nghiệp."
           descriptionClass="max-w-lg"
         />
         <ShopPhotoGrid />

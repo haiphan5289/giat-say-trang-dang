@@ -10,7 +10,7 @@ const navItems = [
   { label: "Giới Thiệu", href: "#gioi-thieu" },
   { label: "Dịch Vụ", href: "#dich-vu" },
   { label: "Quy Trình", href: "#quy-trinh" },
-  { label: "Tin Tức", href: "#tin-tuc" },
+  { label: "Tin Tức", href: "/tin-tuc" },
   { label: "Vị Trí", href: "#vi-tri" },
   { label: "Liên Hệ", href: "#lien-he" },
 ];

@@ -102,8 +102,8 @@
 | `/giat-giay-go-vap` | giặt giày gò vấp, vệ sinh giày | ✅ Done |
 | `/giat-chan-men-go-vap` | giặt chăn mền gò vấp | ✅ Done |
 | `/giat-ui-tan-noi-go-vap` | giặt ủi tận nơi gò vấp | ✅ Done |
-| `/giat-rem-cua-go-vap` | giặt rèm cửa gò vấp | ❌ Chưa tạo |
-| `/giat-hap-go-vap` | giặt hấp vest gò vấp | ❌ Chưa tạo |
+| `/giat-rem-cua-go-vap` | giặt rèm cửa gò vấp | ⏸ Chưa có dịch vụ thật |
+| `/giat-hap-go-vap` | giặt hấp vest gò vấp | ⏸ Chưa có dịch vụ thật |
 | `/giat-gau-bong-go-vap` | giặt gấu bông gò vấp | ⏳ Nếu có dịch vụ |
 
 ---

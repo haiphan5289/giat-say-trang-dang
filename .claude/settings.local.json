@@ -5,10 +5,14 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/giat-say-go-vap)",
       "Bash(find /Users/haiphan/.claude -name \"*.md\" | grep -i \"flipped\\\\|skill\" | head -20)",
       "Read(//Users/haiphan/.claude/**)",
-      "Bash(mkdir -p /Users/haiphan/Desktop/haiphan/giat-say-trang-dang/.claude/skills/seo-conversion-expert)"
+      "Bash(mkdir -p /Users/haiphan/Desktop/haiphan/giat-say-trang-dang/.claude/skills/seo-conversion-expert)",
+      "Bash(mkdir -p /Users/haiphan/Desktop/haiphan/giat-say-trang-dang/web/src/app/tin-tuc/\\\\[slug\\\\])",
+      "Bash(cat tailwind.config.ts)",
+      "Bash(cat tailwind.config.js)"
     ],
     "additionalDirectories": [
-      "/Users/haiphan/Desktop/haiphan/giat-say-trang-dang/.claude/skills"
+      "/Users/haiphan/Desktop/haiphan/giat-say-trang-dang/.claude/skills",
+      "/Users/haiphan/Desktop/haiphan/giat-say-trang-dang/web/src/app/tin-tuc"
     ]
   }
 }

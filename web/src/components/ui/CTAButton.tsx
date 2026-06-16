@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-type Variant = "primary" | "white" | "ghost";
+type Variant = "primary" | "white" | "ghost" | "phone";
 type Size = "sm" | "md" | "lg";
 
 interface CTAButtonProps {
@@ -11,6 +11,7 @@ interface CTAButtonProps {
   className?: string;
   target?: string;
   rel?: string;
+  "aria-label"?: string;
 }
 
 const variantClasses: Record<Variant, string> = {
@@ -20,6 +21,8 @@ const variantClasses: Record<Variant, string> = {
     "bg-white text-blue-700 hover:bg-blue-50 shadow-xl shadow-black/10",
   ghost:
     "bg-white/15 border-2 border-white/30 text-white hover:bg-white/25 backdrop-blur-sm",
+  phone:
+    "bg-green-500 active:bg-green-600 text-white phone-pulse",
 };
 
 const shimmerClasses: Partial<Record<Variant, string>> = {
@@ -41,6 +44,7 @@ export default function CTAButton({
   className,
   target,
   rel,
+  "aria-label": ariaLabel,
 }: CTAButtonProps) {
   const shimmer = shimmerClasses[variant];
   return (
@@ -48,6 +52,7 @@ export default function CTAButton({
       href={href}
       target={target}
       rel={rel}
+      aria-label={ariaLabel}
       className={`group inline-flex items-center justify-center gap-2 font-bold transition-all hover:scale-105 relative overflow-hidden ${variantClasses[variant]} ${sizeClasses[size]} ${className ?? ""}`}
     >
       {shimmer && (

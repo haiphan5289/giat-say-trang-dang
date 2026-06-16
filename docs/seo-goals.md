@@ -42,8 +42,8 @@
 - [x] Giặt Chăn Mền Gò Vấp ✅
 - [x] Giặt Giày Gò Vấp ✅
 - [x] Giặt Sấy Giao Nhận Tận Nơi Gò Vấp ✅
-- [ ] Giặt Rèm Cửa Gò Vấp
-- [ ] Giặt Hấp Quần Áo Gò Vấp
+- [ ] Giặt Rèm Cửa Gò Vấp ⏸ chưa có dịch vụ thật
+- [ ] Giặt Hấp Quần Áo Gò Vấp ⏸ chưa có dịch vụ thật
 
 ---
 
