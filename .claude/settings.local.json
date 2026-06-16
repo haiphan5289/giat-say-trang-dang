@@ -8,7 +8,12 @@
       "Bash(mkdir -p /Users/haiphan/Desktop/haiphan/giat-say-trang-dang/.claude/skills/seo-conversion-expert)",
       "Bash(mkdir -p /Users/haiphan/Desktop/haiphan/giat-say-trang-dang/web/src/app/tin-tuc/\\\\[slug\\\\])",
       "Bash(cat tailwind.config.ts)",
-      "Bash(cat tailwind.config.js)"
+      "Bash(cat tailwind.config.js)",
+      "Bash(cp \"/Users/haiphan/Desktop/Giặt-sây/z7939774665207_14233734c5b7832dbfcbadd87bc556c1.jpg\" \"/Users/haiphan/Desktop/haiphan/giat-say-trang-dang/web/public/images/ao-function-truoc-sau.jpg\")",
+      "Bash(cp \"/Users/haiphan/Desktop/Giặt-sây/z7939774672655_fd8cf467c68deea9be5dfb23490da287.jpg\" \"/Users/haiphan/Desktop/haiphan/giat-say-trang-dang/web/public/images/ao-function-sau.jpg\")",
+      "Bash(cp \"/Users/haiphan/Desktop/Giặt-sây/z7939774676382_e2831074dda00dcc2819d1ab3951b3b8.jpg\" \"/Users/haiphan/Desktop/haiphan/giat-say-trang-dang/web/public/images/dong-phuc-hoc-sinh.jpg\")",
+      "Bash(cp \"/Users/haiphan/Desktop/Giặt-sây/z7939774683345_2f98c48cf292b8eb53fe6d3aba08f459.jpg\" \"/Users/haiphan/Desktop/haiphan/giat-say-trang-dang/web/public/images/ao-trang-truoc-sau.jpg\")",
+      "Bash(cp \"/Users/haiphan/Desktop/Giặt-sây/z7941551975752_1673375541417dd970b43bfaf7ffed78.jpg\" \"/Users/haiphan/Desktop/haiphan/giat-say-trang-dang/web/public/images/giay-adidas-truoc-sau.jpg\")"
     ],
     "additionalDirectories": [
       "/Users/haiphan/Desktop/haiphan/giat-say-trang-dang/.claude/skills",
