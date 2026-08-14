@@ -33,7 +33,7 @@ export default function PricingTable() {
           {pricing.map((item) => (
             <StaggerItem key={item.service}>
               <div
-                className={`relative rounded-2xl border p-5 flex flex-col gap-1 transition-shadow hover:shadow-md h-full ${
+                className={`relative rounded-2xl border p-5 flex flex-col gap-1 transition-all hover:shadow-xl hover:-translate-y-1 h-full ${
                   item.highlight
                     ? "border-blue-300 bg-blue-50 ring-2 ring-blue-200"
                     : "border-slate-100 bg-white"

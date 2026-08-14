@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import TiltCard from "@/components/ui/TiltCard";
 import CTABanner from "@/components/ui/CTABanner";
-import FadeIn from "@/components/ui/FadeIn";
+import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 
 const shopPhotos = [
   {
@@ -90,66 +90,60 @@ const items = [
 
 function ShopPhotoGrid() {
   return (
-    <FadeIn>
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[220px] mb-4">
-      {shopPhotos.map((item, i) => (
-        <TiltCard
-          key={item.label}
-          className={`${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
-        >
-          <Image
-            src={item.image}
-            alt={item.label}
-            fill
-            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 768px) 50vw, 33vw"
-          />
-          <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} group-hover:opacity-90 transition-opacity duration-300`} />
-          <div className="absolute top-3 left-3">
-            <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
-              <span className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-              Ảnh thực tế
-            </span>
-          </div>
-          <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-center">
-            <p className="text-white font-bold text-sm lg:text-base leading-tight drop-shadow-md">{item.label}</p>
-            <p className="text-white/70 text-xs mt-1 drop-shadow">{item.sub}</p>
-          </div>
-        </TiltCard>
+    <StaggerGrid className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[220px] mb-4">
+      {shopPhotos.map((item) => (
+        <StaggerItem key={item.label} className={item.span}>
+          <TiltCard className="relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl h-full">
+            <Image
+              src={item.image}
+              alt={item.label}
+              fill
+              className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 768px) 50vw, 33vw"
+            />
+            <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} group-hover:opacity-90 transition-opacity duration-300`} />
+            <div className="absolute top-3 left-3">
+              <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                <span className="w-1.5 h-1.5 bg-green-400 rounded-full" />
+                Ảnh thực tế
+              </span>
+            </div>
+            <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-center">
+              <p className="text-white font-bold text-sm lg:text-base leading-tight drop-shadow-md">{item.label}</p>
+              <p className="text-white/70 text-xs mt-1 drop-shadow">{item.sub}</p>
+            </div>
+          </TiltCard>
+        </StaggerItem>
       ))}
-    </div>
-    </FadeIn>
+    </StaggerGrid>
   );
 }
 
 function ServicePhotoGrid() {
   return (
-    <FadeIn delay={0.1}>
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px]">
-      {items.map((item, i) => (
-        <TiltCard
-          key={item.label}
-          className={`${item.span} relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl`}
-        >
-          <Image
-            src={item.image}
-            alt={item.label}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 768px) 50vw, 33vw"
-          />
-          <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} group-hover:opacity-90 transition-opacity duration-300`} />
-          <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
-            <ArrowUpRight size={14} className="text-white" />
-          </div>
-          <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-center">
-            <p className="text-white font-bold text-sm lg:text-base leading-tight drop-shadow-md">{item.label}</p>
-            <p className="text-white/70 text-xs mt-1 drop-shadow">{item.sub}</p>
-          </div>
-        </TiltCard>
+    <StaggerGrid className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px]">
+      {items.map((item) => (
+        <StaggerItem key={item.label} className={item.span}>
+          <TiltCard className="relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-2xl h-full">
+            <Image
+              src={item.image}
+              alt={item.label}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 768px) 50vw, 33vw"
+            />
+            <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} group-hover:opacity-90 transition-opacity duration-300`} />
+            <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+              <ArrowUpRight size={14} className="text-white" />
+            </div>
+            <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-center">
+              <p className="text-white font-bold text-sm lg:text-base leading-tight drop-shadow-md">{item.label}</p>
+              <p className="text-white/70 text-xs mt-1 drop-shadow">{item.sub}</p>
+            </div>
+          </TiltCard>
+        </StaggerItem>
       ))}
-    </div>
-    </FadeIn>
+    </StaggerGrid>
   );
 }
 

@@ -26,7 +26,6 @@ const quickLinks = [
 
 const serviceList = [
   "Giặt Sấy Gia Đình",
-  "Giặt Hấp Cao Cấp",
   "Giặt Nệm & Sofa",
   "Giặt Giày",
   "Giặt Rèm Cửa",

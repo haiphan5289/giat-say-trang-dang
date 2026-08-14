@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Phone } from "lucide-react";
 import { BUSINESS } from "@/config/business";
+import CTAButton from "@/components/ui/CTAButton";
 
 const FB_PAGE_ID = "61551799042694";
 
@@ -58,14 +59,15 @@ export default function StickyMobileCTA() {
           <FacebookIcon />
           Facebook
         </button>
-        <a
+        <CTAButton
           href={BUSINESS.hotlineHref}
-          className="flex items-center justify-center gap-2 bg-green-500 active:bg-green-600 text-white font-bold py-4 text-[15px] phone-pulse w-1/2"
+          variant="phone"
+          className="w-1/2 !rounded-none !py-4 !text-[15px]"
           aria-label="Gọi ngay"
         >
           <Phone size={20} />
           Gọi Ngay
-        </a>
+        </CTAButton>
       </div>
     </div>
   );

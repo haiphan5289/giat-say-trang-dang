@@ -1,4 +1,5 @@
 import { BUSINESS } from "@/config/business";
+import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 
 const steps = [
   { emoji: "📅", label: "Đặt lịch", time: "2 phút", sub: "Gọi hotline" },
@@ -11,9 +12,9 @@ export default function PickupFlow() {
   return (
     <section id="pickup-flow" className="bg-white border-b border-slate-100 py-5 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-5">
+        <StaggerGrid className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-5">
           {steps.map((s, i) => (
-            <div key={s.label} className="flex items-center gap-3 relative">
+            <StaggerItem key={s.label} className="flex items-center gap-3 relative">
               <div className="w-11 h-11 rounded-2xl bg-blue-50 flex items-center justify-center text-xl shrink-0">
                 {s.emoji}
               </div>
@@ -27,9 +28,9 @@ export default function PickupFlow() {
                   →
                 </div>
               )}
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
       </div>
     </section>
   );

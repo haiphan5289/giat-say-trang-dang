@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   description:
     "Giặt sạch · Sấy thơm · Giao tận nhà Gò Vấp. Từ 13.000đ/kg — lấy tận nhà. Chăn mền, giày, quần áo. Mở cửa T2–T7.",
-  keywords: ["giặt sấy 24h gò vấp", "giặt sấy gần đây", "giặt sạch gò vấp", "giặt nhanh khử mùi hcm", "giặt ủi tận nơi gò vấp", "giặt hấp vest áo dài", "giặt nệm sofa tại nhà", "giặt giày gò vấp"],
+  keywords: ["giặt sấy 24h gò vấp", "giặt sấy gần đây", "giặt sạch gò vấp", "giặt nhanh khử mùi hcm", "giặt ủi tận nơi gò vấp", "giặt nệm sofa tại nhà", "giặt giày gò vấp"],
   alternates: { canonical: "https://www.giatsay24hgovap.com" },
   twitter: {
     card: "summary_large_image",

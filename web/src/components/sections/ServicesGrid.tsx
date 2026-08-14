@@ -1,4 +1,4 @@
-import { Shirt, Star, Heart, Cloud, ArrowRight, Zap } from "lucide-react";
+import { Shirt, Star, Heart, Cloud, ArrowRight, Zap, Truck } from "lucide-react";
 import Link from "next/link";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CTAButton from "@/components/ui/CTAButton";
@@ -57,7 +57,7 @@ const services = [
   {
     Icon: Cloud,
     title: "Giặt Chăn Mền",
-    description: "Giặt sạch mền gối, đánh bung sợi vải, thơm mát như ngày đầu.",
+    description: "Giặt sạch mền gối, đánh bung bụi bẩn tích tụ, thơm mát như ngày đầu.",
     price: "20.000đ – 30.000đ/kg",
     gradient: "from-indigo-500 to-blue-600",
     glow: "shadow-indigo-500/20",
@@ -65,6 +65,18 @@ const services = [
     text: "text-indigo-600",
     ring: "ring-indigo-100",
     href: "/giat-chan-men-go-vap",
+  },
+  {
+    Icon: Truck,
+    title: "Giặt Ủi Tận Nơi",
+    description: "Nhận & giao tận nhà, ủi phẳng đóng gói sạch. Không cần ra ngoài.",
+    price: "Miễn phí lấy giao",
+    gradient: "from-violet-500 to-purple-600",
+    glow: "shadow-violet-500/20",
+    bg: "bg-violet-50",
+    text: "text-violet-600",
+    ring: "ring-violet-100",
+    href: "/giat-ui-tan-noi-go-vap",
   },
 ];
 

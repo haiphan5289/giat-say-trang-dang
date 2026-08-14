@@ -26,15 +26,6 @@ const slides = [
       "Hỗ trợ nhận và giao đồ tận nơi nhanh chóng, tiện lợi, giúp tiết kiệm thời gian cho khách hàng.",
     accent: "from-slate-900 via-cyan-950 to-slate-900",
   },
-  {
-    id: 3,
-    tag: "Trang phục cao cấp",
-    title: "Giặt Hấp",
-    highlight: "Vest & Áo Dài",
-    description:
-      "Xử lý trang phục cao cấp bằng phương pháp hấp chuyên biệt, giữ nguyên form dáng và màu sắc nguyên bản.",
-    accent: "from-slate-900 via-indigo-950 to-slate-900",
-  },
 ];
 
 const trustPoints = [
@@ -101,7 +92,7 @@ function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
 
 function HeroImagePanel({ current }: { current: number }) {
   return (
-    <div className="hidden lg:block relative h-[540px] w-full rounded-3xl overflow-hidden shadow-[0_32px_80px_-12px_rgba(59,130,246,0.35)]">
+    <div className="hidden lg:block relative h-[540px] w-full rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/35">
       {heroImages.map((img, i) => (
         <Image
           key={i}

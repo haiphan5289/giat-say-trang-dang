@@ -24,8 +24,8 @@ export const testimonials: Testimonial[] = [
     location: "Gò Vấp, TP.HCM",
     rating: 5,
     comment:
-      "Giặt bộ vest cưới ở đây, kết quả ngoài mong đợi. Chất vải được giữ nguyên, không bị nhăn hay phai màu.",
-    service: "Giặt Hấp Cao Cấp",
+      "Đặt giặt ủi tận nơi cho cả tủ đồ công sở, nhân viên đến đúng giờ hẹn, đồ trả về ủi phẳng phiu, gấp gọn gàng. Rất hài lòng!",
+    service: "Giặt Ủi Tận Nơi",
   },
   {
     id: 3,

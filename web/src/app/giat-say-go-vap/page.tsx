@@ -71,7 +71,6 @@ const pricing = [
   { service: "Giặt Giày", price: "Từ 50.000đ", unit: "/đôi", note: "Phục hồi màu sắc" },
   { service: "Giặt Gấu Bông", price: "Từ 30.000đ", unit: "/kg", note: "An toàn cho trẻ em" },
   { service: "Giặt Chăn Mền", price: "20k – 30k", unit: "/kg", note: "Khử khuẩn sâu" },
-  { service: "Giặt Hấp Vest", price: "Liên hệ", unit: "", note: "Báo giá theo từng loại" },
 ];
 
 const steps = [

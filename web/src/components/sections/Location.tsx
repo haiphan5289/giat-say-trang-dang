@@ -71,7 +71,7 @@ export default function Location() {
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-t-2xl" />
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-[#1B3FA0] flex items-center justify-center shadow-lg shadow-blue-800/40">
+                <div className="w-10 h-10 rounded-xl bg-blue-800 flex items-center justify-center shadow-lg shadow-blue-800/40">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
                     <rect x="2" y="2" width="28" height="28" rx="5" fill="#1B3FA0"/>
                     <rect x="2" y="2" width="28" height="9" rx="5" fill="#17367A"/>

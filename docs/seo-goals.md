@@ -24,14 +24,16 @@
 
 ---
 
-## Việc cần làm — Tuần này (cập nhật 2026-06-16)
+## Việc cần làm — Tuần này (cập nhật 2026-06-17)
 
 - [x] Hoàn thiện Landing Page "Giặt Sấy Gò Vấp" ✅
 - [x] Thêm Schema LocalBusiness + FAQ vào website ✅
 - [x] Đăng 2 bài lên Google Business Profile (quần áo + giày) ✅
 - [x] Xin review khách cũ → đạt 20 reviews ✅
-- [ ] Deploy lên Vercel (reviewCount: 20 đang chờ)
-- [ ] Thêm Negative Keywords vào Google Ads
+- [x] Deploy lên Vercel (reviewCount: 20) ✅ — đã có trong code, đã push main
+- [x] Thêm Negative Keywords vào Google Ads ✅ 2026-06-17 — 13 từ khóa (list "Giặt-sấy")
+- [ ] Liên hệ Google Support — fix Map ad 404 (script: docs/google-ads-map-404-issue.md)
+- [ ] Đăng ký hộ kinh doanh cá thể tại UBND Quận Gò Vấp — deadline Google Ads 17/7/2026
 - [ ] Viết 5 bài blog đầu tiên 🔴
 
 ---
@@ -94,10 +96,11 @@
 - [x] Icon máy giặt — thay "GS" ở Header, Footer, Location
 - [x] GTM + GA4 live — track click_hotline + click_zalo
 - [x] Google Ads campaign chạy — PMax, 200k/ngày, 5km radius Gò Vấp
-- [x] Google Business Posts — 2 bài tuần 1 (quần áo + giày)
-- [ ] Deploy changes lên Vercel (reviewCount: 20)
-- [ ] Negative Keywords trong Google Ads
+- [x] Google Business Posts — 2 bài tuần 1 (quần áo + giày), 2 bài tuần 2 (máy sấy + máy giặt) ✅ 2026-06-17
+- [x] Deploy changes lên Vercel (reviewCount: 20) ✅ — đã push main 2026-06-17
+- [ ] Negative Keywords trong Google Ads 🔴
 - [ ] Liên hệ Google Support — Map ad 404 (script: docs/google-ads-map-404-issue.md)
+- [ ] Đăng ký hộ kinh doanh cá thể — deadline Google Ads xác minh: 17/7/2026
 - [ ] Blog content — 20 bài 🔴
 
 # SEO Audit Notes — Giặt Sấy 24h Gò Vấp

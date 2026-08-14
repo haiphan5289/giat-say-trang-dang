@@ -14,15 +14,11 @@ const faqs = [
   },
   {
     q: "Giá giặt sấy bao nhiêu?",
-    a: "Giặt thường từ 13.000đ/kg · Giặt nhanh từ 20.000đ/kg · Giặt giày từ 50.000đ/đôi · Giặt gấu bông từ 30.000đ/kg · Giặt chăn mền từ 20.000–30.000đ/kg. Giặt hấp vest, áo dài vui lòng liên hệ để báo giá chính xác.",
+    a: "Giặt thường từ 13.000đ/kg · Giặt nhanh từ 20.000đ/kg · Giặt giày từ 50.000đ/đôi · Giặt gấu bông từ 30.000đ/kg · Giặt chăn mền từ 20.000–30.000đ/kg.",
   },
   {
     q: "Có giao nhận tận nơi không?",
     a: "Có. Chúng tôi lấy và trả đồ tận địa chỉ trong khu vực Gò Vấp và các quận lân cận. Gọi hotline 0938 432 178 để đặt lịch.",
-  },
-  {
-    q: "Có nhận giặt vest, áo dài, đồ cao cấp không?",
-    a: "Có. Chúng tôi có dịch vụ giặt hấp chuyên biệt — giữ nguyên form dáng, màu sắc và chất liệu. Phù hợp với vest công sở, áo dài truyền thống và trang phục dạ hội.",
   },
   {
     q: "Đặt lịch bằng cách nào?",

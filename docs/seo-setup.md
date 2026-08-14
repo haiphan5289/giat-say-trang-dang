@@ -41,10 +41,15 @@
 
 ### P1 — Tuần này (tạo khách nhanh nhất)
 
-- [ ] **Chạy Google Search Ads** — 200k–300k/ngày, landing pages: `/giat-say-go-vap`, `/giat-chan-men-go-vap`, `/giat-giay-go-vap`
+- [x] **Chạy Google Search Ads** — PMax, 200k/ngày, 5km radius Gò Vấp ✅ đang chạy
 - [x] **Cài GTM + GA4** — `GTM-54R3MFLD` + `G-MTNLMFDDP5`, track Hotline + Zalo ✅ Live & verified
-- [ ] **Tăng Google Reviews: 11 → 30** — xin review sau mỗi đơn hoàn thành. Cập nhật `aggregateRating.reviewCount` trong `layout.tsx`
-- [ ] **Google Business Posts + Ảnh** — 1–2 bài/tuần, mục tiêu 50+ ảnh thực tế (máy giặt, máy sấy, chăn mền, giày, cửa hàng)
+- [x] **reviewCount: 20** — đã cập nhật `layout.tsx`, đã push main 2026-06-17 ✅
+- [x] **Google Reviews: 20** — đạt mốc 20 reviews 5.0 ⭐ (2026-06-16) ✅
+- [x] **Google Business Posts** — 2 bài tuần 1 (quần áo + giày) ✅
+- [ ] **Negative Keywords** — thêm vào Google Ads: tuyển dụng, việc làm, máy giặt, cách giặt, miễn phí 🔴
+- [ ] **Liên hệ Google Support** — fix Map ad "Website" button → 404 (script: `docs/google-ads-map-404-issue.md`)
+- [ ] **Xác minh Google Ads (D&B)** — đăng ký hộ kinh doanh cá thể tại UBND Quận Gò Vấp, deadline **17/7/2026**
+- [ ] **Google Business Posts + Ảnh** — tiếp tục 1–2 bài/tuần, mục tiêu 50+ ảnh thực tế
 
 ### P2 — Trong 30 ngày
 
