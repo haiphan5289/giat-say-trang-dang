@@ -16,7 +16,7 @@
 | Hạng mục | Mục tiêu | Hiện tại |
 |---|---|---|
 | Landing Pages | 6 trang dịch vụ hoàn chỉnh | 4/6 ✅ |
-| Blog | 20 bài (1000–2000 từ/bài) | 0/20 🔴 |
+| Blog | 20 bài (1000–2000 từ/bài) | 30/20 ✅ (2026-08-18) |
 | Google Maps Reviews | 20+ reviews thật | 20 ✅ |
 | Google Business Posts | 1–2 bài/tuần | 2 bài tuần 1 ✅ |
 | PageSpeed Mobile | > 90 điểm | Chưa đo |
@@ -34,7 +34,7 @@
 - [x] Thêm Negative Keywords vào Google Ads ✅ 2026-06-17 — 13 từ khóa (list "Giặt-sấy")
 - [ ] Liên hệ Google Support — fix Map ad 404 (script: docs/google-ads-map-404-issue.md)
 - [ ] Đăng ký hộ kinh doanh cá thể tại UBND Quận Gò Vấp — deadline Google Ads 17/7/2026
-- [ ] Viết 5 bài blog đầu tiên 🔴
+- [x] Viết blog — 30 bài đã có trong `data/news.ts` ✅ 2026-08-18
 
 ---
 
@@ -101,7 +101,7 @@
 - [ ] Negative Keywords trong Google Ads 🔴
 - [ ] Liên hệ Google Support — Map ad 404 (script: docs/google-ads-map-404-issue.md)
 - [ ] Đăng ký hộ kinh doanh cá thể — deadline Google Ads xác minh: 17/7/2026
-- [ ] Blog content — 20 bài 🔴
+- [x] Blog content — 30/20 bài ✅ 2026-08-18
 
 # SEO Audit Notes — Giặt Sấy 24h Gò Vấp
 

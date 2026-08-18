@@ -187,15 +187,35 @@ export default function GiatUiTanNoiGoVapPage() {
       <section className="py-10 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4 text-center">Xem thêm dịch vụ giặt sấy</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { href: "/giat-say-go-vap", title: "Giặt Sấy", sub: "Từ 13k/kg" },
               { href: "/giat-giay-go-vap", title: "Giặt Giày", sub: "Từ 50k/đôi" },
               { href: "/giat-chan-men-go-vap", title: "Giặt Chăn Mền", sub: "Từ 20k/kg" },
+              { href: "/giat-gau-bong-go-vap", title: "Giặt Gấu Bông", sub: "Từ 30k/kg" },
             ].map((s) => (
               <Link key={s.href} href={s.href} className="bg-white border border-slate-100 rounded-xl p-4 text-center hover:border-blue-200 hover:shadow-md hover:bg-blue-50 transition-all duration-200 group">
                 <p className="font-bold text-slate-800 text-sm group-hover:text-blue-700 transition-colors leading-tight">{s.title}</p>
                 <p className="text-xs text-slate-400 mt-1">{s.sub}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bài viết liên quan */}
+      <section className="py-10 bg-white border-t border-slate-100">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4 text-center">Bài viết liên quan</p>
+          <div className="grid sm:grid-cols-3 gap-3">
+            {[
+              { href: "/tin-tuc/giat-ui-tan-noi-co-dat-hon-tu-giat-khong", title: "Giặt Ủi Tận Nơi Có Đắt Hơn Tự Giặt Ở Nhà Không?" },
+              { href: "/tin-tuc/quy-trinh-dong-goi-do-sau-khi-giat-ui-tan-noi", title: "Quy Trình Đóng Gói Đồ Sau Khi Giặt Ủi Tận Nơi" },
+              { href: "/tin-tuc/rut-ngan-thoi-gian-giat-do-cuoi-tuan", title: "Rút Ngắn Thời Gian Giặt Đồ Cuối Tuần" },
+            ].map((a) => (
+              <Link key={a.href} href={a.href} className="bg-slate-50 border border-slate-100 rounded-xl p-4 hover:border-blue-200 hover:shadow-md hover:bg-blue-50 transition-all duration-200 group">
+                <p className="font-semibold text-slate-800 text-sm group-hover:text-blue-700 transition-colors leading-snug line-clamp-2">{a.title}</p>
+                <span className="text-xs text-blue-600 font-medium mt-2 inline-block">Đọc thêm →</span>
               </Link>
             ))}
           </div>

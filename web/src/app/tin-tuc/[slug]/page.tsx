@@ -54,6 +54,11 @@ export default async function BlogPostPage({
     ...relatedServices.filter((s) => s.href !== post.relatedHref),
   ].slice(0, 4);
 
+  const relatedPosts = [
+    ...newsPosts.filter((p) => p.slug !== post.slug && p.category === post.category),
+    ...newsPosts.filter((p) => p.slug !== post.slug && p.category !== post.category),
+  ].slice(0, 3);
+
   return (
     <main className="min-h-screen bg-white pb-32 md:pb-24">
       {/* ── Article header ── */}
@@ -116,6 +121,31 @@ export default async function BlogPostPage({
                   Gọi Ngay
                 </CTAButton>
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── Related Posts ── */}
+        {relatedPosts.length > 0 && (
+          <div className="reveal mt-16 pt-10 border-t border-slate-100">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6">
+              Bài viết liên quan
+            </p>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {relatedPosts.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/tin-tuc/${p.slug}`}
+                  className="group block bg-white border border-slate-100 rounded-2xl p-5 hover:border-blue-200 hover:shadow-lg hover:shadow-slate-200/60 hover:-translate-y-1 transition-all duration-200"
+                >
+                  <span className="inline-flex items-center gap-1 text-xs text-blue-600 font-medium bg-blue-50 px-2 py-0.5 rounded-full mb-3">
+                    {p.category}
+                  </span>
+                  <h3 className="font-semibold text-slate-800 text-sm leading-snug line-clamp-2 group-hover:text-blue-700 transition-colors">
+                    {p.title}
+                  </h3>
+                </Link>
+              ))}
             </div>
           </div>
         )}

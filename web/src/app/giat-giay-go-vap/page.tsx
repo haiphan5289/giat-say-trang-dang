@@ -215,15 +215,35 @@ export default function GiatGiayGoVapPage() {
       <section className="py-10 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4 text-center">Xem thêm dịch vụ giặt sấy</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { href: "/giat-say-go-vap", title: "Giặt Sấy", sub: "Từ 13k/kg" },
               { href: "/giat-chan-men-go-vap", title: "Giặt Chăn Mền", sub: "Từ 20k/kg" },
               { href: "/giat-ui-tan-noi-go-vap", title: "Giặt Ủi Tận Nơi", sub: "Miễn phí lấy giao" },
+              { href: "/giat-gau-bong-go-vap", title: "Giặt Gấu Bông", sub: "Từ 30k/kg" },
             ].map((s) => (
               <Link key={s.href} href={s.href} className="bg-white border border-slate-100 rounded-xl p-4 text-center hover:border-blue-200 hover:shadow-md hover:bg-blue-50 transition-all duration-200 group">
                 <p className="font-bold text-slate-800 text-sm group-hover:text-blue-700 transition-colors leading-tight">{s.title}</p>
                 <p className="text-xs text-slate-400 mt-1">{s.sub}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bài viết liên quan */}
+      <section className="py-10 bg-white border-t border-slate-100">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4 text-center">Bài viết liên quan</p>
+          <div className="grid sm:grid-cols-3 gap-3">
+            {[
+              { href: "/tin-tuc/giay-trang-bi-o-vang-phai-lam-sao", title: "Giày Trắng Bị Ố Vàng Phải Làm Sao?" },
+              { href: "/tin-tuc/co-nen-giat-giay-bang-may-giat-khong", title: "Có Nên Giặt Giày Bằng Máy Giặt Không?" },
+              { href: "/tin-tuc/cach-khu-mui-hoi-giay-the-thao", title: "Cách Khử Mùi Hôi Giày Thể Thao Hiệu Quả" },
+            ].map((a) => (
+              <Link key={a.href} href={a.href} className="bg-slate-50 border border-slate-100 rounded-xl p-4 hover:border-blue-200 hover:shadow-md hover:bg-blue-50 transition-all duration-200 group">
+                <p className="font-semibold text-slate-800 text-sm group-hover:text-blue-700 transition-colors leading-snug line-clamp-2">{a.title}</p>
+                <span className="text-xs text-blue-600 font-medium mt-2 inline-block">Đọc thêm →</span>
               </Link>
             ))}
           </div>

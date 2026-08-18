@@ -25,11 +25,10 @@ const quickLinks = [
 ];
 
 const serviceList = [
-  "Giặt Sấy Gia Đình",
-  "Giặt Nệm & Sofa",
-  "Giặt Giày",
-  "Giặt Rèm Cửa",
-  "Giặt Gấu Bông",
+  { label: "Giặt Sấy Gia Đình", href: "/giat-say-go-vap" },
+  { label: "Giặt Chăn Mền", href: "/giat-chan-men-go-vap" },
+  { label: "Giặt Giày", href: "/giat-giay-go-vap" },
+  { label: "Giặt Ủi Tận Nơi", href: "/giat-ui-tan-noi-go-vap" },
 ];
 
 export default function Footer() {
@@ -112,7 +111,11 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm text-slate-500">
               {serviceList.map((s) => (
-                <li key={s}>{s}</li>
+                <li key={s.label}>
+                  <Link href={s.href} className="hover:text-white transition-colors">
+                    {s.label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>

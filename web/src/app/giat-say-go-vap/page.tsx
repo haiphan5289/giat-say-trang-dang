@@ -217,15 +217,35 @@ export default function GiatSayGoVapPage() {
       <section className="py-10 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4 text-center">Xem thêm dịch vụ giặt sấy</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { href: "/giat-giay-go-vap", title: "Giặt Giày", sub: "Từ 50k/đôi" },
               { href: "/giat-chan-men-go-vap", title: "Giặt Chăn Mền", sub: "Từ 20k/kg" },
               { href: "/giat-ui-tan-noi-go-vap", title: "Giặt Ủi Tận Nơi", sub: "Miễn phí lấy giao" },
+              { href: "/giat-gau-bong-go-vap", title: "Giặt Gấu Bông", sub: "Từ 30k/kg" },
             ].map((s) => (
               <Link key={s.href} href={s.href} className="bg-white border border-slate-100 rounded-xl p-4 text-center hover:border-blue-200 hover:shadow-md hover:bg-blue-50 transition-all duration-200 group">
                 <p className="font-bold text-slate-800 text-sm group-hover:text-blue-700 transition-colors leading-tight">{s.title}</p>
                 <p className="text-xs text-slate-400 mt-1">{s.sub}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bài viết liên quan */}
+      <section className="py-10 bg-white border-t border-slate-100">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4 text-center">Bài viết liên quan</p>
+          <div className="grid sm:grid-cols-3 gap-3">
+            {[
+              { href: "/tin-tuc/bi-quyet-giat-quan-ao-ben-mau", title: "Bí Quyết Giặt Quần Áo Đúng Cách Để Bền Màu Lâu" },
+              { href: "/tin-tuc/tai-sao-quan-ao-van-co-mui-sau-khi-giat", title: "Tại Sao Quần Áo Vẫn Có Mùi Sau Khi Giặt?" },
+              { href: "/tin-tuc/cach-phan-loai-quan-ao-truoc-khi-giat", title: "Cách Phân Loại Quần Áo Trước Khi Giặt" },
+            ].map((a) => (
+              <Link key={a.href} href={a.href} className="bg-slate-50 border border-slate-100 rounded-xl p-4 hover:border-blue-200 hover:shadow-md hover:bg-blue-50 transition-all duration-200 group">
+                <p className="font-semibold text-slate-800 text-sm group-hover:text-blue-700 transition-colors leading-snug line-clamp-2">{a.title}</p>
+                <span className="text-xs text-blue-600 font-medium mt-2 inline-block">Đọc thêm →</span>
               </Link>
             ))}
           </div>

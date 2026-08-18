@@ -840,7 +840,7 @@ export const newsPosts: NewsPost[] = [
     category: "Sức Khỏe",
     image: "/images/shop-interior.jpg",
     slug: "bao-lau-nen-giat-gau-bong-mot-lan",
-    relatedHref: "/giat-say-go-vap",
+    relatedHref: "/giat-gau-bong-go-vap",
     content: `
 <p>Gấu bông thường là món đồ chơi trẻ ôm ngủ cùng mỗi đêm, nhưng lại là một trong những vật dụng ít được giặt định kỳ nhất trong nhà. Trong khi đó, gấu bông tiếp xúc trực tiếp với da mặt, tay trẻ mỗi ngày — tần suất giặt hợp lý quan trọng hơn nhiều so với suy nghĩ thông thường.</p>
 
@@ -866,7 +866,7 @@ export const newsPosts: NewsPost[] = [
 <p>Mạt bụi nhà tích tụ trong gấu bông có thể gây viêm mũi dị ứng, hắt hơi buổi sáng hoặc làm nặng thêm triệu chứng hen suyễn ở trẻ nhạy cảm. Với trẻ sơ sinh và trẻ nhỏ có hệ miễn dịch còn yếu, việc này càng quan trọng hơn vì da và đường hô hấp của trẻ nhạy cảm hơn người lớn rất nhiều.</p>
 
 <h2>Nên tự giặt hay giao dịch vụ?</h2>
-<p>Gấu bông nhỏ, chất liệu đơn giản có thể giặt tay hoặc giặt máy chế độ nhẹ tại nhà. Nhưng với gấu bông lớn, nhồi bông dày hoặc có bộ phận điện tử (phát nhạc, đèn), việc tự giặt dễ làm hỏng hoặc không sấy khô hết bên trong — tạo điều kiện cho nấm mốc phát triển ngầm mà mắt thường khó phát hiện. Dịch vụ <a href="/giat-say-go-vap">giặt sấy tại Gò Vấp</a> của chúng tôi nhận giặt gấu bông với quy trình an toàn cho trẻ em, sấy khô hoàn toàn để không sinh mùi hay nấm mốc.</p>
+<p>Gấu bông nhỏ, chất liệu đơn giản có thể giặt tay hoặc giặt máy chế độ nhẹ tại nhà. Nhưng với gấu bông lớn, nhồi bông dày hoặc có bộ phận điện tử (phát nhạc, đèn), việc tự giặt dễ làm hỏng hoặc không sấy khô hết bên trong — tạo điều kiện cho nấm mốc phát triển ngầm mà mắt thường khó phát hiện. Dịch vụ <a href="/giat-gau-bong-go-vap">giặt gấu bông tại Gò Vấp</a> của chúng tôi nhận giặt gấu bông với quy trình an toàn cho trẻ em, sấy khô hoàn toàn để không sinh mùi hay nấm mốc.</p>
 
 <h2>Kết luận</h2>
 <p>Gấu bông ôm ngủ hàng ngày nên được giặt mỗi 2–3 tuần — tần suất này quan trọng cho sức khỏe của trẻ hơn nhiều người nghĩ. Đừng đợi đến khi gấu bông có mùi rõ rệt mới giặt, vì lúc đó vi khuẩn và mạt bụi đã tích tụ khá nhiều.</p>
@@ -881,7 +881,7 @@ export const newsPosts: NewsPost[] = [
     category: "Sức Khỏe",
     image: "/images/shop-front-1.jpg",
     slug: "cach-ve-sinh-gau-bong-tai-nha-an-toan-cho-be",
-    relatedHref: "/giat-say-go-vap",
+    relatedHref: "/giat-gau-bong-go-vap",
     content: `
 <p>Vệ sinh gấu bông tưởng đơn giản nhưng nếu làm sai cách có thể khiến đồ chơi hỏng dáng, xẹp bông hoặc tệ hơn là còn sót hóa chất tẩy rửa trong lớp bông bên trong — điều đặc biệt nguy hiểm vì trẻ thường cho gấu bông tiếp xúc gần miệng, mặt.</p>
 
@@ -907,7 +907,7 @@ export const newsPosts: NewsPost[] = [
 <p>Đây là bước quyết định gấu bông có bị mốc bên trong hay không. Nếu phơi tự nhiên, cần lật trở nhiều lần và đảm bảo khô hoàn toàn cả lớp bông bên trong, không chỉ khô bề mặt — quá trình này có thể mất 1–2 ngày với gấu bông lớn. Nếu dùng máy sấy, chọn nhiệt độ thấp và cho thêm bóng tennis sạch để đánh tơi bông, tránh vón cục.</p>
 
 <h2>Khi nào nên giao cho dịch vụ chuyên nghiệp?</h2>
-<p>Gấu bông cỡ lớn, nhồi bông dày hoặc có nhiều chi tiết phức tạp rất khó đảm bảo khô hoàn toàn bên trong nếu tự làm tại nhà — nguy cơ ẩm mốc ngầm cao. Dịch vụ <a href="/giat-say-go-vap">giặt gấu bông tại Gò Vấp</a> sử dụng quy trình giặt và sấy chuyên dụng, đảm bảo sạch khuẩn sâu và khô hoàn toàn, an toàn cho bé sử dụng lại ngay.</p>
+<p>Gấu bông cỡ lớn, nhồi bông dày hoặc có nhiều chi tiết phức tạp rất khó đảm bảo khô hoàn toàn bên trong nếu tự làm tại nhà — nguy cơ ẩm mốc ngầm cao. Dịch vụ <a href="/giat-gau-bong-go-vap">giặt gấu bông tại Gò Vấp</a> sử dụng quy trình giặt và sấy chuyên dụng, đảm bảo sạch khuẩn sâu và khô hoàn toàn, an toàn cho bé sử dụng lại ngay.</p>
 
 <h2>Kết luận</h2>
 <p>Vệ sinh gấu bông đúng cách nằm ở hai điểm mấu chốt: xả sạch hoàn toàn xà phòng và sấy khô triệt để. Với gấu bông lớn hoặc có cấu tạo phức tạp, đừng ngại nhờ dịch vụ chuyên nghiệp để đảm bảo an toàn tuyệt đối cho bé.</p>

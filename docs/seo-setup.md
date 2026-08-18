@@ -1,6 +1,6 @@
 # SEO & Growth — giatsay24hgovap.com
 
-> Cập nhật lần cuối: 2026-06-10 (GTM + GA4 verified live)
+> Cập nhật lần cuối: 2026-08-18 (đối chiếu lại với code thực tế — doc cũ bị lỗi thời 2 tháng)
 
 ---
 
@@ -11,10 +11,10 @@
 | Technical SEO | 9/10 ✅ |
 | Landing Pages | 8/10 (4/6 trang) |
 | Conversion | 8.5/10 ✅ |
-| Internal Linking | 5/10 🟡 |
+| Internal Linking | 8/10 ✅ (Footer, Homepage, Landing↔Landing, Landing↔Blog, Blog↔Blog đều đã link — 2026-08-18) |
 | Google Business | 7/10 🟡 |
 | Reviews | 6/10 🟡 |
-| Blog/Content | 2/10 🔴 |
+| Blog/Content | 7/10 ✅ (30 bài đã viết, route `/tin-tuc/[slug]` live — không phải 0/20 như ghi trước đó) |
 | GTM / Ads Tracking | 8/10 ✅ GTM + GA4 live |
 
 ---
@@ -26,7 +26,8 @@
 - 4 landing pages: `/giat-say-go-vap`, `/giat-giay-go-vap`, `/giat-chan-men-go-vap`, `/giat-ui-tan-noi-go-vap`
 - Google Business verified — địa chỉ, SĐT, giờ khớp website
 - 11 Google Reviews 5.0★ — đồng bộ AggregateRating trong `layout.tsx`
-- Blog index `/tin-tuc` + 3 bài mẫu trong `data/news.ts`
+- **Blog: 30 bài đã viết** trong `data/news.ts`, route `/tin-tuc/[slug]/page.tsx` với `generateMetadata` + `generateStaticParams` đã live, sitemap tự động include tất cả (2026-08-18, khác hẳn note cũ "3 bài mẫu")
+- **Internal linking đầy đủ** (2026-08-18): `Footer.tsx` link tới 4 landing pages · Homepage `ServicesGrid.tsx` link tới 4 landing pages · mỗi landing page có "Dịch vụ liên quan" (chéo landing↔landing) + "Bài viết liên quan" (landing→3 bài blog cùng chủ đề) · mỗi bài blog có "Bài viết liên quan" (cùng category, blog↔blog) + "Dịch vụ liên quan" (blog→landing)
 - **GTM** `GTM-54R3MFLD` — script cài trong `layout.tsx`, đã publish v1
 - **GA4** `G-MTNLMFDDP5` — property `giatsay24hgovap.com`, track click Hotline + Zalo
 - GTM Tags: `GA4 - Configuration`, `GA4 - Click Hotline`, `GA4 - Click Zalo`
@@ -53,8 +54,8 @@
 
 ### P2 — Trong 30 ngày
 
-- [ ] **Route `/tin-tuc/[slug]/page.tsx`** — data có sẵn trong `data/news.ts`, thêm `generateMetadata` + internal links
-- [ ] **Viết 10 bài blog** (1000–1500 từ/bài, mỗi bài có 2–3 internal links + CTA)
+- [x] **Route `/tin-tuc/[slug]/page.tsx`** — `generateMetadata` + `generateStaticParams` live ✅ 2026-08-18
+- [x] **Viết bài blog** — 30 bài đã có trong `data/news.ts` (vượt mục tiêu 10 bài ban đầu) ✅ 2026-08-18
 
 | Nhóm | Bài viết | Link về trang |
 |---|---|---|
@@ -69,10 +70,10 @@
 | Vest | Cách bảo quản vest sau khi giặt hấp | `/giat-hap-go-vap` |
 | Chung | Quần áo bị phai màu khi giặt | `/giat-say-go-vap` |
 
-- [ ] **Internal linking** — Homepage → 6 landing pages (`ServicesGrid.tsx`), landing pages liên kết chéo nhau
+- [x] **Internal linking** — Footer + Homepage → 4 landing pages, landing↔landing, landing↔blog, blog↔blog đều đã link ✅ 2026-08-18
 - [ ] **Landing page `/giat-rem-cua-go-vap`** — keyword: giặt rèm cửa gò vấp, giặt màn cửa
 - [ ] **Landing page `/giat-hap-go-vap`** — keyword: giặt hấp vest gò vấp
-- [ ] **Landing page `/giat-gau-bong-go-vap`** — chỉ làm nếu thực tế có nhận dịch vụ này
+- [x] **Landing page `/giat-gau-bong-go-vap`** — ✅ 2026-08-18, giá Từ 30.000đ/kg (khớp `PricingTable.tsx`, `FAQ.tsx`, master spec)
 
 ### P3 — Tháng 2
 
@@ -109,7 +110,7 @@
 | `/giat-ui-tan-noi-go-vap` | giặt ủi tận nơi gò vấp | ✅ Done |
 | `/giat-rem-cua-go-vap` | giặt rèm cửa gò vấp | ⏸ Chưa có dịch vụ thật |
 | `/giat-hap-go-vap` | giặt hấp vest gò vấp | ⏸ Chưa có dịch vụ thật |
-| `/giat-gau-bong-go-vap` | giặt gấu bông gò vấp | ⏳ Nếu có dịch vụ |
+| `/giat-gau-bong-go-vap` | giặt gấu bông gò vấp | ✅ Done (2026-08-18) |
 
 ---
 

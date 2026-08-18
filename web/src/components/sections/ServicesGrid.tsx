@@ -52,7 +52,7 @@ const services = [
     bg: "bg-pink-50",
     text: "text-pink-600",
     ring: "ring-pink-100",
-    href: "/giat-say-go-vap",
+    href: "/giat-gau-bong-go-vap",
   },
   {
     Icon: Cloud,
