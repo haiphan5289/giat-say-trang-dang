@@ -48,7 +48,7 @@ const jsonLd = {
   priceRange: "₫₫",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Số 1 đường số 8, Thông Tay Hội",
+    streetAddress: "Số 1 đường số 8, Thông Tây Hội",
     addressLocality: "Gò Vấp",
     addressRegion: "Hồ Chí Minh",
     addressCountry: "VN",

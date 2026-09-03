@@ -4,7 +4,7 @@ export const BUSINESS = {
   hotlineHref: "tel:0938432178",
   zaloHref: "https://zalo.me/0938432178",
   facebookHref: "https://www.facebook.com/profile.php?id=61551799042694",
-  address: "Số 1 đường số 8, Thông Tay Hội, Gò Vấp, TP.HCM",
+  address: "Số 1 đường số 8, Thông Tây Hội, Gò Vấp, TP.HCM",
   hours: "08:00 - 20:00, tất cả các ngày trừ chủ nhật",
   priceFrom: "13.000đ/kg",
   responseTime: "30–60 phút",
@@ -13,5 +13,5 @@ export const BUSINESS = {
   lng: 106.6645925,
   coverageAreas: ["Gò Vấp", "Bình Thạnh", "Phú Nhuận", "Quận 12", "Tân Bình"],
   rating: "5.0",
-  reviewCount: 11,
+  reviewCount: 20,
 } as const;

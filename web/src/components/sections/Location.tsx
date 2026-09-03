@@ -7,7 +7,7 @@ const info = [
   {
     icon: MapPin,
     label: "Địa chỉ",
-    value: "Số 1 đường số 8, Thông Tay Hội, Hồ Chí Minh",
+    value: "Số 1 đường số 8, Thông Tây Hội, Hồ Chí Minh",
   },
   {
     icon: Phone,

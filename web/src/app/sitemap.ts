@@ -19,6 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/giat-chan-men-go-vap`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/giat-ui-tan-noi-go-vap`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/giat-gau-bong-go-vap`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/giat-say-hanh-thong-go-vap`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/giat-say-an-nhon-go-vap`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/giat-say-phuong-go-vap`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/giat-say-an-hoi-dong-go-vap`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/giat-say-an-hoi-tay-go-vap`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/giat-say-thong-tay-hoi-go-vap`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     ...blogUrls,
   ];
 }
