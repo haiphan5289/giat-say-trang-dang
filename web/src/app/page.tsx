@@ -9,6 +9,7 @@ const Gallery      = dynamic(() => import("@/components/sections/Gallery"));
 const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
 const NewsSection  = dynamic(() => import("@/components/sections/NewsSection"));
 const FAQ          = dynamic(() => import("@/components/sections/FAQ"));
+const ServiceAreas = dynamic(() => import("@/components/sections/ServiceAreas"));
 const Location     = dynamic(() => import("@/components/sections/Location"));
 
 export default function HomePage() {
@@ -23,6 +24,7 @@ export default function HomePage() {
       <div className="section-lazy"><Testimonials /></div>
       <div className="section-lazy"><NewsSection /></div>
       <div className="section-lazy"><FAQ /></div>
+      <div className="section-lazy"><ServiceAreas /></div>
       <div className="section-lazy"><Location /></div>
     </>
   );
