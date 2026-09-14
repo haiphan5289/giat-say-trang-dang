@@ -9,6 +9,16 @@ import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
 
 type NewsPost = (typeof newsPosts)[0];
 
+// date is "dd/mm/yyyy" — not ISO, so `new Date(str)` can't parse it directly
+function parseVNDate(date: string) {
+  const [day, month, year] = date.split("/").map(Number);
+  return new Date(year, month - 1, day).getTime();
+}
+
+const latestPosts = [...newsPosts]
+  .sort((a, b) => parseVNDate(b.date) - parseVNDate(a.date))
+  .slice(0, 3);
+
 function NewsCard({ post }: { post: NewsPost }) {
   return (
     <TiltCard className="group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:border-blue-200 hover:shadow-xl hover:shadow-slate-200/60 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer h-full">
@@ -85,7 +95,7 @@ export default function NewsSection() {
         </div>
 
         <StaggerGrid className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {newsPosts.map((post) => (
+          {latestPosts.map((post) => (
             <StaggerItem key={post.id}>
               <NewsCard post={post} />
             </StaggerItem>
