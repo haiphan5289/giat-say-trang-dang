@@ -21,6 +21,7 @@ const latestPosts = [...newsPosts]
 
 function NewsCard({ post }: { post: NewsPost }) {
   return (
+    <Link href={`/tin-tuc/${post.slug}`} className="block h-full">
     <TiltCard className="group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:border-blue-200 hover:shadow-xl hover:shadow-slate-200/60 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer h-full">
       <div className="h-44 relative overflow-hidden bg-slate-100">
         {post.image && (
@@ -57,6 +58,7 @@ function NewsCard({ post }: { post: NewsPost }) {
         </div>
       </div>
     </TiltCard>
+    </Link>
   );
 }
 
