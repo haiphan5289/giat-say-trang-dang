@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Phone, ChevronLeft, ChevronRight, CheckCircle, Pause, Play } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import CTAButton from "@/components/ui/CTAButton";
-import FadeIn from "@/components/ui/FadeIn";
 
 const slides = [
   {
@@ -43,7 +42,7 @@ const heroImages = [
 function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
   return (
     <div className="text-white space-y-8">
-      <FadeIn direction="up" className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-center gap-3">
         <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm text-blue-200 font-medium backdrop-blur-sm shadow-lg shadow-blue-900/20">
           <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
           {slide.tag}
@@ -51,9 +50,9 @@ function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
         <div className="inline-flex items-center gap-1.5 bg-amber-400/90 backdrop-blur-sm text-amber-900 rounded-full px-3.5 py-1.5 text-xs font-bold shadow-lg shadow-amber-500/30 animate-float">
           🎉 Giảm 10% đơn đầu tiên
         </div>
-      </FadeIn>
+      </div>
 
-      <FadeIn direction="up" delay={0.1} className="space-y-1">
+      <div className="space-y-1">
         <h1 className="space-y-1">
           <span className="sr-only">Giặt Sấy 24h Gò Vấp — </span>
           <span className="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight drop-shadow-sm">
@@ -63,13 +62,13 @@ function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
             {slide.highlight}
           </span>
         </h1>
-      </FadeIn>
+      </div>
 
-      <FadeIn direction="up" delay={0.2} className="text-slate-300 text-lg leading-relaxed max-w-md">
+      <div className="text-slate-300 text-lg leading-relaxed max-w-md">
         {slide.description}
-      </FadeIn>
+      </div>
 
-      <FadeIn direction="up" delay={0.3}>
+      <div>
         <ul className="space-y-2.5">
           {trustPoints.map((point) => (
             <li key={point} className="flex items-center gap-2.5 text-sm text-slate-300">
@@ -78,14 +77,14 @@ function HeroTextContent({ slide }: { slide: (typeof slides)[0] }) {
             </li>
           ))}
         </ul>
-      </FadeIn>
+      </div>
 
-      <FadeIn direction="up" delay={0.4} className="flex flex-wrap gap-3 pt-2">
+      <div className="flex flex-wrap gap-3 pt-2">
         <CTAButton href="tel:0938432178">
           <Phone size={20} />
           Đặt Lịch Lấy Đồ
         </CTAButton>
-      </FadeIn>
+      </div>
     </div>
   );
 }
@@ -102,7 +101,6 @@ function HeroImagePanel({ current }: { current: number }) {
           className={`object-cover object-center transition-opacity duration-1000 ${
             i === current ? "opacity-100 animate-ken-burns" : "opacity-0"
           }`}
-          priority={i === 0}
           sizes="(max-width: 1024px) 0px, 50vw"
         />
       ))}
@@ -131,7 +129,6 @@ export default function HeroBanner() {
   const [heroInView, setHeroInView] = useState(true);
   const pausedRef = useRef(paused);
   const sectionRef = useRef<HTMLElement>(null);
-  pausedRef.current = paused;
 
   const { scrollY } = useScroll();
   const contentY = useTransform(scrollY, [0, 500], [0, -50]);
@@ -143,6 +140,10 @@ export default function HeroBanner() {
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
+
+  useEffect(() => {
+    pausedRef.current = paused;
+  }, [paused]);
 
   useEffect(() => {
     const timer = setInterval(() => {

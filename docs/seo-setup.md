@@ -1,6 +1,6 @@
 # SEO & Growth — giatsay24hgovap.com
 
-> Cập nhật lần cuối: 2026-08-18 (đối chiếu lại với code thực tế — doc cũ bị lỗi thời 2 tháng)
+> Cập nhật lần cuối: 2026-09-19 (đối chiếu lại với code: thêm 6 trang phường, reviewCount 20)
 
 ---
 
@@ -9,7 +9,7 @@
 | Nhóm | Điểm |
 |---|---|
 | Technical SEO | 9/10 ✅ |
-| Landing Pages | 8/10 (4/6 trang) |
+| Landing Pages | 8/10 (5 trang dịch vụ + 6 trang phường) |
 | Conversion | 8.5/10 ✅ |
 | Internal Linking | 8/10 ✅ (Footer, Homepage, Landing↔Landing, Landing↔Blog, Blog↔Blog đều đã link — 2026-08-18) |
 | Google Business | 7/10 🟡 |
@@ -25,7 +25,8 @@
 - OpenGraph, Twitter Card, Google Search Console (verified 2026-06-05)
 - 4 landing pages: `/giat-say-go-vap`, `/giat-giay-go-vap`, `/giat-chan-men-go-vap`, `/giat-ui-tan-noi-go-vap`
 - Google Business verified — địa chỉ, SĐT, giờ khớp website
-- 11 Google Reviews 5.0★ — đồng bộ AggregateRating trong `layout.tsx`
+- 20 Google Reviews 5.0★ — đồng bộ AggregateRating (`reviewCount: "20"`) trong `layout.tsx`
+- **6 trang phường** (sau sáp nhập, đã có trong sitemap): `/giat-say-phuong-go-vap` (Phường Gò Vấp mới, từ P10+P17 cũ), `/giat-say-hanh-thong-go-vap`, `/giat-say-an-nhon-go-vap`, `/giat-say-an-hoi-dong-go-vap`, `/giat-say-an-hoi-tay-go-vap`, `/giat-say-thong-tay-hoi-go-vap` (2026-09-03 → 09-14); Footer có link tới các trang này
 - **Blog: 30 bài đã viết** trong `data/news.ts`, route `/tin-tuc/[slug]/page.tsx` với `generateMetadata` + `generateStaticParams` đã live, sitemap tự động include tất cả (2026-08-18, khác hẳn note cũ "3 bài mẫu")
 - **Internal linking đầy đủ** (2026-08-18): `Footer.tsx` link tới 4 landing pages · Homepage `ServicesGrid.tsx` link tới 4 landing pages · mỗi landing page có "Dịch vụ liên quan" (chéo landing↔landing) + "Bài viết liên quan" (landing→3 bài blog cùng chủ đề) · mỗi bài blog có "Bài viết liên quan" (cùng category, blog↔blog) + "Dịch vụ liên quan" (blog→landing)
 - **GTM** `GTM-54R3MFLD` — script cài trong `layout.tsx`, đã publish v1
@@ -77,9 +78,10 @@
 
 ### P3 — Tháng 2
 
-- [ ] **3 Location Pages đầu tiên**: `/giat-say-phuong-5-go-vap`, `/giat-say-phuong-10-go-vap`, `/giat-say-phuong-14-go-vap`
-- [ ] **Reviews: 30 → 40+**
-- [ ] **PageSpeed audit** — mục tiêu > 90
+- [x] **Location Pages đợt 1**: 6 trang phường mới đã live ✅ (tên phường theo địa giới sau sáp nhập, không dùng P5/10/14 cũ)
+- [ ] **Location Pages đợt 2**: phường còn lại quanh Gò Vấp + quận lân cận (Tân Bình, Phú Nhuận, Bình Thạnh)
+- [ ] **Reviews: 20 → 30–40+**
+- [ ] **PageSpeed audit** — mục tiêu > 90. Đo 2026-09-19 (trang chủ): Mobile 75 / Desktop 99; A11y 96, Best Practices 100, SEO 100 (cả hai). Mobile LCP 5.7s do text hero nằm trong `FadeIn` (framer-motion, opacity 0 tới khi hydrate) — đã sửa (bỏ FadeIn ở text hero, bỏ preload ảnh hero ẩn trên mobile, tăng tương phản Footer, sửa lỗi lint pausedRef) → build local: Mobile 92 / Desktop 100 / A11y 100, LCP mobile còn 3.3s (chưa tới ngưỡng tốt 2.5s). Cần deploy rồi đo lại trên production
 
 ### P4 — Khi có Ads ngân sách lớn hơn
 
@@ -120,8 +122,8 @@ Mỗi trang phải khác nhau **30–40%** — không clone, không chỉ thay t
 
 | Giai đoạn | Trang |
 |---|---|
-| 1 | `/giat-say-phuong-5-go-vap`, `/giat-say-phuong-10-go-vap`, `/giat-say-phuong-14-go-vap` |
-| 2 | `/giat-say-phuong-1-go-vap`, `/giat-say-phuong-15-go-vap`, `/giat-say-phuong-17-go-vap` |
+| 1 ✅ | 6 trang phường mới (xem mục Đã Xong) |
+| 2 | Phường còn lại của Gò Vấp (theo địa giới mới) |
 | 3 | `/giat-say-tan-binh`, `/giat-say-phu-nhuan`, `/giat-say-binh-thanh` |
 
 ---

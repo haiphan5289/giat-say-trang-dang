@@ -77,7 +77,7 @@ export default function Footer() {
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">24h Gò Vấp</span>
               </span>
             </div>
-            <p className="text-sm leading-relaxed text-slate-500 mb-5">
+            <p className="text-sm leading-relaxed text-slate-400 mb-5">
               Dịch vụ giặt sấy chuyên nghiệp — sạch đúng nghĩa, đẹp như mới.
               Phục vụ tận tình 09:00 – 20:00, thứ 2 đến thứ 7.
             </p>
@@ -118,7 +118,7 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-5 text-xs uppercase tracking-widest">
               Dịch Vụ
             </h3>
-            <ul className="space-y-2.5 text-sm text-slate-500">
+            <ul className="space-y-2.5 text-sm text-slate-400">
               {serviceList.map((s) => (
                 <li key={s.label}>
                   <Link href={s.href} className="hover:text-white transition-colors">
@@ -134,7 +134,7 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-5 text-xs uppercase tracking-widest">
               Khu Vực
             </h3>
-            <ul className="space-y-2.5 text-sm text-slate-500">
+            <ul className="space-y-2.5 text-sm text-slate-400">
               {areaList.map((a) => (
                 <li key={a.label}>
                   <Link href={a.href} className="hover:text-white transition-colors">
@@ -160,20 +160,20 @@ export default function Footer() {
                   >
                     0938 432 178
                   </a>
-                  <p className="text-slate-500 text-xs mt-0.5">
+                  <p className="text-slate-400 text-xs mt-0.5">
                     Hotline 09:00 – 20:00, T2–T7
                   </p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={15} className="text-blue-500 mt-0.5 shrink-0" />
-                <span className="text-slate-500">
+                <span className="text-slate-400">
                   Số 1 đường số 8, Thông Tây Hội, Hồ Chí Minh
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Clock size={15} className="text-blue-500 shrink-0" />
-                <span className="text-slate-500">
+                <span className="text-slate-400">
                   09:00 - 20:00, tất cả các ngày trừ chủ nhật
                 </span>
               </li>
@@ -184,7 +184,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-slate-800/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-600">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-400">
           <p>© 2025 Giặt Sấy 24h Gò Vấp. Bảo lưu mọi quyền.</p>
           <p className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />

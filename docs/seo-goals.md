@@ -15,12 +15,12 @@
 
 | Hạng mục | Mục tiêu | Hiện tại |
 |---|---|---|
-| Landing Pages | 6 trang dịch vụ hoàn chỉnh | 4/6 ✅ |
+| Landing Pages | 6 trang dịch vụ hoàn chỉnh | 5/6 ✅ (thiếu rèm cửa/giặt hấp, chưa có dịch vụ) + 6 trang phường ✅ |
 | Blog | 20 bài (1000–2000 từ/bài) | 30/20 ✅ (2026-08-18) |
 | Google Maps Reviews | 20+ reviews thật | 20 ✅ |
 | Google Business Posts | 1–2 bài/tuần | 2 bài tuần 1 ✅ |
-| PageSpeed Mobile | > 90 điểm | Chưa đo |
-| PageSpeed Desktop | > 90 điểm | Chưa đo |
+| PageSpeed Mobile | > 90 điểm | 75 🟡 production (LCP 5.7s, 2026-09-19) → 92 ✅ bản build local sau khi sửa hero, chờ deploy đo lại |
+| PageSpeed Desktop | > 90 điểm | 99 ✅ (2026-09-19); 100 sau khi sửa |
 
 ---
 
@@ -33,7 +33,7 @@
 - [x] Deploy lên Vercel (reviewCount: 20) ✅ — đã có trong code, đã push main
 - [x] Thêm Negative Keywords vào Google Ads ✅ 2026-06-17 — 13 từ khóa (list "Giặt-sấy")
 - [ ] Liên hệ Google Support — fix Map ad 404 (script: docs/google-ads-map-404-issue.md)
-- [ ] Đăng ký hộ kinh doanh cá thể tại UBND Quận Gò Vấp — deadline Google Ads 17/7/2026
+- [ ] ⏸ Đăng ký hộ kinh doanh cá thể — user chủ động hoãn; deadline xác minh Google Ads mới: 11/10/2026
 - [x] Viết blog — 30 bài đã có trong `data/news.ts` ✅ 2026-08-18
 
 ---
@@ -44,6 +44,7 @@
 - [x] Giặt Chăn Mền Gò Vấp ✅
 - [x] Giặt Giày Gò Vấp ✅
 - [x] Giặt Sấy Giao Nhận Tận Nơi Gò Vấp ✅
+- [x] Giặt Gấu Bông Gò Vấp ✅ (2026-08-18)
 - [ ] Giặt Rèm Cửa Gò Vấp ⏸ chưa có dịch vụ thật
 - [ ] Giặt Hấp Quần Áo Gò Vấp ⏸ chưa có dịch vụ thật
 
@@ -90,7 +91,8 @@
 - [x] Google reviews — 20 reviews 5.0 ⭐ (cập nhật 2026-06-16)
 - [x] Search Console verified — 2026-06-05
 - [x] Sitemap submitted — 2026-06-05 (6 URLs, Status: Success)
-- [x] Landing pages dịch vụ — 4 trang: /giat-say-go-vap, /giat-giay-go-vap, /giat-chan-men-go-vap, /giat-ui-tan-noi-go-vap
+- [x] Landing pages dịch vụ — 5 trang: /giat-say-go-vap, /giat-giay-go-vap, /giat-chan-men-go-vap, /giat-ui-tan-noi-go-vap, /giat-gau-bong-go-vap
+- [x] 6 trang phường (2026-09-03 → 09-14): phuong-go-vap, hanh-thong, an-nhon, an-hoi-dong, an-hoi-tay, thong-tay-hoi
 - [x] Giờ mở cửa đồng bộ 08:00–20:00 toàn project
 - [x] Meta title + description cập nhật emoji + USP
 - [x] Icon máy giặt — thay "GS" ở Header, Footer, Location
