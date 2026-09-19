@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     `giặt sấy phường ${WARD.toLowerCase()} gò vấp`,
     "giặt sấy phường 1 gò vấp",
     "giặt sấy phường 3 gò vấp",
+    "giặt sấy chung cư hà đô green view",
     "giặt đồ gần đây gò vấp",
   ],
   alternates: { canonical: `https://www.giatsay24hgovap.com/${SLUG}` },
@@ -48,6 +49,10 @@ const faqs: FAQItem[] = [
   {
     q: "Có tính phí lấy giao tận nơi không?",
     a: "Miễn phí lấy và giao tận nhà trong khu vực Gò Vấp và các quận lân cận.",
+  },
+  {
+    q: "Có nhận lấy và giao đồ tại chung cư Hà Đô Green View không?",
+    a: "Có. Tiệm nhận lấy và giao đồ tận nơi cho cư dân chung cư Hà Đô Green View (đường Nguyễn Văn Công). Nhắn hoặc gọi đặt lịch, nhân viên sẽ đến lấy trong khoảng 30–60 phút.",
   },
   {
     q: "Nhận giặt những loại đồ gì?",
@@ -132,6 +137,15 @@ export default function Page() {
           <SectionHeader label="Khu vực phục vụ" title={`Phường ${WARD}, Gò Vấp`} wrapperClass="mb-10" />
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 text-sm text-blue-800 leading-relaxed">
             Phường {WARD} được sáp nhập từ {OLD_WARDS}. Tiệm giặt sấy có trụ sở tại Thông Tây Hội ({BUSINESS.address}), phục vụ giao nhận tận nơi cho toàn bộ Phường {WARD} trong {BUSINESS.responseTime}. Dù bạn quen gọi theo tên phường cũ hay tên mới, chúng tôi vẫn nhận và giao đồ như bình thường.
+          </div>
+          <div className="mt-6 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+            <h3 className="flex items-center gap-2 font-bold text-slate-900 mb-2">
+              <MapPin size={18} className="text-blue-600 shrink-0" />
+              Cư dân chung cư Hà Đô Green View
+            </h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Hà Đô Green View nằm trên đường Nguyễn Văn Công, thuộc phường Hạnh Thông (trước đây là Phường 3). Căn hộ chung cư thường ít chỗ phơi, nhất là mùa mưa, nên đồ giặt sấy xong khô hẳn và gấp gọn giúp cư dân đỡ vất vả. Tiệm nhận lấy và giao đồ tận nơi cho cư dân Hà Đô Green View, đặt lịch là nhân viên đến lấy trong {BUSINESS.responseTime}.
+            </p>
           </div>
         </div>
       </section>

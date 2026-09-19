@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     "giặt sấy phường gò vấp",
     "giặt sấy phường 10 gò vấp",
     "giặt sấy phường 17 gò vấp",
+    "giặt sấy cityland park hills gò vấp",
     "giặt đồ gần đây gò vấp",
   ],
   alternates: { canonical: `https://www.giatsay24hgovap.com/${SLUG}` },
@@ -48,6 +49,10 @@ const faqs: FAQItem[] = [
   {
     q: "Có tính phí lấy giao tận nơi không?",
     a: "Miễn phí lấy và giao tận nhà trong khu vực Gò Vấp và các quận lân cận.",
+  },
+  {
+    q: "Có nhận lấy và giao đồ tại CityLand Park Hills không?",
+    a: "Có. Tiệm nhận lấy và giao đồ tận nơi cho cư dân CityLand Park Hills (18 Phan Văn Trị), cả căn hộ lẫn nhà phố. Nhắn hoặc gọi đặt lịch, nhân viên sẽ đến lấy trong khoảng 30–60 phút.",
   },
   {
     q: "Nhận giặt những loại đồ gì?",
@@ -132,6 +137,15 @@ export default function Page() {
           <SectionHeader label="Khu vực phục vụ" title={`Phường ${WARD} (Mới)`} wrapperClass="mb-10" />
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 text-sm text-blue-800 leading-relaxed">
             Phường {WARD} (mới) được sáp nhập từ {OLD_WARDS}, trùng tên với tên gọi quen thuộc của cả khu vực nên dễ gây nhầm lẫn. Tiệm giặt sấy có trụ sở tại Thông Tây Hội ({BUSINESS.address}), phục vụ giao nhận tận nơi cho toàn bộ Phường {WARD} (mới) trong {BUSINESS.responseTime}.
+          </div>
+          <div className="mt-6 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+            <h3 className="flex items-center gap-2 font-bold text-slate-900 mb-2">
+              <MapPin size={18} className="text-blue-600 shrink-0" />
+              Cư dân khu đô thị CityLand Park Hills
+            </h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              CityLand Park Hills nằm tại 18 Phan Văn Trị, thuộc Phường Gò Vấp mới (trước đây là Phường 10). Khu đô thị có cả căn hộ lẫn nhà phố, đa số gia đình đi làm cả ngày nên khó sắp xếp thời gian giặt giũ. Tiệm nhận lấy và giao đồ tận nơi cho cư dân CityLand Park Hills, đặt lịch là nhân viên đến lấy trong {BUSINESS.responseTime}.
+            </p>
           </div>
         </div>
       </section>

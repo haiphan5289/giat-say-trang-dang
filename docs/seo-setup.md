@@ -79,7 +79,9 @@
 ### P3 — Tháng 2
 
 - [x] **Location Pages đợt 1**: 6 trang phường mới đã live ✅ (tên phường theo địa giới sau sáp nhập, không dùng P5/10/14 cũ)
-- [ ] **Location Pages đợt 2**: phường còn lại quanh Gò Vấp + quận lân cận (Tân Bình, Phú Nhuận, Bình Thạnh)
+- [x] **Location Pages đợt 2**: Gò Vấp sau sáp nhập chỉ còn 6 phường, đều đã có trang → không còn phường nào để tạo. Thay vào đó (2026-09-19) thêm mục khu dân cư + FAQ riêng: Hà Đô Green View (trang Hạnh Thông), CityLand Park Hills (trang Gò Vấp mới)
+- [ ] **Trang riêng cho chung cư** — chưa tạo. Chờ 3–4 tuần xem Search Console (từ khóa "hà đô", "cityland") + có review/ảnh thật; ưu tiên CityLand Park Hills
+- [ ] **Khu vực lân cận** (Tân Bình, Phú Nhuận, Bình Thạnh, Quận 12) — chưa chọn khu, cần dữ liệu đơn hàng
 - [ ] **Reviews: 20 → 30–40+**
 - [ ] **PageSpeed audit** — mục tiêu > 90. Đo 2026-09-19 (trang chủ): Mobile 75 / Desktop 99; A11y 96, Best Practices 100, SEO 100 (cả hai). Mobile LCP 5.7s do text hero nằm trong `FadeIn` (framer-motion, opacity 0 tới khi hydrate) — đã sửa (bỏ FadeIn ở text hero, bỏ preload ảnh hero ẩn trên mobile, tăng tương phản Footer, sửa lỗi lint pausedRef) → build local: Mobile 92 / Desktop 100 / A11y 100, LCP mobile còn 3.3s (chưa tới ngưỡng tốt 2.5s). Cần deploy rồi đo lại trên production
 
