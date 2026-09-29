@@ -93,7 +93,7 @@
 - [x] Sitemap submitted — 2026-06-05 (6 URLs, Status: Success)
 - [x] Landing pages dịch vụ — 5 trang: /giat-say-go-vap, /giat-giay-go-vap, /giat-chan-men-go-vap, /giat-ui-tan-noi-go-vap, /giat-gau-bong-go-vap
 - [x] 6 trang phường (2026-09-03 → 09-14): phuong-go-vap, hanh-thong, an-nhon, an-hoi-dong, an-hoi-tay, thong-tay-hoi
-- [x] Giờ mở cửa đồng bộ 08:00–20:00 toàn project
+- [x] Giờ mở cửa đồng bộ 09:00–20:00 mỗi ngày (cả Chủ nhật, khớp Google Business) toàn project — 2026-09-29
 - [x] Meta title + description cập nhật emoji + USP
 - [x] Icon máy giặt — thay "GS" ở Header, Footer, Location
 - [x] GTM + GA4 live — track click_hotline + click_zalo

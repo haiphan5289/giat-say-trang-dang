@@ -79,7 +79,7 @@ export default function Footer() {
             </div>
             <p className="text-sm leading-relaxed text-slate-400 mb-5">
               Dịch vụ giặt sấy chuyên nghiệp — sạch đúng nghĩa, đẹp như mới.
-              Phục vụ tận tình 09:00 – 20:00, thứ 2 đến thứ 7.
+              Phục vụ tận tình 09:00 – 20:00, tất cả các ngày trong tuần.
             </p>
             <div className="flex gap-2">
               <a
@@ -161,7 +161,7 @@ export default function Footer() {
                     0938 432 178
                   </a>
                   <p className="text-slate-400 text-xs mt-0.5">
-                    Hotline 09:00 – 20:00, T2–T7
+                    Hotline 09:00 – 20:00, mỗi ngày
                   </p>
                 </div>
               </li>
@@ -174,7 +174,7 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Clock size={15} className="text-blue-500 shrink-0" />
                 <span className="text-slate-400">
-                  09:00 - 20:00, tất cả các ngày trừ chủ nhật
+                  09:00 - 20:00, tất cả các ngày trong tuần
                 </span>
               </li>
             </ul>

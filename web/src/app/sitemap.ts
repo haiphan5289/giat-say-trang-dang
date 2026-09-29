@@ -11,7 +11,7 @@ const PAGES: {
   changeFrequency: "weekly" | "monthly";
   priority: number;
 }[] = [
-  { path: "", lastModified: "2026-09-19", changeFrequency: "monthly", priority: 1 },
+  { path: "", lastModified: "2026-09-29", changeFrequency: "monthly", priority: 1 },
   { path: "/tin-tuc", lastModified: "2026-08-18", changeFrequency: "weekly", priority: 0.8 },
   { path: "/giat-say-go-vap", lastModified: "2026-08-18", changeFrequency: "monthly", priority: 0.9 },
   { path: "/giat-giay-go-vap", lastModified: "2026-08-18", changeFrequency: "monthly", priority: 0.9 },

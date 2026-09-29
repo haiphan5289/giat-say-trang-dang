@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | Giặt Sấy 24h Gò Vấp",
   },
   description:
-    "Giặt sạch · Sấy thơm · Giao tận nhà Gò Vấp. Từ 13.000đ/kg — lấy tận nhà. Chăn mền, giày, quần áo. Mở cửa T2–T7.",
+    "Giặt sạch · Sấy thơm · Giao tận nhà Gò Vấp. Từ 13.000đ/kg — lấy tận nhà. Chăn mền, giày, quần áo. Mở cửa 9h–20h mỗi ngày.",
   keywords: ["giặt sấy 24h gò vấp", "giặt sấy gần đây", "giặt sạch gò vấp", "giặt nhanh khử mùi hcm", "giặt ủi tận nơi gò vấp", "giặt nệm sofa tại nhà", "giặt giày gò vấp"],
   alternates: { canonical: "https://www.giatsay24hgovap.com" },
   twitter: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   verification: { google: "icIyIBiGHqRzlTao9gdrk4Y7T1N1tGxuOTHLPlS4UJU" },
   openGraph: {
     title: "Giặt Sấy 24h Gò Vấp - Sạch · Nhanh · Khử Mùi",
-    description: "Giặt sạch · Sấy thơm · Giao tận nhà Gò Vấp. Từ 13.000đ/kg — lấy tận nhà. Chăn mền, giày, quần áo. Mở cửa T2–T7.",
+    description: "Giặt sạch · Sấy thơm · Giao tận nhà Gò Vấp. Từ 13.000đ/kg — lấy tận nhà. Chăn mền, giày, quần áo. Mở cửa 9h–20h mỗi ngày.",
     images: [{ url: "/images/shop-front-1.jpg", width: 815, height: 1200, alt: "Giặt Sấy 24h Gò Vấp" }],
     locale: "vi_VN",
     type: "website",
@@ -41,6 +41,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Giặt Sấy 24h Gò Vấp",
+  alternateName: "Giặt sấy Gò Vấp",
   description: "Dịch vụ giặt sấy chuyên nghiệp tại Gò Vấp, Hồ Chí Minh. Giao nhận tận nơi.",
   url: "https://www.giatsay24hgovap.com",
   telephone: "+84938432178",
@@ -60,8 +61,8 @@ const jsonLd = {
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    opens: "08:00",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "09:00",
     closes: "20:00",
   },
   aggregateRating: {
