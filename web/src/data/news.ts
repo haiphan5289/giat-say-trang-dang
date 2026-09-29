@@ -1349,4 +1349,121 @@ export const newsPosts: NewsPost[] = [
 <p>Đóng gói không phải là bước phụ mà là mắt xích cuối cùng quyết định trải nghiệm thực tế của khách hàng. Một quy trình giặt ủi tốt chỉ thực sự hoàn chỉnh khi đồ đến tay người dùng vẫn giữ nguyên chất lượng như lúc vừa hoàn thành.</p>
     `,
   },
+  {
+    id: 30,
+    title: "Giặt Đồ Mùa Mưa Ở Chung Cư Không Có Ban Công: Cách Làm Khô Nhanh, Không Ám Mùi",
+    excerpt:
+      "Căn hộ không có ban công, trời mưa cả tuần, đồ phơi trong nhà mãi không khô và bắt đầu có mùi. Đây là những cách thực tế giúp cư dân chung cư xử lý đồ giặt mùa mưa.",
+    date: "29/09/2026",
+    category: "Mẹo Hay",
+    image: "/images/folded-clothes.jpg",
+    slug: "giat-do-mua-mua-o-chung-cu-khong-co-ban-cong",
+    relatedHref: "/giat-ui-tan-noi-go-vap",
+    content: `
+<p>Sống ở chung cư có nhiều cái tiện, nhưng đến mùa mưa thì việc phơi đồ trở thành nỗi lo thật sự — nhất là với căn hộ không có ban công hoặc logia rất hẹp. Đồ phơi trong phòng 2–3 ngày vẫn còn ẩm, bắt đầu có mùi chua, trong khi đồ bẩn mới lại tiếp tục dồn lên. Bài viết này tổng hợp những cách làm thực tế để xử lý đồ giặt mùa mưa khi không gian phơi hạn chế.</p>
+
+<h2>Vì sao đồ phơi trong căn hộ lâu khô và dễ ám mùi?</h2>
+<ul>
+  <li><strong>Độ ẩm không khí cao:</strong> Mùa mưa ở TP.HCM, độ ẩm trong nhà thường rất cao, hơi nước từ quần áo khó bay đi</li>
+  <li><strong>Thiếu lưu thông gió:</strong> Căn hộ đóng kín cửa khi mưa, không khí gần như đứng yên quanh đồ phơi</li>
+  <li><strong>Phơi quá dày:</strong> Không gian hẹp buộc phải treo đồ sát nhau, các lớp vải che hơi nước của nhau</li>
+  <li><strong>Vi khuẩn phát triển khi đồ ẩm lâu:</strong> Đồ ẩm quá 6–8 tiếng là môi trường lý tưởng cho vi khuẩn gây mùi — đây là nguồn gốc của mùi "chua" đặc trưng</li>
+</ul>
+
+<h2>Cách làm khô đồ nhanh hơn khi phơi trong căn hộ</h2>
+
+<h3>1. Vắt thật kỹ trước khi phơi</h3>
+<p>Chọn chế độ vắt mạnh nhất máy giặt cho phép với từng loại vải (đồ cotton, jeans, khăn có thể vắt mạnh; đồ mỏng, đồ lót nên vắt nhẹ). Đồ càng ít nước khi treo lên, thời gian khô càng ngắn và nguy cơ ám mùi càng thấp.</p>
+
+<h3>2. Giặt ít đồ hơn mỗi lần, giặt thường xuyên hơn</h3>
+<p>Thay vì dồn một mẻ lớn cuối tuần, chia thành 2–3 mẻ nhỏ trong tuần. Mỗi mẻ ít đồ thì phơi được thưa, không khí lưu thông tốt hơn và đồ khô nhanh hơn rõ rệt.</p>
+
+<h3>3. Tạo luồng gió bằng quạt</h3>
+<p>Đặt quạt thổi trực tiếp vào khu vực phơi, kết hợp mở hé cửa sổ nếu mưa không tạt vào. Luồng gió liên tục giúp hơi ẩm thoát khỏi bề mặt vải nhanh hơn nhiều so với phơi trong không khí tĩnh.</p>
+
+<h3>4. Phơi thưa và lộn trái đồ dày</h3>
+<p>Giữ khoảng cách giữa các món đồ, lộn trái quần jeans, áo hoodie và các món có túi, đường may dày. Đây là những vùng khô chậm nhất và thường là nơi bắt đầu có mùi.</p>
+
+<h3>5. Tận dụng máy hút ẩm hoặc điều hòa chế độ Dry</h3>
+<p>Nếu căn hộ có điều hòa, chế độ Dry (khử ẩm) giúp giảm độ ẩm trong phòng, đồ phơi khô nhanh hơn. Máy hút ẩm đặt gần khu phơi đồ cũng có tác dụng tương tự, nhưng cần tính thêm chi phí điện.</p>
+
+<h3>6. Không để đồ ướt trong lồng giặt</h3>
+<p>Giặt xong nên phơi ngay. Đồ ướt nằm trong lồng giặt kín vài tiếng là đủ để bắt mùi — kể cả khi sau đó phơi khô hoàn toàn, mùi vẫn có thể còn lại.</p>
+
+<h2>Những món đồ nên gửi tiệm vào mùa mưa</h2>
+<p>Có những món gần như không thể làm khô đúng cách trong căn hộ vào mùa mưa, và cố phơi trong nhà nhiều ngày chỉ khiến chúng ám mùi, thậm chí mốc:</p>
+<ul>
+  <li><strong>Chăn, mền, topper:</strong> Ruột bông dày, phơi trong nhà có thể mất nhiều ngày mà lõi vẫn ẩm — xem thêm <a href="/tin-tuc/khu-mui-chan-mua-mua">cách khử mùi chăn mùa mưa</a></li>
+  <li><strong>Khăn tắm dày, áo khoác, quần jeans:</strong> Vải dày giữ nước lâu, dễ có mùi nếu không khô trong ngày</li>
+  <li><strong>Gấu bông lớn:</strong> Phần bông bên trong gần như không thể khô tự nhiên trong mùa mưa</li>
+  <li><strong>Đồng phục, đồ đi làm cần dùng ngay:</strong> Khi không chờ được 2–3 ngày để đồ khô</li>
+</ul>
+<p>Với những món này, máy sấy công suất lớn làm khô hoàn toàn đến tận lõi chỉ trong một lần sấy, đồ trả về thơm và gấp gọn — cất tủ được ngay, không chiếm thêm chỗ trong căn hộ.</p>
+
+<h2>Dịch vụ lấy – giao tận nơi cho cư dân chung cư Gò Vấp</h2>
+<p>Tiệm nhận <a href="/giat-ui-tan-noi-go-vap">giặt sấy lấy và giao tận nơi</a> cho cư dân các chung cư khu vực Gò Vấp. Đặt lịch qua điện thoại hoặc Zalo, nhân viên đến lấy đồ trong khoảng 30–60 phút, giặt sấy xong giao lại tận nơi, miễn phí lấy – giao trong khu vực. Cư dân các khu như <a href="/giat-say-hanh-thong-go-vap">Hà Đô Green View (phường Hạnh Thông)</a> hay <a href="/giat-say-phuong-go-vap">CityLand Park Hills (Phường Gò Vấp)</a> có thể đặt lịch ngay mà không cần xuống sảnh chờ.</p>
+
+<h2>Kết luận</h2>
+<p>Không có ban công không có nghĩa là mùa mưa phải chịu đồ ẩm, đồ có mùi. Vắt kỹ, giặt mẻ nhỏ, tạo gió và khử ẩm giúp đồ thường ngày khô nhanh hơn đáng kể. Còn với chăn mền, khăn dày và những món khó khô, gửi tiệm giặt sấy là cách nhanh và chắc chắn nhất để đồ sạch, khô hẳn và thơm tho.</p>
+    `,
+  },
+  {
+    id: 31,
+    title: "Giá Giặt Sấy Theo Kg Ở Gò Vấp 2026: Bảng Giá Chi Tiết Và Cách Tính",
+    excerpt:
+      "Giặt sấy theo kg ở Gò Vấp giá bao nhiêu? Bảng giá cập nhật 2026 cho giặt thường, giặt nhanh, chăn mền, giày, gấu bông — kèm cách ước tính số kg đồ và mẹo để không bị tính sai.",
+    date: "29/09/2026",
+    category: "Dịch Vụ",
+    image: "/images/laundry-items-shelf.jpg",
+    slug: "gia-giat-say-theo-kg-go-vap-2026",
+    relatedHref: "/giat-say-go-vap",
+    content: `
+<p>"Giặt sấy một ký bao nhiêu tiền?" là câu hỏi phổ biến nhất trước khi khách gửi đồ lần đầu. Bài viết này tổng hợp bảng giá giặt sấy cập nhật 2026 tại tiệm ở Gò Vấp, cách tính tiền theo kg và cách ước lượng số kg đồ trước khi mang đi giặt.</p>
+
+<h2>Bảng giá giặt sấy tại Gò Vấp (cập nhật 2026)</h2>
+<ul>
+  <li><strong>Giặt thường:</strong> từ 13.000đ/kg — giặt, sấy khô, gấp gọn, thời gian 2–4 tiếng</li>
+  <li><strong>Giặt nhanh:</strong> từ 20.000đ/kg — trả trong cùng buổi (sáng gửi – chiều nhận, chiều gửi – sáng hôm sau nhận), phụ thu 20.000đ/đơn</li>
+  <li><strong>Giặt chăn mền:</strong> 20.000 – 30.000đ/kg tùy loại chăn</li>
+  <li><strong>Giặt gấu bông:</strong> từ 30.000đ/kg</li>
+  <li><strong>Giặt giày:</strong> từ 50.000đ/đôi</li>
+</ul>
+<p>Giá trên đã bao gồm công giặt, sấy và gấp. Lấy và giao tận nơi miễn phí trong khu vực Gò Vấp và các quận lân cận. Tiệm báo giá trước khi giặt, không phát sinh phụ phí ẩn.</p>
+
+<h2>Giặt sấy theo kg được tính như thế nào?</h2>
+<p>Đồ được cân <strong>khô, trước khi giặt</strong>. Tổng tiền = số kg × đơn giá của loại dịch vụ. Những món cần xử lý riêng như chăn mền, gấu bông, giày được tính theo bảng giá riêng, không gộp chung với đồ giặt thường.</p>
+<p>Ví dụ: một túi đồ 5kg quần áo thường ngày, chọn giặt thường → 5 × 13.000đ = 65.000đ. Nếu cần lấy trong ngày, chọn giặt nhanh → 5 × 20.000đ + 20.000đ phụ thu = 120.000đ.</p>
+
+<h2>Cách ước lượng số kg đồ trước khi gửi</h2>
+<p>Khối lượng thực tế phụ thuộc vào chất liệu và kích cỡ, nhưng có thể tham khảo mức trung bình sau:</p>
+<ul>
+  <li><strong>Áo thun:</strong> khoảng 0,15 – 0,2kg/cái</li>
+  <li><strong>Áo sơ mi:</strong> khoảng 0,2 – 0,25kg/cái</li>
+  <li><strong>Quần jeans:</strong> khoảng 0,5 – 0,7kg/cái</li>
+  <li><strong>Khăn tắm lớn:</strong> khoảng 0,5 – 0,7kg/cái</li>
+  <li><strong>Bộ ga gối:</strong> khoảng 1 – 1,5kg/bộ</li>
+</ul>
+<p>Thực tế, đồ giặt trong một tuần của một người đi làm thường rơi vào khoảng 3–4kg; gia đình 3–4 người khoảng 8–12kg.</p>
+
+<h2>Khi nào nên chọn giặt thường, khi nào chọn giặt nhanh?</h2>
+<ul>
+  <li><strong>Giặt thường</strong> phù hợp với đồ dùng hàng ngày, không gấp — tiết kiệm chi phí nhất</li>
+  <li><strong>Giặt nhanh</strong> phù hợp khi cần đồng phục, đồ đi làm, đồ đi du lịch trong ngày, hoặc mùa mưa đồ ở nhà không khô kịp</li>
+</ul>
+
+<h2>Mẹo để tiết kiệm khi giặt sấy theo kg</h2>
+<ul>
+  <li><strong>Gom đồ đủ mẻ:</strong> Gửi một lần 4–5kg thay vì nhiều lần lẻ tẻ giúp dễ tính và tiết kiệm công đi lại</li>
+  <li><strong>Tách riêng đồ đặc biệt:</strong> Đồ ra màu, đồ len, đồ cần giặt tay nên để riêng và báo trước để tiệm xử lý đúng cách</li>
+  <li><strong>Kiểm tra túi quần áo:</strong> Lấy hết giấy tờ, tiền, tai nghe… trước khi gửi</li>
+  <li><strong>Chăn mền giặt định kỳ:</strong> Giặt chăn mền 2–3 tháng một lần giúp chăn bền và không phải xử lý mốc, mùi — tham khảo <a href="/tin-tuc/gia-giat-chan-men-hien-nay-o-go-vap">giá giặt chăn mền ở Gò Vấp</a></li>
+</ul>
+
+<h2>Giặt sấy lấy tận nơi tại Gò Vấp</h2>
+<p>Tiệm đặt tại Số 1 đường số 8, phường Thông Tây Hội, mở cửa 09:00 – 20:00 tất cả các ngày trong tuần. Bạn có thể mang đồ đến trực tiếp hoặc đặt lịch để nhân viên đến lấy trong khoảng 30–60 phút. Xem chi tiết dịch vụ tại <a href="/giat-say-go-vap">giặt sấy Gò Vấp</a> hoặc <a href="/giat-ui-tan-noi-go-vap">giặt sấy lấy giao tận nơi</a>.</p>
+
+<h2>Kết luận</h2>
+<p>Giặt sấy theo kg ở Gò Vấp hiện có giá từ 13.000đ/kg cho giặt thường và từ 20.000đ/kg cho giặt nhanh, đã bao gồm sấy và gấp. Ước lượng trước số kg và chọn đúng loại dịch vụ giúp bạn biết trước chi phí, không bất ngờ khi nhận đồ.</p>
+    `,
+  },
 ];

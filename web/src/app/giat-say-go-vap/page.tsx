@@ -239,7 +239,7 @@ export default function GiatSayGoVapPage() {
           <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4 text-center">Bài viết liên quan</p>
           <div className="grid sm:grid-cols-3 gap-3">
             {[
-              { href: "/tin-tuc/bi-quyet-giat-quan-ao-ben-mau", title: "Bí Quyết Giặt Quần Áo Đúng Cách Để Bền Màu Lâu" },
+              { href: "/tin-tuc/gia-giat-say-theo-kg-go-vap-2026", title: "Giá Giặt Sấy Theo Kg Ở Gò Vấp 2026: Bảng Giá Chi Tiết Và Cách Tính" },
               { href: "/tin-tuc/tai-sao-quan-ao-van-co-mui-sau-khi-giat", title: "Tại Sao Quần Áo Vẫn Có Mùi Sau Khi Giặt?" },
               { href: "/tin-tuc/cach-phan-loai-quan-ao-truoc-khi-giat", title: "Cách Phân Loại Quần Áo Trước Khi Giặt" },
             ].map((a) => (

@@ -144,7 +144,11 @@ export default function Page() {
               Cư dân chung cư Hà Đô Green View
             </h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Hà Đô Green View nằm trên đường Nguyễn Văn Công, thuộc phường Hạnh Thông (trước đây là Phường 3). Căn hộ chung cư thường ít chỗ phơi, nhất là mùa mưa, nên đồ giặt sấy xong khô hẳn và gấp gọn giúp cư dân đỡ vất vả. Tiệm nhận lấy và giao đồ tận nơi cho cư dân Hà Đô Green View, đặt lịch là nhân viên đến lấy trong {BUSINESS.responseTime}.
+              Hà Đô Green View nằm trên đường Nguyễn Văn Công, thuộc phường Hạnh Thông (trước đây là Phường 3). Căn hộ chung cư thường ít chỗ phơi, nhất là mùa mưa, nên đồ giặt sấy xong khô hẳn và gấp gọn giúp cư dân đỡ vất vả. Tiệm nhận lấy và giao đồ tận nơi cho cư dân Hà Đô Green View, đặt lịch là nhân viên đến lấy trong {BUSINESS.responseTime}. Xem thêm{" "}
+              <Link href="/tin-tuc/giat-do-mua-mua-o-chung-cu-khong-co-ban-cong" className="text-blue-600 font-medium hover:underline">
+                mẹo giặt đồ mùa mưa ở chung cư không có ban công
+              </Link>
+              .
             </p>
           </div>
         </div>

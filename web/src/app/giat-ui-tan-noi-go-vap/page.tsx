@@ -211,7 +211,7 @@ export default function GiatUiTanNoiGoVapPage() {
             {[
               { href: "/tin-tuc/giat-ui-tan-noi-co-dat-hon-tu-giat-khong", title: "Giặt Ủi Tận Nơi Có Đắt Hơn Tự Giặt Ở Nhà Không?" },
               { href: "/tin-tuc/quy-trinh-dong-goi-do-sau-khi-giat-ui-tan-noi", title: "Quy Trình Đóng Gói Đồ Sau Khi Giặt Ủi Tận Nơi" },
-              { href: "/tin-tuc/rut-ngan-thoi-gian-giat-do-cuoi-tuan", title: "Rút Ngắn Thời Gian Giặt Đồ Cuối Tuần" },
+              { href: "/tin-tuc/giat-do-mua-mua-o-chung-cu-khong-co-ban-cong", title: "Giặt Đồ Mùa Mưa Ở Chung Cư Không Có Ban Công" },
             ].map((a) => (
               <Link key={a.href} href={a.href} className="bg-slate-50 border border-slate-100 rounded-xl p-4 hover:border-blue-200 hover:shadow-md hover:bg-blue-50 transition-all duration-200 group">
                 <p className="font-semibold text-slate-800 text-sm group-hover:text-blue-700 transition-colors leading-snug line-clamp-2">{a.title}</p>

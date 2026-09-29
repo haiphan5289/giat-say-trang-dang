@@ -144,7 +144,11 @@ export default function Page() {
               Cư dân khu đô thị CityLand Park Hills
             </h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              CityLand Park Hills nằm tại 18 Phan Văn Trị, thuộc Phường Gò Vấp mới (trước đây là Phường 10). Khu đô thị có cả căn hộ lẫn nhà phố, đa số gia đình đi làm cả ngày nên khó sắp xếp thời gian giặt giũ. Tiệm nhận lấy và giao đồ tận nơi cho cư dân CityLand Park Hills, đặt lịch là nhân viên đến lấy trong {BUSINESS.responseTime}.
+              CityLand Park Hills nằm tại 18 Phan Văn Trị, thuộc Phường Gò Vấp mới (trước đây là Phường 10). Khu đô thị có cả căn hộ lẫn nhà phố, đa số gia đình đi làm cả ngày nên khó sắp xếp thời gian giặt giũ. Tiệm nhận lấy và giao đồ tận nơi cho cư dân CityLand Park Hills, đặt lịch là nhân viên đến lấy trong {BUSINESS.responseTime}. Xem thêm{" "}
+              <Link href="/tin-tuc/giat-do-mua-mua-o-chung-cu-khong-co-ban-cong" className="text-blue-600 font-medium hover:underline">
+                mẹo giặt đồ mùa mưa ở chung cư không có ban công
+              </Link>
+              .
             </p>
           </div>
         </div>
