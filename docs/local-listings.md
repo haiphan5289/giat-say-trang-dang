@@ -38,6 +38,15 @@ Apple báo *"The website has a domain that cannot be resolved"* vì DNS Mắt B�
 4. **Search Console:** Request Indexing ~10 URL/ngày (5 trang dịch vụ → 6 trang phường → blog), gửi lại `sitemap.xml`
 5. **Facebook / Zalo OA:** thêm link website vào phần giới thiệu
 
+## Apple Business — tạm gác (2026-10-02)
+
+- Đang ở Step 4 of 4 (Verify), cần 2 phương thức.
+- ✅ Method 1 Domain Validation: đã thêm TXT `apple-domain-verification=oxrPnDyPRyidcVwp` ở Mắt Bão (host `@`). **Khi chuyển nameserver sang Vercel phải chép bản ghi này sang.**
+- ⛔ Method 2: hoá đơn điện và hợp đồng thuê đều ghi địa chỉ cũ **32/16 Thống Nhất**, không khớp "Số 1 Đường Số 8".
+- Cách gỡ khi quay lại: thử nộp hợp đồng thuê kèm ghi chú đổi số nhà; nếu bị từ chối thì cập nhật địa chỉ với EVNHCMC, xin giấy chứng nhận số nhà ở UBND phường, hoặc ký phụ lục hợp đồng thuê.
+- Còn phải sửa giờ Chủ nhật trên Apple: đang "Closed" → 09:00–20:00.
+- Không đổi địa chỉ trên Apple về địa chỉ cũ (phải khớp Google Business).
+
 ## DNS (đang xử lý)
 
 - Registrar: Mắt Bão (xem `docs/domain-setup.md`)
